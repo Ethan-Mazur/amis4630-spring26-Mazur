@@ -1,0 +1,38 @@
+Need: Fast & Easy Product Discovery
+Architecture Decision:
+* React frontend with dynamic search
+* Backend Search Service
+* Indexed database fields
+How this supports the user:
+* Fast API responses improve search speed
+* Indexed queries reduce database lookup time
+* Dynamic frontend filtering improves usability
+
+Need: Reliable Messaging
+Architecture Decision:
+* Dedicated Messaging Service
+* Separate Messages table
+* Real-time or near real-time API polling
+How this supports the user:
+* Organized conversation tracking
+* Scalable message storage
+* Reduced interference with listing performance
+
+Need: Simple Listing Creation
+Architecture Decision:
+* Cloud storage for images
+* Backend validation layer
+* Structured database schema for listings
+How this supports the user:
+* Image uploads improve listing clarity
+* Validation prevents errors
+* Clean schema ensures reliable display
+
+Need: Administrative Oversight
+Architecture Decision:
+* Admin dashboard (separate frontend view)
+* Role-based permissions
+* Backend moderation endpoints
+How this supports the user:
+* Maintains platform safety
+* Allows quick removal of inappropriate content
