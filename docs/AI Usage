@@ -2,3 +2,7 @@ USED PROMPTS for 2.System Architecture Diagram
 * Could I use Draw.io to create a System Architecture Diagram?
 * I need to create a System Architecture Diagram for Buckeye Marketplace. I'm working on Milestone 2. This milestone is focused on Architecture Design and Frontend Foundation.
 * I'm also supposed to "Connect architecture decisions back to user needs from Milestone 1"
+
+USED PROMPTS for 3.Database Schema Design
+* I need to create a Database Schema Design using an Entity Relationship Diagram. I only need to create the main tables and relationships needed to support my prioritized features. The relationship mappings are one-to-many & many-to-many Do Not Include: Column-level details (data types, constraints) or worry about things like normalization at this stage. I need to Focus on the big picture of how data entities relate to each other and support my user stories. 
+* I also need to explain how schema supports my user stories

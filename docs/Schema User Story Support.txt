@@ -1,0 +1,17 @@
+Supported User Story:
+As a student, I want to receive notifications about my listing so that I know when someone is interested in my listing
+Supported by:
+Listing → Messages (1:M)
+This allows a message to be received about a listing
+
+Supported User Story:
+As a student, I want the option to provide a seller rating for products that I have purchased, so that I can determine if a seller is trustworthy
+Supported by:
+User → Reviews (1:M)
+This system allows users to leave a review for a seller
+
+Supported User Story:
+As a professor, I want a way to communicate in the app to keep my communication with any students professional and safe
+Supported by:
+User → Messages (1:M)
+This protects users through built-in messaging
