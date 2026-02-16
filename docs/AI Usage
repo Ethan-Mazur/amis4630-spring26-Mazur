@@ -10,3 +10,10 @@ USED PROMPTS for 3.Database Schema Design
 USED PROMPTS for 4.Architecture Decision Records
 * Architecture Decision Records 
 * What technology should I use and why?
+
+USED PROMPTS for 5.Component Architecture
+* Component Architecture
+* I need to use Atomic Design principles to create a component hierarchy. I need to scope the components to the Product Catalog feature for now to keep it simple
+
+USED Prompt to generate sample summary of business system
+* I need to make a summary of my business system
