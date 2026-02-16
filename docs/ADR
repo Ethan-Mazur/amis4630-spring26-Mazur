@@ -1,0 +1,54 @@
+Overall Architecture Style
+3-Tier Web Application Architecture (Frontend, Backend, Database)
+
+Reasons:
+* Separates concerns for UI, Business Logic, and Data
+* Makes future scaling easier
+* Industry standard for marketplace platforms (according to ChatGPT)
+* Supports modular frontend foundation requirement
+
+Frontend Technology
+Use React
+
+Reasons:
+* Component-based architecture (ideal for listings, cards, forms)
+* Fast UI updates for dynamic marketplace browsing
+* Large ecosystem and strong documentation
+* Aligns well with REST APIs
+
+Backend Technology
+Use Node.js with Express.js
+
+Reasons:
+* Lightweight and fast for REST APIs
+* Same language as frontend (JavaScript)
+* Easy integration with authentication and database layers
+
+Database Technology
+Use PostgreSQL
+
+Reasons:
+* Relational model fits ERD design (User, Listing, Order/Transaction, Review)
+* Supports one-to-many and many-to-many relationships
+* Strong data integrity
+* Widely used in production systems
+
+Authentication Strategy
+OAuth (Google/OSU login)
+
+Reasons:
+* No new passwords
+* Fast signup
+* Trust & verification
+OAuth:
+* Reduces fake accounts
+* Improves recruiter trust
+* Speeds onboarding
+
+Hosting
+AWS
+
+Reasons:
+* Industry standard
+* Scalable
+* Supports EC2 (backend), RDS (database), S3 (images)
