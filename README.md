@@ -83,3 +83,42 @@ USED PROMPTS for 5.Component Architecture
 
 USED Prompt to generate sample summary of business system
 * I need to make a summary of my business system
+
+Milestone 3 Project Description
+Milestone 3 adds a static list of products available for sale on Buckeye Marketplace.
+This is temporary until later Milestones. Milestone 3 shows off what the marketplace may look like when it is finished.
+To run this temporary DEMO, you must open a terminal to backend\api\products and run dotnet run to launch 
+.NET API locally. You will open the REACT app in a separate terminal and run npm install > npm run dev to launch the React app.
+
+MILESTONE 3 Prompts and Decisions
+
+I used this prompt to generate an agent
+(Follow instructions in create-agent.prompt.md.
+This agent should create the following components
+Frontend (React)
+• Product List Page — a page displaying all available products as cards
+• Product Detail Page — a page showing full details for a single product
+• Client-side routing between the two pages using React Router
+• API integration — all product data fetched from your .NET API, no hardcoded data in
+components
+Backend (.NET API)
+• GET /api/products — returns all products as a JSON array
+• GET /api/products/{id} — returns a single product by ID, or 404 if not found
+• In-memory data store — a static list of at least 8 sample products in C#)
+
+I used this prompt to build the backend and frontend. ("Build the complete backend and frontend for the product catalog")
+I reviewed and accepted the changes it made.
+
+I used the following prompt to get dotnet working.(Please change the framework for the backend to run on NETCore 10.0.3)
+
+I used the following prompt to correct the product fields, so they would match the requirements.
+I went through each file it modified to ensure the changes were satisfactory.
+I need to include the following Product Fields in the API response and React components
+id — unique identifier
+• title — product name
+• description — seller's description
+• price — listed price (number)
+• category — e.g., Textbooks, Electronics, Furniture, Clothing
+• sellerName — display name of the seller
+• postedDate — when the listing was created
+• imageUrl — placeholder image URL is fine (e.g., from picsum.photos)
