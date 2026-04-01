@@ -1,0 +1,38 @@
+# ─── .NET / ASP.NET Core ───────────────────────────────────────────────────
+bin/
+obj/
+*.user
+*.suo
+.vs/
+*.swp
+*.DS_Store
+
+# EF Core SQLite database files
+*.db
+*.db-shm
+*.db-wal
+
+# Published output
+publish/
+out/
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+
+# Rider / JetBrains
+.idea/
+
+# ─── Node / React / Vite ───────────────────────────────────────────────────
+node_modules/
+dist/
+.env
+.env.local
+.env.*.local
+
+# Vite cache
+.vite/
+
+# ─── OS ────────────────────────────────────────────────────────────────────
+Thumbs.db
