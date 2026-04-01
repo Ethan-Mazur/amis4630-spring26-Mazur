@@ -1,6 +1,14 @@
 import { Link } from 'react-router-dom'
+import { useCart } from '../context/CartContext.jsx'
 
 export default function ProductCard({ product }) {
+  const { addToCart } = useCart()
+
+  function handleAddToCart(e) {
+    e.preventDefault()
+    addToCart(product)
+  }
+
   return (
     <Link to={`/products/${product.id}`} style={styles.cardLink}>
       <div style={styles.card}>
@@ -11,6 +19,7 @@ export default function ProductCard({ product }) {
           <p style={styles.meta}>Category: {product.category}</p>
           <p style={styles.meta}>Seller: {product.sellerName}</p>
           <p style={styles.meta}>Posted: {product.postedDate}</p>
+          <button style={styles.addBtn} onClick={handleAddToCart}>Add to Cart</button>
         </div>
       </div>
     </Link>
@@ -18,6 +27,10 @@ export default function ProductCard({ product }) {
 }
 
 const styles = {
+  addBtn: {
+    marginTop: 10, width: '100%', padding: '8px 0', background: '#BB0000', color: '#fff',
+    border: 'none', borderRadius: 6, fontWeight: 700, fontSize: 14, cursor: 'pointer',
+  },
   cardLink: { textDecoration: 'none', color: 'inherit' },
   card: {
     border: '1px solid #ddd', borderRadius: 8, overflow: 'hidden', background: '#fff',

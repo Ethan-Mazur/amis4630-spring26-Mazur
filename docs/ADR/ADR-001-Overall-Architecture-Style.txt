@@ -1,0 +1,20 @@
+ADR-001: Overall Architecture Style
+Status: Accepted
+Date: 2026-01-01
+
+Context:
+Buckeye Marketplace requires a clear separation between the user interface, business logic, and data storage to support multiple feature areas (listings, messaging, payments, reviews) and future scaling.
+
+Decision:
+Use a 3-Tier Web Application Architecture (Frontend, Backend, Database).
+
+Reasons:
+* Separates concerns for UI, Business Logic, and Data
+* Makes future scaling easier
+* Industry standard for marketplace platforms
+* Supports modular frontend foundation requirement
+
+Consequences:
+* Each tier can be developed and deployed independently
+* Adds communication overhead between tiers (mitigated by REST APIs)
+* Enables team members to work on separate layers without conflicts

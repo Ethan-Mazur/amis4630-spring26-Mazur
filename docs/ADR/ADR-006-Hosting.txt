@@ -1,0 +1,22 @@
+ADR-006: Hosting
+Status: Accepted
+Date: 2026-01-01
+
+Context:
+The application needs a reliable, scalable hosting environment that supports separate deployment of the frontend, backend, database, and image storage.
+
+Decision:
+Host on Amazon Web Services (AWS).
+
+Reasons:
+* Industry standard with broad documentation and support
+* Scalable infrastructure that grows with usage
+* Supports all required components:
+  - EC2: backend API server
+  - RDS: PostgreSQL database
+  - S3: product image storage
+
+Consequences:
+* Team gains exposure to industry-standard cloud tooling
+* Requires AWS account setup and IAM permissions management
+* Cost scales with usage (manageable at student project scale with free tier)

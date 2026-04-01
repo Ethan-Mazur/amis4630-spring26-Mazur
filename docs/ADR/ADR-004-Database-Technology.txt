@@ -1,0 +1,20 @@
+ADR-004: Database Technology
+Status: Accepted
+Date: 2026-01-01
+
+Context:
+The marketplace manages structured, relational data: users, listings, orders, messages, and reviews — with clear one-to-many and many-to-many relationships. Data integrity and query reliability are critical.
+
+Decision:
+Use PostgreSQL as the relational database.
+
+Reasons:
+* Relational model fits ERD design (User, Listing, Order/Transaction, Review, Messages)
+* Supports one-to-many and many-to-many relationships
+* Strong data integrity with constraints and foreign keys
+* Widely used in production systems
+
+Consequences:
+* Schema changes require migrations (manageable at this project scale)
+* Hosted on AWS RDS for production deployment
+* Well-supported by all major backend frameworks and ORMs

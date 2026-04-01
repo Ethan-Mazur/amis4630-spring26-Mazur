@@ -1,0 +1,20 @@
+ADR-002: Frontend Technology
+Status: Accepted
+Date: 2026-01-01
+
+Context:
+The marketplace requires a responsive, dynamic UI capable of rendering product listings, detail pages, a shopping cart, and messaging — all with fast updates and a component-based structure.
+
+Decision:
+Use React as the frontend framework.
+
+Reasons:
+* Component-based architecture (ideal for listings, cards, forms)
+* Fast UI updates for dynamic marketplace browsing
+* Large ecosystem and strong documentation
+* Aligns well with REST APIs
+
+Consequences:
+* Enables reusable components (ProductCard, NavBar, CartContext)
+* Requires a build step (Vite used as bundler)
+* Team must be familiar with JSX and React hooks

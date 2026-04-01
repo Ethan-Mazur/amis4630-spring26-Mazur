@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react'
-import buckeyeLogo from '../assets/Ohio_State_Buckeyes_logo.svg'
-import blockOLogo from '../assets/ohio-stadium-block-o-university.png'
 import ProductCard from '../components/ProductCard.jsx'
 
 const API_BASE = 'http://localhost:5000'
@@ -30,20 +28,6 @@ export default function ProductListPage() {
   if (error) return <p style={styles.status}>Error loading products: {error}</p>
   if (products.length === 0) return <p style={styles.status}>No products available at this time.</p>
 
-  return (
-    <div style={styles.page}>
-      <div style={styles.headerRow}>
-        <img src={blockOLogo} alt="Block O" style={styles.logo} />
-        <h1 style={styles.heading}>Buckeye Marketplace</h1>
-        <img src={buckeyeLogo} alt="Ohio State Buckeyes logo" style={styles.logo} />
-      </div>
-      <div style={styles.grid}>
-        {products.map(product => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
-    </div>
-  )
 }
 
 const styles = {

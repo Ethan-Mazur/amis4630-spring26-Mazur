@@ -1,0 +1,85 @@
+Database Schema - Column-Level Detail
+Buckeye Marketplace
+
+Tables and Columns:
+
+------------------------------------------------------------
+Table: Users
+------------------------------------------------------------
+  user_id       INT           Primary Key, Auto-increment
+  name          VARCHAR(100)  Full display name
+  email         VARCHAR(150)  Unique, used for login
+  osu_username  VARCHAR(50)   OSU login identifier (nullable for non-OSU)
+  role          VARCHAR(20)   'student', 'professor', or 'admin'
+  created_at    TIMESTAMP     Account creation date
+
+Relationships:
+  Users (1) → Listings (M)
+  Users (1) → Messages (M)  [as sender or receiver]
+  Users (1) → Reviews (M)   [as reviewer or seller]
+  Users (1) → Orders (M)    [as buyer]
+
+------------------------------------------------------------
+Table: Listings
+------------------------------------------------------------
+  listing_id    INT           Primary Key, Auto-increment
+  user_id       INT           Foreign Key → Users.user_id  (seller)
+  title         VARCHAR(200)  Short product title
+  description   TEXT          Full product description
+  price         DECIMAL(10,2) Listed price in USD
+  category      VARCHAR(50)   e.g. 'Textbooks', 'Electronics', 'Clothing'
+  condition     VARCHAR(20)   'New', 'Like New', 'Good', 'Fair'
+  image_url     VARCHAR(500)  URL to image stored in AWS S3
+  status        VARCHAR(20)   'active', 'sold', 'removed'
+  created_at    TIMESTAMP     Date listing was posted
+
+Relationships:
+  Listings (M) → Users (1)
+  Listings (1) → Messages (M)
+  Listings (1) → Orders (M)
+  Listings (1) → Reviews (M)
+
+------------------------------------------------------------
+Table: Messages
+------------------------------------------------------------
+  message_id    INT           Primary Key, Auto-increment
+  sender_id     INT           Foreign Key → Users.user_id
+  receiver_id   INT           Foreign Key → Users.user_id
+  listing_id    INT           Foreign Key → Listings.listing_id (nullable)
+  content       TEXT          Message body
+  sent_at       TIMESTAMP     Date/time message was sent
+
+Relationships:
+  Messages (M) → Users (1)    [sender]
+  Messages (M) → Users (1)    [receiver]
+  Messages (M) → Listings (1) [context listing, optional]
+
+------------------------------------------------------------
+Table: Reviews
+------------------------------------------------------------
+  review_id     INT           Primary Key, Auto-increment
+  reviewer_id   INT           Foreign Key → Users.user_id  (buyer leaving review)
+  seller_id     INT           Foreign Key → Users.user_id  (seller being reviewed)
+  listing_id    INT           Foreign Key → Listings.listing_id
+  rating        INT           1–5 star rating
+  comment       TEXT          Optional written review
+  created_at    TIMESTAMP     Date review was submitted
+
+Relationships:
+  Reviews (M) → Users (1)     [reviewer]
+  Reviews (M) → Users (1)     [seller]
+  Reviews (M) → Listings (1)
+
+------------------------------------------------------------
+Table: Orders
+------------------------------------------------------------
+  order_id      INT           Primary Key, Auto-increment
+  buyer_id      INT           Foreign Key → Users.user_id
+  listing_id    INT           Foreign Key → Listings.listing_id
+  amount        DECIMAL(10,2) Final purchase amount
+  status        VARCHAR(20)   'pending', 'completed', 'cancelled'
+  created_at    TIMESTAMP     Date order was placed
+
+Relationships:
+  Orders (M) → Users (1)      [buyer]
+  Orders (M) → Listings (1)

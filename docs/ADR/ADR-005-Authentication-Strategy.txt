@@ -1,0 +1,21 @@
+ADR-005: Authentication Strategy
+Status: Accepted
+Date: 2026-01-01
+
+Context:
+Buckeye Marketplace is targeted at Ohio State students. Users need a trusted, low-friction way to sign up and log in. Fake or unverified accounts are a marketplace safety risk.
+
+Decision:
+Use OAuth (Google / OSU login) for authentication.
+
+Reasons:
+* No new passwords for users to manage
+* Fast signup and onboarding
+* OAuth via institutional login (OSU) provides trust and verification
+* Reduces fake accounts
+* Improves recruiter trust in the platform
+
+Consequences:
+* Users must have a Google or OSU account (acceptable for OSU-targeted platform)
+* No custom password reset flow needed
+* Speeds up onboarding significantly for the target audience

@@ -1,0 +1,20 @@
+ADR-003: Backend Technology
+Status: Accepted
+Date: 2026-01-01
+
+Context:
+The backend must expose REST API endpoints for products, users, messages, and orders. It needs to be lightweight, easy to integrate with the database and authentication layers, and familiar to the team.
+
+Decision:
+Use Node.js with Express.js for the backend (with .NET/C# used for the Milestone 3 demo API).
+
+Reasons:
+* Lightweight and fast for REST APIs
+* Same language as frontend (JavaScript) reduces context switching
+* Easy integration with authentication and database layers
+* Large package ecosystem (npm)
+
+Consequences:
+* Single-threaded event loop suits I/O-bound marketplace workloads
+* Team can share JavaScript knowledge across frontend and backend
+* Must use async/await patterns carefully to avoid blocking

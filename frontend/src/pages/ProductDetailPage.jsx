@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
+import { useCart } from '../context/CartContext.jsx'
 
 const API_BASE = 'http://localhost:5000'
 
 export default function ProductDetailPage() {
   const { id } = useParams()
+  const { addToCart } = useCart()
   const [product, setProduct] = useState(null)
   const [loading, setLoading] = useState(true)
   const [notFound, setNotFound] = useState(false)
@@ -69,6 +71,7 @@ export default function ProductDetailPage() {
               </tr>
             </tbody>
           </table>
+          <button style={styles.addBtn} onClick={() => addToCart(product)}>Add to Cart</button>
         </div>
       </div>
     </div>
@@ -91,4 +94,8 @@ const styles = {
   label: { fontWeight: 600, color: '#555', paddingRight: 16, paddingTop: 6, paddingBottom: 6, width: 110 },
   status: { textAlign: 'center', fontSize: 18, marginTop: 48 },
   notFound: { fontSize: 22, textAlign: 'center', marginTop: 48, color: '#555' },
+  addBtn: {
+    marginTop: 24, padding: '12px 32px', background: '#BB0000', color: '#fff',
+    border: 'none', borderRadius: 6, fontWeight: 700, fontSize: 16, cursor: 'pointer',
+  },
 }

@@ -8,6 +8,16 @@ Buckeye Marketplace is a student-focused e-commerce platform designed to connect
 * Supporting university clubs, student organizations, and partner company listings to boost engagement on campus.
 # Feature Prioritization 
 Feature Prioritization is done through labels. Low, Medium, and High labels are attached to features matching the respective priority. Any feature labeled [launch requirement] has the highest priority.
+
+## Kanban Board
+
+| Backlog | In Progress | Done |
+|---|---|---|
+| Admin Dashboard | User Authentication (OAuth) | Product List Page |
+| Seller Ratings & Reviews | Messaging System | Product Detail Page |
+| Payment / Transactions | Search & Filtering | Static Product API (Demo) |
+| Notifications | | |
+| Club / Org Listings | | |
 # Architecture Decisions
 Overall Architecture Style
 3-Tier Web Application Architecture (Frontend, Backend, Database)
@@ -122,3 +132,19 @@ id — unique identifier
 • sellerName — display name of the seller
 • postedDate — when the listing was created
 • imageUrl — placeholder image URL is fine (e.g., from picsum.photos)
+
+MILESTONE 4 Prompts and Decisions
+
+STEP 1 — Cart State Management (Frontend)
+Prompt: "Implement cart state management for the Buckeye Marketplace React frontend. Requirements: cart state managed with useReducer and Context API; Add to Cart from product listing and detail pages; update item quantity; remove individual items; clear entire cart; cart item count visible in navigation/header; cart totals calculated and displayed."
+
+Generated and reviewed the following:
+• CartContext.jsx — cartReducer handles ADD_TO_CART, UPDATE_QUANTITY, REMOVE_ITEM, CLEAR_CART; CartProvider exposes cart, addToCart, updateQuantity, removeItem, clearCart, itemCount, and cartTotal via useCart hook
+• NavBar.jsx — persistent header with Buckeye branding; cart link displays live item count badge
+• CartPage.jsx — full cart view with product thumbnail, quantity +/− controls, per-item subtotal, remove button, clear cart button, and grand total
+• Updated App.jsx — wrapped app in CartProvider, added NavBar, added /cart route
+• Updated ProductCard.jsx — "Add to Cart" button calls addToCart without navigating away
+• Updated ProductDetailPage.jsx — "Add to Cart" button below product metadata
+• Updated ProductListPage.jsx — removed redundant header/logos now handled by NavBar
+
+No modifications were needed; generated code was accepted as-is after review.
