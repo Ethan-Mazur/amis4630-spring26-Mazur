@@ -218,3 +218,18 @@ Generated and reviewed the following:
 • Updated CartContext.jsx — addToCart(product, quantity = 1) now accepts a quantity parameter and passes it to POST /api/cart
 • Updated ProductCard.jsx — added qty state (default 1); added −/+ picker row shown when product is in stock and not at cart limit; + disabled when qty >= maxAddable (stock − cartQty); − disabled when qty <= 1; picker hidden when out of stock or cart is already at the stock limit; qty resets to 1 after a successful add
 • Updated ProductDetailPage.jsx — same quantity picker with a "Quantity:" label; picker hidden when out of stock or cart is maxed; isMaxed computed from product.stock − cartQty
+
+STEP 6 — Code Quality
+Prompt: "Refactor the frontend for code quality. Requirements: clean component structure (CartPage, CartItem, CartSummary); separation of concerns with API calls in a service layer and data-fetching in custom hooks; consistent naming and coding patterns throughout."
+
+Generated and reviewed the following:
+• Created src/services/cartApi.js — service module exporting getCart, addCartItem, updateCartItem, removeCartItem, clearCartItems; all cart fetch calls centralized here with no raw fetch calls remaining in CartContext
+• Created src/services/productApi.js — service module exporting getProducts and getProduct; all product fetch calls centralized here
+• Created src/hooks/useProducts.js — custom hook encapsulating product list fetch, loading, and error state; ProductListPage now calls useProducts() instead of managing useEffect/useState directly
+• Created src/hooks/useProduct.js — custom hook encapsulating single product fetch with 404 and error handling; ProductDetailPage now calls useProduct(id) instead of managing useEffect/useState directly
+• Created src/components/CartItem.jsx — isolated component for a single cart row; renders thumbnail, title, unit price, quantity controls (with stock limit enforcement), subtotal, and remove button
+• Created src/components/CartSummary.jsx — isolated component for the cart footer; renders total price and Clear Cart button
+• Updated CartContext.jsx — replaced all inline fetch calls with imported service functions; logic and state management unchanged
+• Updated CartPage.jsx — replaced inline item rows with CartItem, replaced inline footer with CartSummary; removed styles that moved to sub-components
+• Updated ProductListPage.jsx — removed useState/useEffect/fetch boilerplate; replaced with useProducts() hook
+• Updated ProductDetailPage.jsx — removed useState/useEffect/fetch boilerplate for product loading; replaced with useProduct(id) hook

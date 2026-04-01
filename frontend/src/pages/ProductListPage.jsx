@@ -1,28 +1,8 @@
-import { useState, useEffect } from 'react'
 import ProductCard from '../components/ProductCard.jsx'
-
-const API_BASE = 'http://localhost:5000'
+import { useProducts } from '../hooks/useProducts.js'
 
 export default function ProductListPage() {
-  const [products, setProducts] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
-
-  useEffect(() => {
-    fetch(`${API_BASE}/api/products`)
-      .then(res => {
-        if (!res.ok) throw new Error(`HTTP ${res.status}`)
-        return res.json()
-      })
-      .then(data => {
-        setProducts(data)
-        setLoading(false)
-      })
-      .catch(err => {
-        setError(err.message)
-        setLoading(false)
-      })
-  }, [])
+  const { products, loading, error } = useProducts()
 
   if (loading) return <p style={styles.status}>Loading products...</p>
   if (error) return <p style={styles.status}>Error loading products: {error}</p>

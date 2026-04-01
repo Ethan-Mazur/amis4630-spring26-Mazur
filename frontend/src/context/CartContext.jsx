@@ -1,7 +1,7 @@
 import { createContext, useContext, useReducer, useEffect, useState } from 'react'
+import { getCart, addCartItem, updateCartItem, removeCartItem, clearCartItems } from '../services/cartApi.js'
 
 const CartContext = createContext(null)
-const API_BASE = 'http://localhost:5000'
 
 function cartReducer(state, action) {
   switch (action.type) {
@@ -40,11 +40,7 @@ export function CartProvider({ children }) {
   useEffect(() => {
     setCartLoading(true)
     setCartError(null)
-    fetch(`${API_BASE}/api/cart`)
-      .then(res => {
-        if (!res.ok) throw new Error(`Failed to load cart (HTTP ${res.status})`)
-        return res.json()
-      })
+    getCart()
       .then(data => {
         dispatch({ type: 'SET_CART', cart: data })
         setCartLoading(false)
@@ -57,14 +53,10 @@ export function CartProvider({ children }) {
 
   // Returns true on success, false on failure so callers can show error feedback
   const addToCart = async (product, quantity = 1) => {
-    const res = await fetch(`${API_BASE}/api/cart`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ productId: product.id, quantity }),
-    })
+    const res = await addCartItem(product.id, quantity)
     if (!res.ok) return false
     // Re-fetch to get DB-assigned cart item ID so subsequent operations use the correct ID
-    const refreshed = await fetch(`${API_BASE}/api/cart`).then(r => r.json())
+    const refreshed = await getCart()
     dispatch({ type: 'SET_CART', cart: refreshed })
     return true
   }
@@ -73,14 +65,10 @@ export function CartProvider({ children }) {
     if (quantity < 1) return
     // Optimistic update — reflect change in UI immediately
     dispatch({ type: 'UPDATE_QUANTITY', id: cartItemId, quantity })
-    const res = await fetch(`${API_BASE}/api/cart/${cartItemId}`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ quantity }),
-    })
+    const res = await updateCartItem(cartItemId, quantity)
     // Revert to server state if the API call fails
     if (!res.ok) {
-      const refreshed = await fetch(`${API_BASE}/api/cart`).then(r => r.json())
+      const refreshed = await getCart()
       dispatch({ type: 'SET_CART', cart: refreshed })
     }
   }
@@ -88,10 +76,10 @@ export function CartProvider({ children }) {
   const removeItem = async (cartItemId) => {
     // Optimistic update — remove from UI immediately
     dispatch({ type: 'REMOVE_ITEM', id: cartItemId })
-    const res = await fetch(`${API_BASE}/api/cart/${cartItemId}`, { method: 'DELETE' })
+    const res = await removeCartItem(cartItemId)
     // Revert to server state if the API call fails
     if (!res.ok) {
-      const refreshed = await fetch(`${API_BASE}/api/cart`).then(r => r.json())
+      const refreshed = await getCart()
       dispatch({ type: 'SET_CART', cart: refreshed })
     }
   }
@@ -99,10 +87,10 @@ export function CartProvider({ children }) {
   const clearCart = async () => {
     // Optimistic update — clear UI immediately
     dispatch({ type: 'CLEAR_CART' })
-    const res = await fetch(`${API_BASE}/api/cart/clear`, { method: 'DELETE' })
+    const res = await clearCartItems()
     // Revert to server state if the API call fails
     if (!res.ok) {
-      const refreshed = await fetch(`${API_BASE}/api/cart`).then(r => r.json())
+      const refreshed = await getCart()
       dispatch({ type: 'SET_CART', cart: refreshed })
     }
   }

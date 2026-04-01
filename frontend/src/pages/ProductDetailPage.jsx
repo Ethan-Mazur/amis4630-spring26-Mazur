@@ -1,16 +1,12 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { useCart } from '../context/CartContext.jsx'
-
-const API_BASE = 'http://localhost:5000'
+import { useProduct } from '../hooks/useProduct.js'
 
 export default function ProductDetailPage() {
   const { id } = useParams()
   const { addToCart, cart } = useCart()
-  const [product, setProduct] = useState(null)
-  const [loading, setLoading] = useState(true)
-  const [notFound, setNotFound] = useState(false)
-  const [error, setError] = useState(null)
+  const { product, loading, notFound, error } = useProduct(id)
   const [added, setAdded] = useState(false)
   const [addError, setAddError] = useState(false)
   const [qty, setQty] = useState(1)
@@ -34,29 +30,6 @@ export default function ProductDetailPage() {
   function handleQtyChange(delta) {
     setQty(prev => Math.min(maxAddable, Math.max(1, prev + delta)))
   }
-
-  useEffect(() => {
-    fetch(`${API_BASE}/api/products/${id}`)
-      .then(res => {
-        if (res.status === 404) {
-          setNotFound(true)
-          setLoading(false)
-          return null
-        }
-        if (!res.ok) throw new Error(`HTTP ${res.status}`)
-        return res.json()
-      })
-      .then(data => {
-        if (data) {
-          setProduct(data)
-          setLoading(false)
-        }
-      })
-      .catch(err => {
-        setError(err.message)
-        setLoading(false)
-      })
-  }, [id])
 
   if (loading) return <p style={styles.status}>Loading product...</p>
 
