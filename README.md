@@ -148,3 +148,13 @@ Generated and reviewed the following:
 • Updated ProductListPage.jsx — removed redundant header/logos now handled by NavBar
 
 No modifications were needed; generated code was accepted as-is after review.
+
+STEP 2 — Cart API Endpoints (Backend)
+Prompt: "Add cart API endpoints to the .NET backend. Requirements: GET /api/cart, POST /api/cart, PUT /api/cart/{cartItemId}, DELETE /api/cart/{cartItemId}, DELETE /api/cart/clear. Use a hardcoded user ID (to be replaced with auth in Milestone 5). Cart items should relate to products. Return proper HTTP status codes (200, 201, 400, 404)."
+
+Generated and reviewed the following:
+• Data/ProductStore.cs — shared static product list and Product record extracted here so both controllers can access them
+• Controllers/CartController.cs — in-memory cart scoped to hardcoded user-001; POST increments quantity if product already in cart and returns 201 on new item; PUT updates quantity; DELETE /clear removes all user items; DELETE /{id} removes single item; 400 on invalid quantity, 404 on missing product or item
+• Updated Controllers/ProductsController.cs — now references ProductStore.Products instead of its own static list
+
+Build verified with dotnet build (exit code 0). No modifications were needed; generated code was accepted as-is after review.
