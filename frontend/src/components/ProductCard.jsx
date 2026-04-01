@@ -1,12 +1,16 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useCart } from '../context/CartContext.jsx'
 
 export default function ProductCard({ product }) {
   const { addToCart } = useCart()
+  const [added, setAdded] = useState(false)
 
-  function handleAddToCart(e) {
+  async function handleAddToCart(e) {
     e.preventDefault()
-    addToCart(product)
+    await addToCart(product)
+    setAdded(true)
+    setTimeout(() => setAdded(false), 1500)
   }
 
   return (
@@ -19,7 +23,13 @@ export default function ProductCard({ product }) {
           <p style={styles.meta}>Category: {product.category}</p>
           <p style={styles.meta}>Seller: {product.sellerName}</p>
           <p style={styles.meta}>Posted: {product.postedDate}</p>
-          <button style={styles.addBtn} onClick={handleAddToCart}>Add to Cart</button>
+          <button
+            style={{ ...styles.addBtn, background: added ? '#4CAF50' : '#BB0000' }}
+            onClick={handleAddToCart}
+            disabled={added}
+          >
+            {added ? '✓ Added!' : 'Add to Cart'}
+          </button>
         </div>
       </div>
     </Link>

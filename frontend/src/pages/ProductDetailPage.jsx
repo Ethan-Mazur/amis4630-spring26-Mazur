@@ -11,6 +11,13 @@ export default function ProductDetailPage() {
   const [loading, setLoading] = useState(true)
   const [notFound, setNotFound] = useState(false)
   const [error, setError] = useState(null)
+  const [added, setAdded] = useState(false)
+
+  async function handleAddToCart() {
+    await addToCart(product)
+    setAdded(true)
+    setTimeout(() => setAdded(false), 1500)
+  }
 
   useEffect(() => {
     fetch(`${API_BASE}/api/products/${id}`)
@@ -71,7 +78,13 @@ export default function ProductDetailPage() {
               </tr>
             </tbody>
           </table>
-          <button style={styles.addBtn} onClick={() => addToCart(product)}>Add to Cart</button>
+          <button
+            style={{ ...styles.addBtn, background: added ? '#4CAF50' : '#BB0000' }}
+            onClick={handleAddToCart}
+            disabled={added}
+          >
+            {added ? '✓ Added to Cart!' : 'Add to Cart'}
+          </button>
         </div>
       </div>
     </div>

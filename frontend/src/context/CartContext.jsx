@@ -49,33 +49,47 @@ export function CartProvider({ children }) {
       body: JSON.stringify({ productId: product.id, quantity: 1 }),
     })
     if (!res.ok) return
-    const saved = await res.json()
-    // Use the DB-assigned item (with real id) to keep reducer in sync
+    // Re-fetch to get the DB-assigned cart item ID so subsequent operations use the correct ID
     const refreshed = await fetch(`${API_BASE}/api/cart`).then(r => r.json())
     dispatch({ type: 'SET_CART', cart: refreshed })
   }
 
   const updateQuantity = async (cartItemId, quantity) => {
     if (quantity < 1) return
+    // Optimistic update — reflect change in UI immediately
+    dispatch({ type: 'UPDATE_QUANTITY', id: cartItemId, quantity })
     const res = await fetch(`${API_BASE}/api/cart/${cartItemId}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ quantity }),
     })
-    if (!res.ok) return
-    dispatch({ type: 'UPDATE_QUANTITY', id: cartItemId, quantity })
+    // Revert to server state if the API call fails
+    if (!res.ok) {
+      const refreshed = await fetch(`${API_BASE}/api/cart`).then(r => r.json())
+      dispatch({ type: 'SET_CART', cart: refreshed })
+    }
   }
 
   const removeItem = async (cartItemId) => {
-    const res = await fetch(`${API_BASE}/api/cart/${cartItemId}`, { method: 'DELETE' })
-    if (!res.ok) return
+    // Optimistic update — remove from UI immediately
     dispatch({ type: 'REMOVE_ITEM', id: cartItemId })
+    const res = await fetch(`${API_BASE}/api/cart/${cartItemId}`, { method: 'DELETE' })
+    // Revert to server state if the API call fails
+    if (!res.ok) {
+      const refreshed = await fetch(`${API_BASE}/api/cart`).then(r => r.json())
+      dispatch({ type: 'SET_CART', cart: refreshed })
+    }
   }
 
   const clearCart = async () => {
-    const res = await fetch(`${API_BASE}/api/cart/clear`, { method: 'DELETE' })
-    if (!res.ok) return
+    // Optimistic update — clear UI immediately
     dispatch({ type: 'CLEAR_CART' })
+    const res = await fetch(`${API_BASE}/api/cart/clear`, { method: 'DELETE' })
+    // Revert to server state if the API call fails
+    if (!res.ok) {
+      const refreshed = await fetch(`${API_BASE}/api/cart`).then(r => r.json())
+      dispatch({ type: 'SET_CART', cart: refreshed })
+    }
   }
 
   const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0)

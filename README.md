@@ -180,3 +180,13 @@ Seed Data / Test Scenarios:
 • Test scenario 3 — Quantity update: In /cart, click + or − to change quantity, confirm the count updates and the subtotal recalculates
 • Test scenario 4 — Remove item: Click Remove on a cart item, confirm it disappears from the UI and is deleted from the DB
 • Test scenario 5 — Clear cart: Click "Clear Cart", confirm all items are removed from the UI and GET /api/cart returns an empty array
+
+STEP 4 — Frontend-Backend Integration
+Prompt: "Complete the frontend-backend integration for the Buckeye Marketplace. Requirements: product catalog pulls from real API with no mock data; cart operations call backend API; useEffect and fetch for all cart API calls; optimistic UI updates where appropriate; cart state synchronized between frontend and backend."
+
+Generated and reviewed the following:
+• Updated CartContext.jsx — updateQuantity, removeItem, and clearCart now dispatch to the reducer optimistically (UI updates instantly) then call the API; if the API call fails, re-fetch from GET /api/cart and SET_CART reverts to server state; removed unused variable from addToCart
+• Updated ProductCard.jsx — handleAddToCart is async; awaits addToCart before showing "✓ Added!" feedback; button turns green and disables for 1.5s to prevent double-adds
+• Updated ProductDetailPage.jsx — same optimistic feedback pattern; button shows "✓ Added to Cart!" for 1.5s after a successful add
+
+No mock data exists anywhere in the frontend — product catalog and cart have been fully API-backed since earlier steps. No modifications were needed beyond the additions above.
