@@ -158,3 +158,25 @@ Generated and reviewed the following:
 • Updated Controllers/ProductsController.cs — now references ProductStore.Products instead of its own static list
 
 Build verified with dotnet build (exit code 0). No modifications were needed; generated code was accepted as-is after review.
+
+STEP 3 — Database Persistence (Backend)
+Prompt: "Add Entity Framework Core database persistence to the cart. Define Cart and CartItem entities with navigation properties, create a migration for the cart tables, and make cart data persist across page refreshes and browser sessions. Use SQLite. Apply migrations automatically on startup."
+
+Generated and reviewed the following:
+• NuGet packages added: Microsoft.EntityFrameworkCore.Sqlite, .Design, and .Tools (v9.0.3)
+• Models/CartEntity.cs — CartEntity (Id, UserId, Items nav property) and CartItemEntity (Id, CartId, ProductId, Quantity, Title, Price, ImageUrl) with Cart → CartItem relationship
+• Data/AppDbContext.cs — EF DbContext with Carts and CartItems DbSets; cascade delete on Cart → Items; decimal stored as TEXT for SQLite compatibility
+• Data/Migrations/InitCart — migration that creates Carts and CartItems tables
+• Updated Program.cs — registers AppDbContext with SQLite (buckeye_marketplace.db); calls db.Database.Migrate() on startup to apply migrations automatically
+• Updated Controllers/CartController.cs — replaced static in-memory list with AppDbContext; all endpoints are async; GetOrCreateCartAsync finds or creates the cart row for user-001
+• Updated CartContext.jsx — added SET_CART action to cartReducer; useEffect on mount fetches GET /api/cart to populate reducer; all mutations call the API then dispatch into the reducer so useReducer remains the UI state manager while SQLite provides persistence
+
+Modifications made: CartContext was revised to restore useReducer (keeping cartReducer) while adding API-backed persistence, rather than switching to useState. A SET_CART action seeds the reducer from the backend on mount.
+
+Seed Data / Test Scenarios:
+• 10 sample products are pre-loaded in ProductStore.cs (Textbooks, Electronics, Clothing, Furniture categories)
+• Test scenario 1 — Add item: Start the API (dotnet run), open the React app, click "Add to Cart" on any product, navigate to /cart and confirm the item appears
+• Test scenario 2 — Persistence: With items in the cart, refresh the browser page — cart items reload from the SQLite database via GET /api/cart on mount
+• Test scenario 3 — Quantity update: In /cart, click + or − to change quantity, confirm the count updates and the subtotal recalculates
+• Test scenario 4 — Remove item: Click Remove on a cart item, confirm it disappears from the UI and is deleted from the DB
+• Test scenario 5 — Clear cart: Click "Clear Cart", confirm all items are removed from the UI and GET /api/cart returns an empty array

@@ -28,6 +28,15 @@ export default function ProductListPage() {
   if (error) return <p style={styles.status}>Error loading products: {error}</p>
   if (products.length === 0) return <p style={styles.status}>No products available at this time.</p>
 
+  return (
+    <div style={styles.page}>
+      <div style={styles.grid}>
+        {products.map(product => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </div>
+    </div>
+  )
 }
 
 const styles = {

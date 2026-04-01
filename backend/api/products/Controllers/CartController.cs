@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using ProductsApi.Data;
+using ProductsApi.Models;
 
 namespace ProductsApi.Controllers;
 
@@ -10,20 +12,37 @@ public class CartController : ControllerBase
     // Hardcoded user ID — will be replaced with authenticated user in Milestone 5
     private const string HardcodedUserId = "user-001";
 
-    private static readonly List<CartItem> _cart = new();
-    private static int _nextId = 1;
+    private readonly AppDbContext _db;
+
+    public CartController(AppDbContext db) => _db = db;
+
+    private async Task<CartEntity> GetOrCreateCartAsync()
+    {
+        var cart = await _db.Carts
+            .Include(c => c.Items)
+            .FirstOrDefaultAsync(c => c.UserId == HardcodedUserId);
+
+        if (cart is null)
+        {
+            cart = new CartEntity { UserId = HardcodedUserId };
+            _db.Carts.Add(cart);
+            await _db.SaveChangesAsync();
+        }
+
+        return cart;
+    }
 
     // GET /api/cart
     [HttpGet]
-    public IActionResult GetCart()
+    public async Task<IActionResult> GetCart()
     {
-        var userCart = _cart.Where(ci => ci.UserId == HardcodedUserId).ToList();
-        return Ok(userCart);
+        var cart = await GetOrCreateCartAsync();
+        return Ok(cart.Items.Select(ToDto));
     }
 
     // POST /api/cart
     [HttpPost]
-    public IActionResult AddToCart([FromBody] AddToCartRequest request)
+    public async Task<IActionResult> AddToCart([FromBody] AddToCartRequest request)
     {
         if (request.Quantity < 1)
             return BadRequest(new { error = "Quantity must be at least 1." });
@@ -32,73 +51,82 @@ public class CartController : ControllerBase
         if (product is null)
             return NotFound(new { error = $"Product {request.ProductId} not found." });
 
-        var existing = _cart.FirstOrDefault(ci => ci.UserId == HardcodedUserId && ci.ProductId == request.ProductId);
+        var cart = await GetOrCreateCartAsync();
+
+        var existing = cart.Items.FirstOrDefault(ci => ci.ProductId == request.ProductId);
         if (existing is not null)
         {
-            var updated = existing with { Quantity = existing.Quantity + request.Quantity };
-            _cart[_cart.IndexOf(existing)] = updated;
-            return Ok(updated);
+            existing.Quantity += request.Quantity;
+            await _db.SaveChangesAsync();
+            return Ok(ToDto(existing));
         }
 
-        var item = new CartItem(
-            Id: _nextId++,
-            UserId: HardcodedUserId,
-            ProductId: product.Id,
-            Quantity: request.Quantity,
-            Title: product.Title,
-            Price: product.Price,
-            ImageUrl: product.ImageUrl
-        );
+        var item = new CartItemEntity
+        {
+            CartId = cart.Id,
+            ProductId = product.Id,
+            Quantity = request.Quantity,
+            Title = product.Title,
+            Price = product.Price,
+            ImageUrl = product.ImageUrl
+        };
 
-        _cart.Add(item);
-        return CreatedAtAction(nameof(GetCart), new { }, item);
+        cart.Items.Add(item);
+        await _db.SaveChangesAsync();
+        return CreatedAtAction(nameof(GetCart), new { }, ToDto(item));
     }
 
     // PUT /api/cart/{cartItemId}
     [HttpPut("{cartItemId:int}")]
-    public IActionResult UpdateQuantity(int cartItemId, [FromBody] UpdateCartItemRequest request)
+    public async Task<IActionResult> UpdateQuantity(int cartItemId, [FromBody] UpdateCartItemRequest request)
     {
         if (request.Quantity < 1)
             return BadRequest(new { error = "Quantity must be at least 1." });
 
-        var item = _cart.FirstOrDefault(ci => ci.Id == cartItemId && ci.UserId == HardcodedUserId);
+        var cart = await GetOrCreateCartAsync();
+        var item = cart.Items.FirstOrDefault(ci => ci.Id == cartItemId);
         if (item is null)
             return NotFound(new { error = $"Cart item {cartItemId} not found." });
 
-        var updated = item with { Quantity = request.Quantity };
-        _cart[_cart.IndexOf(item)] = updated;
-        return Ok(updated);
+        item.Quantity = request.Quantity;
+        await _db.SaveChangesAsync();
+        return Ok(ToDto(item));
     }
 
-    // DELETE /api/cart/clear  — must be declared before the /{cartItemId} route
+    // DELETE /api/cart/clear — declared before /{cartItemId} to avoid route conflict
     [HttpDelete("clear")]
-    public IActionResult ClearCart()
+    public async Task<IActionResult> ClearCart()
     {
-        _cart.RemoveAll(ci => ci.UserId == HardcodedUserId);
+        var cart = await GetOrCreateCartAsync();
+        _db.CartItems.RemoveRange(cart.Items);
+        await _db.SaveChangesAsync();
         return Ok(new { message = "Cart cleared." });
     }
 
     // DELETE /api/cart/{cartItemId}
     [HttpDelete("{cartItemId:int}")]
-    public IActionResult RemoveItem(int cartItemId)
+    public async Task<IActionResult> RemoveItem(int cartItemId)
     {
-        var item = _cart.FirstOrDefault(ci => ci.Id == cartItemId && ci.UserId == HardcodedUserId);
+        var cart = await GetOrCreateCartAsync();
+        var item = cart.Items.FirstOrDefault(ci => ci.Id == cartItemId);
         if (item is null)
             return NotFound(new { error = $"Cart item {cartItemId} not found." });
 
-        _cart.Remove(item);
+        _db.CartItems.Remove(item);
+        await _db.SaveChangesAsync();
         return Ok(new { message = $"Cart item {cartItemId} removed." });
     }
-}
 
-public record CartItem(
-    int Id,
-    string UserId,
-    int ProductId,
-    int Quantity,
-    string Title,
-    decimal Price,
-    string ImageUrl);
+    private static object ToDto(CartItemEntity ci) => new
+    {
+        ci.Id,
+        ci.ProductId,
+        ci.Quantity,
+        ci.Title,
+        ci.Price,
+        ci.ImageUrl
+    };
+}
 
 public record AddToCartRequest(int ProductId, int Quantity);
 public record UpdateCartItemRequest(int Quantity);
