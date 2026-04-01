@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer, useEffect } from 'react'
+import { createContext, useContext, useReducer, useEffect, useState } from 'react'
 
 const CartContext = createContext(null)
 const API_BASE = 'http://localhost:5000'
@@ -33,25 +33,40 @@ function cartReducer(state, action) {
 
 export function CartProvider({ children }) {
   const [cart, dispatch] = useReducer(cartReducer, [])
+  const [cartLoading, setCartLoading] = useState(true)
+  const [cartError, setCartError] = useState(null)
 
   // On mount: load persisted cart from the backend
   useEffect(() => {
+    setCartLoading(true)
+    setCartError(null)
     fetch(`${API_BASE}/api/cart`)
-      .then(res => res.json())
-      .then(data => dispatch({ type: 'SET_CART', cart: data }))
-      .catch(() => {})
+      .then(res => {
+        if (!res.ok) throw new Error(`Failed to load cart (HTTP ${res.status})`)
+        return res.json()
+      })
+      .then(data => {
+        dispatch({ type: 'SET_CART', cart: data })
+        setCartLoading(false)
+      })
+      .catch(err => {
+        setCartError(err.message)
+        setCartLoading(false)
+      })
   }, [])
 
-  const addToCart = async (product) => {
+  // Returns true on success, false on failure so callers can show error feedback
+  const addToCart = async (product, quantity = 1) => {
     const res = await fetch(`${API_BASE}/api/cart`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ productId: product.id, quantity: 1 }),
+      body: JSON.stringify({ productId: product.id, quantity }),
     })
-    if (!res.ok) return
-    // Re-fetch to get the DB-assigned cart item ID so subsequent operations use the correct ID
+    if (!res.ok) return false
+    // Re-fetch to get DB-assigned cart item ID so subsequent operations use the correct ID
     const refreshed = await fetch(`${API_BASE}/api/cart`).then(r => r.json())
     dispatch({ type: 'SET_CART', cart: refreshed })
+    return true
   }
 
   const updateQuantity = async (cartItemId, quantity) => {
@@ -96,7 +111,7 @@ export function CartProvider({ children }) {
   const cartTotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0)
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, updateQuantity, removeItem, clearCart, itemCount, cartTotal }}>
+    <CartContext.Provider value={{ cart, cartLoading, cartError, addToCart, updateQuantity, removeItem, clearCart, itemCount, cartTotal }}>
       {children}
     </CartContext.Provider>
   )

@@ -190,3 +190,31 @@ Generated and reviewed the following:
 • Updated ProductDetailPage.jsx — same optimistic feedback pattern; button shows "✓ Added to Cart!" for 1.5s after a successful add
 
 No mock data exists anywhere in the frontend — product catalog and cart have been fully API-backed since earlier steps. No modifications were needed beyond the additions above.
+
+STEP 5 — Error Handling, UX Polish & Stock Enforcement
+Prompt: "Add comprehensive error handling and UX improvements to the Buckeye Marketplace cart. Requirements: loading and error states for cart fetches; empty cart state with call-to-action; remove/clear success notifications; button feedback for failed add attempts; addToCart should return a boolean to indicate success or failure."
+
+Generated and reviewed the following:
+• Updated CartContext.jsx — added cartLoading (useState(true)) and cartError (useState(null)); exposed both via context; addToCart now returns true on success, false on failure
+• Updated CartPage.jsx — shows "Loading your cart..." spinner during fetch; shows red error banner with message on API failure; styled empty state with cart icon, description, and "Browse Products" button; remove and clear actions show a green success notification for 2.5s; notification uses showNotification() helper
+• Updated ProductCard.jsx — handleAddToCart checks boolean return from addToCart; on failure shows "⚠ Could not add" in grey for 2.5s
+• Updated ProductDetailPage.jsx — same failure feedback pattern; shows "⚠ Could not add to cart" on failure
+
+Stock feature (added during Step 5):
+Prompt: "Add out-of-stock and limited stock product awareness. Some products should have stock = 0 (out of stock) and some should have limited stock (e.g. 5 remaining). The backend should block adding out-of-stock items. The frontend should show badges and disable the add button for out-of-stock items."
+
+Generated and reviewed the following:
+• Updated ProductStore.cs — added Stock field to Product record; Mini Fridge (id=3) set to Stock=0, AirPods Pro Gen 2 (id=8) set to Stock=5, all others set to Stock=10
+• Updated CartItemEntity.cs — added Stock property to CartItemEntity so the stock limit is stored with each cart item
+• Updated CartController.cs — POST /api/cart returns 400 if product.Stock == 0; returns 400 with remaining count if existing.Quantity + request.Quantity > product.Stock; PUT /api/cart/{id} returns 400 if request.Quantity > item.Stock; Stock stored on CartItemEntity at creation; returned in ToDto
+• Created migration AddStockToCartItem — adds Stock column to CartItems table
+• Updated ProductCard.jsx — shows "Out of Stock" badge (grey) when stock==0; shows "Only N left!" badge (orange) when 0 < stock <= 5; Add to Cart button disabled and greyed when stock==0 or cart is at stock limit; shows "Max in Cart" label
+• Updated ProductDetailPage.jsx — shows "⚠ Out of Stock" message when stock==0; shows "⚡ Only N left" urgency message when 0 < stock <= 5; button disabled when out of stock
+
+Quantity picker feature (added during Step 5):
+Prompt: "Each product should have + and - buttons to allow for adjusting the amount to add to cart before selecting "Add to Cart". This needs to be limited by out of stock and limited inventory."
+
+Generated and reviewed the following:
+• Updated CartContext.jsx — addToCart(product, quantity = 1) now accepts a quantity parameter and passes it to POST /api/cart
+• Updated ProductCard.jsx — added qty state (default 1); added −/+ picker row shown when product is in stock and not at cart limit; + disabled when qty >= maxAddable (stock − cartQty); − disabled when qty <= 1; picker hidden when out of stock or cart is already at the stock limit; qty resets to 1 after a successful add
+• Updated ProductDetailPage.jsx — same quantity picker with a "Quantity:" label; picker hidden when out of stock or cart is maxed; isMaxed computed from product.stock − cartQty

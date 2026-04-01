@@ -51,15 +51,24 @@ public class CartController : ControllerBase
         if (product is null)
             return NotFound(new { error = $"Product {request.ProductId} not found." });
 
+        if (product.Stock == 0)
+            return BadRequest(new { error = "This item is out of stock." });
+
         var cart = await GetOrCreateCartAsync();
 
         var existing = cart.Items.FirstOrDefault(ci => ci.ProductId == request.ProductId);
         if (existing is not null)
         {
-            existing.Quantity += request.Quantity;
+            var newQty = existing.Quantity + request.Quantity;
+            if (newQty > product.Stock)
+                return BadRequest(new { error = $"Only {product.Stock - existing.Quantity} more available. You already have {existing.Quantity} in your cart." });
+            existing.Quantity = newQty;
             await _db.SaveChangesAsync();
             return Ok(ToDto(existing));
         }
+
+        if (request.Quantity > product.Stock)
+            return BadRequest(new { error = $"Only {product.Stock} available for this item." });
 
         var item = new CartItemEntity
         {
@@ -68,7 +77,8 @@ public class CartController : ControllerBase
             Quantity = request.Quantity,
             Title = product.Title,
             Price = product.Price,
-            ImageUrl = product.ImageUrl
+            ImageUrl = product.ImageUrl,
+            Stock = product.Stock
         };
 
         cart.Items.Add(item);
@@ -87,6 +97,9 @@ public class CartController : ControllerBase
         var item = cart.Items.FirstOrDefault(ci => ci.Id == cartItemId);
         if (item is null)
             return NotFound(new { error = $"Cart item {cartItemId} not found." });
+
+        if (request.Quantity > item.Stock)
+            return BadRequest(new { error = $"Only {item.Stock} available for this item." });
 
         item.Quantity = request.Quantity;
         await _db.SaveChangesAsync();
@@ -124,7 +137,8 @@ public class CartController : ControllerBase
         ci.Quantity,
         ci.Title,
         ci.Price,
-        ci.ImageUrl
+        ci.ImageUrl,
+        ci.Stock
     };
 }
 
