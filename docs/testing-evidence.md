@@ -1,0 +1,76 @@
+# Testing Evidence — Buckeye Marketplace (Milestone 5)
+
+## Backend Tests (xUnit)
+
+**Command:** `cd backend/ProductsApi.Tests && dotnet test`
+
+**Result: 14/14 passed**
+
+```
+Passed!  - Failed: 0, Passed: 14, Skipped: 0, Total: 14, Duration: 2s
+```
+
+### Test breakdown
+
+| File | Tests | Coverage |
+|---|---|---|
+| `OrderLogicTests.cs` | 9 | Order total calculation, password rule validation (6 Theory cases), cart-to-order mapping, confirmation number format |
+| `AuthIntegrationTests.cs` | 5 | Register valid → 200+token, register weak password → 400, login wrong password → 401, cart without token → 401, cart with valid token → 200 |
+
+---
+
+## Frontend Tests (Vitest)
+
+**Command:** `cd frontend && npm test`
+
+**Result: 16/16 passed**
+
+```
+Test Files  3 passed (3)
+     Tests  16 passed (16)
+  Duration  2.11s
+```
+
+### Test breakdown
+
+| File | Tests | Coverage |
+|---|---|---|
+| `validateForm.test.js` | 8 | All validation branches: empty email, invalid email format, empty password, too short, no digit, no uppercase, password mismatch, valid form |
+| `authReducer.test.js` | 4 | Unknown action returns initial state, LOGIN sets `isAuthenticated`, LOGOUT clears all fields, successive LOGIN replaces state |
+| `LoginPage.test.jsx` | 4 | Email field renders, empty email → error, empty password → error, valid submit calls `login()` with correct args |
+
+---
+
+## E2E Tests (Playwright)
+
+**Command:** `npx playwright test` (from repo root; requires both servers running)
+
+**Spec:** `e2e/checkout.spec.ts`
+
+### Test steps
+
+1. Register a new user → expect redirect to `/products`
+2. Login with registered credentials → expect greeting in NavBar
+3. Browse product list → click product → add to cart → expect cart badge shows count
+4. Navigate cart → checkout → fill shipping address → place order → expect `/order-confirmation` with `BM-` confirmation number
+5. Navigate to `/orders` → expect placed order is listed
+
+**See `docs/e2e-run.md` for full setup and execution instructions.**
+
+---
+
+## Security Fix Applied
+
+| Issue | File | Change |
+|---|---|---|
+| JWT token expiration was 8 hours | `Controllers/AuthController.cs` | Changed `AddHours(8)` → `AddHours(1)` |
+
+---
+
+## Issues Caught During Review
+
+| Issue | How Caught | Resolution |
+|---|---|---|
+| Password Theory test: `ALLUPPERCASE1` expected to fail but is actually valid (has uppercase + digit) | Read `Program.cs` Identity options — no lowercase requirement | Corrected `expected: false` → `expected: true` |
+| In-memory SQLite factory: new connection per request → empty schema on every request | Integration tests threw "no such table" errors | Opened one shared `SqliteConnection` in factory constructor; reused for all requests |
+| `AuthController.cs` leaked a named export issue | `LoginPage.test.jsx` couldn't inject mock context | Added `export` to `AuthContext = createContext(null)` |
