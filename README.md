@@ -233,3 +233,133 @@ Generated and reviewed the following:
 • Updated CartPage.jsx — replaced inline item rows with CartItem, replaced inline footer with CartSummary; removed styles that moved to sub-components
 • Updated ProductListPage.jsx — removed useState/useEffect/fetch boilerplate; replaced with useProducts() hook
 • Updated ProductDetailPage.jsx — removed useState/useEffect/fetch boilerplate for product loading; replaced with useProduct(id) hook
+
+---
+
+## Milestone 5 — Authentication, Orders & Testing
+
+### Step 1 — JWT Authentication (Backend)
+
+**Prompt used:**
+> "Add JWT authentication to the .NET backend using ASP.NET Core Identity. Requirements: register and login endpoints; JWT tokens with role claims (User/Admin); protect cart and order endpoints with [Authorize]; seed an admin user; store the JWT signing key in .NET user-secrets."
+
+**What was generated:**
+
+| File | Change |
+|---|---|
+| `ProductsApi.csproj` | Added JwtBearer and Identity.EntityFrameworkCore packages; added UserSecretsId |
+| `appsettings.json` | Added `Jwt:Issuer` and `Jwt:Audience`; `Jwt:Key` intentionally omitted (stored in user-secrets) |
+| `Models/ApplicationUser.cs` | Extends `IdentityUser` with a `DisplayName` property |
+| `Models/ProductEntity.cs` | Database-backed product entity replacing static `ProductStore` |
+| `Models/OrderEntity.cs` + `OrderItemEntity.cs` | Order and line-item entities |
+| `Data/AppDbContext.cs` | Changed base class to `IdentityDbContext<ApplicationUser>`; added `Products`, `Orders`, `OrderItems` DbSets; seeded 10 products |
+| `Program.cs` | Identity + JWT Bearer auth, HTTPS redirect, role seeding (Admin/User), admin user seeding, auto-migration |
+| `Controllers/AuthController.cs` | `POST /api/auth/register` and `POST /api/auth/login`; returns JWT with 8-hour lifetime |
+| `Controllers/OrdersController.cs` | Place order, view own orders (JWT-scoped), admin view all, admin update status |
+| `Controllers/CartController.cs` | Added `[Authorize]`; replaced hardcoded `user-001` with JWT claim |
+| `Controllers/ProductsController.cs` | DB-backed; `POST`/`PUT`/`DELETE` require Admin role |
+| Migration `AddIdentityOrdersAndProducts` | Adds all Identity tables, Products, Orders, OrderItems with seed data |
+
+**JWT signing key** (required to run locally):
+```bash
+cd backend/api/products
+dotnet user-secrets set "Jwt:Key" "BuckeyeMarketplace_SuperSecretJwtKey_2026_AtLeast32CharsLong!"
+```
+
+No modifications were needed after reviewing the generated code.
+
+---
+
+### Step 2 — Frontend Auth Integration
+
+**Prompt used:**
+> "Add JWT authentication to the React frontend. Requirements: AuthContext with reducer (LOGIN/LOGOUT), localStorage persistence; login and register pages; ProtectedRoute component; axios service layer with JWT interceptor; update NavBar to show auth state; protected cart/checkout/orders routes."
+
+**What was generated:**
+
+| File | Change |
+|---|---|
+| `src/services/api.js` | Axios instance; request interceptor attaches `Authorization: Bearer <token>` from localStorage |
+| `src/services/authApi.js` | `registerUser` and `loginUser` |
+| `src/services/orderApi.js` | `placeOrder`, `getMyOrders`, `getAllOrders`, `updateOrderStatus` |
+| `src/services/productApi.js` | Switched from `fetch` to axios; added admin CRUD functions |
+| `src/services/cartApi.js` | Switched from `fetch` to axios |
+| `src/context/AuthContext.jsx` | Reducer with `LOGIN`/`LOGOUT`; persists to localStorage; exports `useAuth` hook |
+| `src/context/CartContext.jsx` | Auth-aware; reloads cart on login, clears on logout |
+| `src/components/ProtectedRoute.jsx` | Redirects unauthenticated users to `/login`; blocks wrong-role access |
+| `src/pages/LoginPage.jsx` | Sign-in form; redirects back to the previous page after login |
+| `src/pages/RegisterPage.jsx` | Registration form with client-side validation; exports `validateForm` for unit tests |
+| `src/pages/CheckoutPage.jsx` | Cart summary + shipping address form; navigates to order confirmation on success |
+| `src/pages/OrderConfirmationPage.jsx` | Displays confirmation number and order details |
+| `src/pages/OrderHistoryPage.jsx` | Loads and displays user's orders with status badges |
+| `src/pages/AdminDashboard.jsx` | Products tab (full CRUD) and Orders tab (status management) |
+| `src/App.jsx` | `AuthProvider` wraps `CartProvider`; all new routes added |
+| `src/components/NavBar.jsx` | Shows Sign In/Register when logged out; shows greeting, My Orders, Admin, and Sign Out when logged in |
+
+**Modification made:** `AuthContext` had to export `AuthContext` as a named export so `LoginPage.test.jsx` could inject a mock value via `<AuthContext.Provider>`.
+
+---
+
+### Step 3 — Automated Tests
+
+**Prompt used:**
+> "Write automated tests for the backend and frontend. Backend: xUnit unit tests for order total, password rules, and cart-to-order mapping; integration tests for register, login, and protected endpoints using WebApplicationFactory. Frontend: Vitest tests for form validation, auth reducer, and LoginPage rendering."
+
+**Backend results — 14/14 passing**
+
+| File | Tests |
+|---|---|
+| `OrderLogicTests.cs` | 9 unit tests: order total, password rules (Theory × 6), cart mapper, confirmation number format |
+| `AuthIntegrationTests.cs` | 5 integration tests: register → 200+token, weak password → 400, wrong password → 401, no token → 401, valid token → 200 |
+
+**Frontend results — 16/16 passing**
+
+| File | Tests |
+|---|---|
+| `validateForm.test.js` | 8 tests covering every validation branch in `RegisterPage` |
+| `authReducer.test.js` | 4 tests for `LOGIN`/`LOGOUT` reducer logic |
+| `LoginPage.test.jsx` | 4 tests rendering `<LoginPage>` with a mock `AuthContext` |
+
+**Corrections made during review:**
+- `ALLUPPERCASE1` was incorrectly expected to fail — it contains both an uppercase letter and a digit, so it is a valid password. Fixed expected value from `false` to `true`.
+- In-memory SQLite test factory created a new connection per request, resulting in an empty schema. Fixed by opening one shared `SqliteConnection` for the factory lifetime.
+
+---
+
+### Step 4 — Playwright E2E Tests
+
+**Prompt used:**
+> "Write a Playwright E2E test spec that covers the checkout happy path: register → login → browse to a product → add to cart → checkout → view order history."
+
+**What was generated:**
+
+| File | Description |
+|---|---|
+| `playwright.config.js` | Chromium only; `baseURL` set to `localhost:5173`; retries: 1; screenshot on failure |
+| `e2e/checkout.spec.ts` | 5 tests: register, login, add to cart, checkout (verifies `BM-` confirmation number), order history |
+| `docs/e2e-run.md` | Step-by-step instructions for running E2E tests locally |
+
+**To run E2E tests** (both servers must be running first):
+```bash
+# Terminal 1 — backend
+cd backend/api/products && dotnet run
+
+# Terminal 2 — frontend
+cd frontend && npm run dev
+
+# Terminal 3 — E2E
+npx playwright test
+```
+
+---
+
+### Security Practices Applied
+
+| Practice | Implementation |
+|---|---|
+| Parameterized queries | All DB access uses LINQ (EF Core) — no raw SQL string concatenation |
+| Secret management | `Jwt:Key` stored in .NET user-secrets; never committed to source control |
+| HTTPS redirect | `app.UseHttpsRedirection()` in `Program.cs` |
+| JWT-scoped queries | `GET /api/orders/mine` filters by the JWT `NameIdentifier` claim (prevents BOLA) |
+| Password policy | ASP.NET Core Identity enforces ≥8 chars, digit, and uppercase letter |
+| Role enforcement | Admin endpoints use `[Authorize(Roles="Admin")]`; non-admins receive 403 |

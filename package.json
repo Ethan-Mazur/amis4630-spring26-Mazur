@@ -1,0 +1,27 @@
+{
+  "name": "amis4630-spring26-mazur",
+  "version": "1.0.0",
+  "description": "AMIS 4630 Buckeye Marketplace Project\r Table of Contents\r # Summary\r Buckeye Marketplace is a student-focused e-commerce platform designed to connect Ohio State students with peer-to-peer buying and selling opportunities. The platform aims to simplify the student experience by:\r * Enabling students to quickly list and discover products and services.\r * Providing secure and intuitive payment and messaging systems.\r * Supporting university clubs, student organizations, and partner company listings to boost engagement on campus.\r # Feature Prioritization \r Feature Prioritization is done through labels. Low, Medium, and High labels are attached to features matching the respective priority. Any feature labeled [launch requirement] has the highest priority.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ethan-Mazur/amis4630-spring26-Mazur.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Ethan-Mazur/amis4630-spring26-Mazur/issues"
+  },
+  "homepage": "https://github.com/Ethan-Mazur/amis4630-spring26-Mazur#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1"
+  }
+}

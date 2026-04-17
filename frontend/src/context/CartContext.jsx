@@ -1,5 +1,6 @@
 import { createContext, useContext, useReducer, useEffect, useState } from 'react'
 import { getCart, addCartItem, updateCartItem, removeCartItem, clearCartItems } from '../services/cartApi.js'
+import { useAuth } from './AuthContext.jsx'
 
 const CartContext = createContext(null)
 
@@ -32,12 +33,19 @@ function cartReducer(state, action) {
 }
 
 export function CartProvider({ children }) {
+  const { auth } = useAuth()
   const [cart, dispatch] = useReducer(cartReducer, [])
   const [cartLoading, setCartLoading] = useState(true)
   const [cartError, setCartError] = useState(null)
 
-  // On mount: load persisted cart from the backend
+  // Reload cart whenever authentication state changes
   useEffect(() => {
+    if (!auth.isAuthenticated) {
+      dispatch({ type: 'CLEAR_CART' })
+      setCartLoading(false)
+      setCartError(null)
+      return
+    }
     setCartLoading(true)
     setCartError(null)
     getCart()
@@ -49,7 +57,7 @@ export function CartProvider({ children }) {
         setCartError(err.message)
         setCartLoading(false)
       })
-  }, [])
+  }, [auth.isAuthenticated])
 
   // Returns true on success, false on failure so callers can show error feedback
   const addToCart = async (product, quantity = 1) => {

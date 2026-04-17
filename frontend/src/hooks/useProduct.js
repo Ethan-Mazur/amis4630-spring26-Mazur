@@ -12,26 +12,17 @@ export function useProduct(id) {
     setNotFound(false)
     setError(null)
     getProduct(id)
-      .then(res => {
-        if (res.status === 404) {
-          setNotFound(true)
-          setLoading(false)
-          return null
-        }
-        if (!res.ok) throw new Error(`HTTP ${res.status}`)
-        return res.json()
-      })
       .then(data => {
-        if (data) {
-          setProduct(data)
-          setLoading(false)
-        }
+        setProduct(data)
+        setLoading(false)
       })
       .catch(err => {
-        setError(err.message)
+        if (err.response?.status === 404) setNotFound(true)
+        else setError(err.message)
         setLoading(false)
       })
   }, [id])
 
   return { product, loading, notFound, error }
 }
+

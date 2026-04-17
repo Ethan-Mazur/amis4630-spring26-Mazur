@@ -1,3 +1,5 @@
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProductsApi.Data;
@@ -7,24 +9,27 @@ namespace ProductsApi.Controllers;
 
 [ApiController]
 [Route("api/cart")]
+[Authorize]
 public class CartController : ControllerBase
 {
-    // Hardcoded user ID — will be replaced with authenticated user in Milestone 5
-    private const string HardcodedUserId = "user-001";
-
     private readonly AppDbContext _db;
 
     public CartController(AppDbContext db) => _db = db;
 
+    private string GetUserId() =>
+        User.FindFirstValue(ClaimTypes.NameIdentifier)
+        ?? throw new InvalidOperationException("User ID claim missing from token.");
+
     private async Task<CartEntity> GetOrCreateCartAsync()
     {
+        var userId = GetUserId();
         var cart = await _db.Carts
             .Include(c => c.Items)
-            .FirstOrDefaultAsync(c => c.UserId == HardcodedUserId);
+            .FirstOrDefaultAsync(c => c.UserId == userId);
 
         if (cart is null)
         {
-            cart = new CartEntity { UserId = HardcodedUserId };
+            cart = new CartEntity { UserId = userId };
             _db.Carts.Add(cart);
             await _db.SaveChangesAsync();
         }
@@ -47,7 +52,7 @@ public class CartController : ControllerBase
         if (request.Quantity < 1)
             return BadRequest(new { error = "Quantity must be at least 1." });
 
-        var product = ProductStore.Products.FirstOrDefault(p => p.Id == request.ProductId);
+        var product = await _db.Products.FindAsync(request.ProductId);
         if (product is null)
             return NotFound(new { error = $"Product {request.ProductId} not found." });
 
@@ -144,3 +149,4 @@ public class CartController : ControllerBase
 
 public record AddToCartRequest(int ProductId, int Quantity);
 public record UpdateCartItemRequest(int Quantity);
+

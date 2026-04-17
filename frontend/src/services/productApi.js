@@ -1,11 +1,25 @@
-const API_BASE = 'http://localhost:5000'
+import api from './api.js'
 
 export async function getProducts() {
-  const res = await fetch(`${API_BASE}/api/products`)
-  if (!res.ok) throw new Error(`HTTP ${res.status}`)
-  return res.json()
+  const res = await api.get('/api/products')
+  return res.data
 }
 
 export async function getProduct(id) {
-  return fetch(`${API_BASE}/api/products/${id}`)
+  const res = await api.get(`/api/products/${id}`)
+  return res.data
+}
+
+export async function createProduct(product) {
+  const res = await api.post('/api/products', product)
+  return res.data
+}
+
+export async function updateProduct(id, product) {
+  const res = await api.put(`/api/products/${id}`, product)
+  return res.data
+}
+
+export async function deleteProduct(id) {
+  await api.delete(`/api/products/${id}`)
 }

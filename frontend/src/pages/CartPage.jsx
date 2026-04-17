@@ -80,7 +80,10 @@ export default function CartPage() {
       </div>
 
       <CartSummary total={cartTotal} onClear={handleClear} />
-      <Link to="/products" style={styles.back}>← Continue Shopping</Link>
+      <div style={styles.checkoutRow}>
+        <Link to="/products" style={styles.back}>← Continue Shopping</Link>
+        <Link to="/checkout" style={styles.checkoutBtn}>Proceed to Checkout →</Link>
+      </div>
     </div>
   )
 }
@@ -105,6 +108,8 @@ const styles = {
     border: '1px solid', borderRadius: 6, padding: '10px 16px',
     marginBottom: 16, fontSize: 14, fontWeight: 600,
   },
-  back: { display: 'inline-block', color: '#BB0000', textDecoration: 'none', fontWeight: 600, marginTop: 16 },
+  checkoutRow: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 16 },
+  back: { display: 'inline-block', color: '#BB0000', textDecoration: 'none', fontWeight: 600 },
+  checkoutBtn: { display: 'inline-block', background: '#BB0000', color: '#fff', textDecoration: 'none', fontWeight: 700, padding: '10px 24px', borderRadius: 6 },
   itemList: { display: 'flex', flexDirection: 'column', gap: 16 },
 }
