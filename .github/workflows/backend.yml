@@ -48,11 +48,11 @@ jobs:
           KUDU_USER: ${{ secrets.AZURE_KUDU_USER }}
           KUDU_PASS: ${{ secrets.AZURE_KUDU_PASS }}
         run: |
+          AUTH_HEADER=$(printf '%s:%s' "${KUDU_USER}" "${KUDU_PASS}" | base64 -w 0)
           curl -X POST \
             "https://amis4630-api.scm.azurewebsites.net/api/publish?type=zip&async=true" \
-            --user "${KUDU_USER}:${KUDU_PASS}" \
+            --header "Authorization: Basic ${AUTH_HEADER}" \
             --header "Content-Type: application/zip" \
             --data-binary @backend/api/products/deploy.zip \
             --fail \
-            --silent \
             --show-error
