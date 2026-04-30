@@ -1,103 +1,252 @@
-# amis4630-spring26-Mazur
-AMIS 4630 Buckeye Marketplace Project
-Table of Contents
-# Summary
-Buckeye Marketplace is a student-focused e-commerce platform designed to connect Ohio State students with peer-to-peer buying and selling opportunities. The platform aims to simplify the student experience by:
-* Enabling students to quickly list and discover products and services.
-* Providing secure and intuitive payment and messaging systems.
-* Supporting university clubs, student organizations, and partner company listings to boost engagement on campus.
-# Feature Prioritization 
-Feature Prioritization is done through labels. Low, Medium, and High labels are attached to features matching the respective priority. Any feature labeled [launch requirement] has the highest priority.
+# Buckeye Marketplace
 
-## Kanban Board
+A student-focused peer-to-peer e-commerce platform for Ohio State University students to buy and sell textbooks, electronics, clothing, and more.
 
-| Backlog | In Progress | Done |
-|---|---|---|
-| Admin Dashboard | User Authentication (OAuth) | Product List Page |
-| Seller Ratings & Reviews | Messaging System | Product Detail Page |
-| Payment / Transactions | Search & Filtering | Static Product API (Demo) |
-| Notifications | | |
-| Club / Org Listings | | |
-# Architecture Decisions
-Overall Architecture Style
-3-Tier Web Application Architecture (Frontend, Backend, Database)
+**Live Application**
+- Frontend: https://calm-sky-0d7181d1e.7.azurestaticapps.net
+- Backend API: https://amis4630-api.azurewebsites.net
+- Swagger UI: https://amis4630-api.azurewebsites.net/swagger
 
-Reasons:
-* Separates concerns for UI, Business Logic, and Data
-* Makes future scaling easier
-* Industry standard for marketplace platforms (according to ChatGPT)
-* Supports modular frontend foundation requirement
+---
 
-Frontend Technology
-Use React
+## Features
 
-Reasons:
-* Component-based architecture (ideal for listings, cards, forms)
-* Fast UI updates for dynamic marketplace browsing
-* Large ecosystem and strong documentation
-* Aligns well with REST APIs
+- Browse and search products by category
+- User registration and JWT-based authentication
+- Shopping cart (persistent per user)
+- Checkout with shipping address → order confirmation
+- Order history per user
+- Admin dashboard: product CRUD, order status management
 
-Backend Technology
-Use Node.js with Express.js
+---
 
-Reasons:
-* Lightweight and fast for REST APIs
-* Same language as frontend (JavaScript)
-* Easy integration with authentication and database layers
+## Technology Stack
 
-Database Technology
-Use PostgreSQL
+| Layer | Technology | Version |
+|-------|-----------|---------|
+| Frontend | React | 18.3 |
+| Frontend build | Vite | 6.0 |
+| Frontend routing | React Router | 6.28 |
+| HTTP client | Axios | 1.15 |
+| Backend | ASP.NET Core Web API | .NET 10 |
+| ORM | Entity Framework Core | 9.0 |
+| Authentication | ASP.NET Core Identity + JWT Bearer | 9.0 |
+| Database (local) | SQLite | — |
+| Database (production) | Azure SQL (SQL Server) | — |
+| Unit tests (backend) | xUnit | 2.9 |
+| Unit/component tests (frontend) | Vitest + Testing Library | 4.1 |
+| E2E tests | Playwright | latest |
+| CI/CD | GitHub Actions | — |
+| Hosting (frontend) | Azure Static Web Apps | — |
+| Hosting (backend) | Azure App Service (Linux, B1) | — |
 
-Reasons:
-* Relational model fits ERD design (User, Listing, Order/Transaction, Review)
-* Supports one-to-many and many-to-many relationships
-* Strong data integrity
-* Widely used in production systems
+---
 
-Authentication Strategy
-OAuth (Google/OSU login)
+## Local Development Setup
 
-Reasons:
-* No new passwords
-* Fast signup
-* Trust & verification
-OAuth:
-* Reduces fake accounts
-* Improves recruiter trust
-* Speeds onboarding
+### Prerequisites
+- [.NET 10 SDK](https://dotnet.microsoft.com/download)
+- [Node.js 20+](https://nodejs.org/)
+- Git
 
-Hosting
-AWS
+### 1. Clone the repository
 
-Reasons:
-* Industry standard
-* Scalable
-* Supports EC2 (backend), RDS (database), S3 (images)
-# AI Usage
-USED PROMPTS for 2.System Architecture Diagram
-* Could I use Draw.io to create a System Architecture Diagram?
-* I need to create a System Architecture Diagram for Buckeye Marketplace. I'm working on Milestone 2. This milestone is focused on Architecture Design and Frontend Foundation.
-* I'm also supposed to "Connect architecture decisions back to user needs from Milestone 1"
+```bash
+git clone https://github.com/<your-org>/amis4630-spring26-Mazur.git
+cd amis4630-spring26-Mazur
+```
 
-USED PROMPTS for 3.Database Schema Design
-* I need to create a Database Schema Design using an Entity Relationship Diagram. I only need to create the main tables and relationships needed to support my prioritized features. The relationship mappings are one-to-many & many-to-many Do Not Include: Column-level details (data types, constraints) or worry about things like normalization at this stage. I need to Focus on the big picture of how data entities relate to each other and support my user stories. 
-* I also need to explain how schema supports my user stories
+### 2. Configure backend secrets
 
-USED PROMPTS for 4.Architecture Decision Records
-* Architecture Decision Records 
-* What technology should I use and why?
+```bash
+cd backend/api/products
+dotnet user-secrets set "Jwt:Key" "BuckeyeMarketplace_SuperSecretJwtKey_2026_AtLeast32CharsLong!"
+```
 
-USED PROMPTS for 5.Component Architecture
-* Component Architecture
-* I need to use Atomic Design principles to create a component hierarchy. I need to scope the components to the Product Catalog feature for now to keep it simple
+### 3. Run the backend
 
-USED Prompt to generate sample summary of business system
-* I need to make a summary of my business system
+```bash
+# still in backend/api/products
+dotnet run
+```
 
-Milestone 3 Project Description
-Milestone 3 adds a static list of products available for sale on Buckeye Marketplace.
-This is temporary until later Milestones. Milestone 3 shows off what the marketplace may look like when it is finished.
-To run this temporary DEMO, you must open a terminal to backend\api\products and run dotnet run to launch 
+API listens on `http://localhost:5000`. SQLite database (`buckeye_marketplace.db`) is created automatically on first run with migrations applied and seed data loaded.
+
+### 4. Run the frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Frontend runs on `http://localhost:5173`.
+
+### 5. Run backend tests
+
+```bash
+cd backend/ProductsApi.Tests
+dotnet test
+```
+
+### 6. Run frontend tests
+
+```bash
+cd frontend
+npm test
+```
+
+### 7. Run E2E tests
+
+Requires both servers running (steps 3 & 4 above):
+
+```bash
+# From repo root
+npx playwright install
+npx playwright test
+```
+
+See [docs/e2e-run.md](docs/e2e-run.md) for full E2E setup instructions.
+
+---
+
+## Deployment Instructions
+
+### Prerequisites
+- Azure CLI installed and logged in (`az login`)
+- GitHub repository with Actions enabled
+
+### Backend (Azure App Service)
+
+Deployment is automated via GitHub Actions on every push to `main`. To deploy manually:
+
+```bash
+cd backend/api/products
+dotnet publish --configuration Release --output ./publish
+az webapp deploy \
+  --name amis4630-api \
+  --resource-group amis4630-rg \
+  --src-path ./publish \
+  --type zip \
+  --async true
+```
+
+### Frontend (Azure Static Web Apps)
+
+Deployment is automated via GitHub Actions on every push to `main`. To deploy manually:
+
+```bash
+cd frontend
+npm run build
+npx @azure/static-web-apps-cli deploy ./dist \
+  --deployment-token "<SWA_TOKEN>" \
+  --env production
+```
+
+---
+
+## API Documentation
+
+Swagger UI is available at: https://amis4630-api.azurewebsites.net/swagger
+
+### Key Endpoints
+
+| Method | Endpoint | Auth | Description |
+|--------|----------|------|-------------|
+| POST | `/api/auth/register` | None | Register new user |
+| POST | `/api/auth/login` | None | Login, returns JWT |
+| GET | `/api/products` | None | List all products |
+| GET | `/api/products/{id}` | None | Get product detail |
+| POST | `/api/products` | Admin | Create product |
+| PUT | `/api/products/{id}` | Admin | Update product |
+| DELETE | `/api/products/{id}` | Admin | Delete product |
+| GET | `/api/cart` | User | Get current cart |
+| POST | `/api/cart/items` | User | Add item to cart |
+| DELETE | `/api/cart/items/{id}` | User | Remove cart item |
+| POST | `/api/orders` | User | Place order |
+| GET | `/api/orders` | User | Get order history |
+| GET | `/api/orders/all` | Admin | Get all orders |
+| PUT | `/api/orders/{id}/status` | Admin | Update order status |
+
+---
+
+## Environment Variables
+
+### Backend (Azure App Service → Configuration → App Settings)
+
+| Setting | Description |
+|---------|-------------|
+| `ConnectionStrings__DefaultConnection` | Azure SQL connection string |
+| `Jwt__Key` | JWT signing key (min 32 characters) |
+| `Jwt__Issuer` | JWT issuer (`BuckeyeMarketplace`) |
+| `Jwt__Audience` | JWT audience (`BuckeyeMarketplace`) |
+| `AllowedOrigins__0` | Frontend URL for CORS |
+| `ASPNETCORE_ENVIRONMENT` | `Production` |
+
+### Frontend (build-time)
+
+| Variable | Description |
+|----------|-------------|
+| `VITE_API_BASE` | Backend API base URL |
+
+Set in [frontend/.env.production](frontend/.env.production) or as a GitHub Actions environment variable.
+
+---
+
+## Architecture
+
+3-tier web application:
+
+```
+[React SPA]  →  [ASP.NET Core REST API]  →  [Azure SQL Database]
+Azure Static      Azure App Service            Azure SQL Server
+Web Apps          (Linux, B1)                  (Basic tier)
+```
+
+- Frontend communicates with backend exclusively via REST/JSON over HTTPS
+- Backend uses EF Core with SQL Server in production, SQLite locally
+- Identity managed by ASP.NET Core Identity; sessions are stateless JWT tokens
+- Admin role seeded automatically on startup
+
+See [docs/Architecture Connections.txt](docs/Architecture%20Connections.txt) and [docs/ADR/](docs/ADR/) for full architecture decision records.
+
+---
+
+## Database Schema
+
+### Production Tables (Azure SQL)
+
+| Table | Key Columns |
+|-------|-------------|
+| `AspNetUsers` | Id, Email, DisplayName (Identity) |
+| `AspNetRoles` | Id, Name (`Admin`, `User`) |
+| `Products` | Id, Title, Description, Price, Category, SellerName, Stock, ImageUrl |
+| `Carts` | Id, UserId |
+| `CartItems` | Id, CartId, ProductId, Quantity, Price |
+| `Orders` | Id, UserId, Total, ShippingAddress, Status, ConfirmationNumber, CreatedAt |
+| `OrderItems` | Id, OrderId, ProductId, Title, Price, Quantity |
+
+See [docs/Database Schema Detail.txt](docs/Database%20Schema%20Detail.txt) for full column-level detail.
+
+---
+
+## CI/CD Pipeline
+
+Two GitHub Actions workflows run on every push to `main`:
+
+| Workflow | File | Steps |
+|----------|------|-------|
+| Backend CI/CD | [.github/workflows/backend.yml](.github/workflows/backend.yml) | Restore → Build → Test → Publish → Deploy to Azure App Service |
+| Frontend CI/CD | [.github/workflows/frontend.yml](.github/workflows/frontend.yml) | Install → Test → Build → Deploy to Azure Static Web Apps |
+
+Required GitHub secrets: `AZURE_API_PUBLISH_PROFILE`, `AZURE_STATIC_WEB_APPS_TOKEN`
+
+---
+
+## AI Tool Usage
+
+See [AI-USAGE.md](AI-USAGE.md) and [docs/AI Usage](docs/AI%20Usage) for a full summary of AI tool usage across the project lifecycle.
+
 .NET API locally. You will open the REACT app in a separate terminal and run npm install > npm run dev to launch the React app.
 
 MILESTONE 3 Prompts and Decisions
