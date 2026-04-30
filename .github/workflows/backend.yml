@@ -34,13 +34,13 @@ jobs:
 
       - name: Publish API
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: dotnet publish backend/api/products/ProductsApi.csproj -c Release -o backend/api/products/publish --runtime linux-x64 --self-contained false
+        run: dotnet publish backend/api/products/ProductsApi.csproj -c Release -o backend/api/products/publish
 
       - name: Zip artifact
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: |
           cd backend/api/products/publish
-          find . -type f | sort | zip -@ ../deploy.zip
+          zip -r ../deploy.zip .
 
       - name: Deploy to Azure App Service
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
