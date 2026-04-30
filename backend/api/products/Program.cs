@@ -72,8 +72,13 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddCors(options =>
 {
-    var allowedOrigins = builder.Configuration.GetSection("AllowedOrigins").Get<string[]>()
+    // Support both array-style (AllowedOrigins__0) and comma-separated (AllowedOrigins) config
+    var originsSection = builder.Configuration.GetSection("AllowedOrigins").Get<string[]>();
+    var originsSingle = builder.Configuration["AllowedOrigins"];
+    var allowedOrigins = originsSection
+        ?? originsSingle?.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
         ?? new[] { "http://localhost:3000", "http://localhost:5173" };
+
     options.AddDefaultPolicy(policy =>
     {
         policy.WithOrigins(allowedOrigins)
