@@ -34,25 +34,13 @@ jobs:
 
       - name: Publish API
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: dotnet publish backend/api/products/ProductsApi.csproj -c Release -o backend/api/products/publish --runtime linux-x64 --self-contained false
+        run: dotnet publish backend/api/products/ProductsApi.csproj --configuration Release --output ./publish
 
-      - name: Zip artifact
+      - name: Deploy to Azure App Service
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: |
-          cd backend/api/products/publish
-          find . -type f | sort | zip -@ ../deploy.zip
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: amis4630-api
+          publish-profile: ${{ secrets.AZURE_API_PUBLISH_PROFILE }}
+          package: ./publish
 
-      - name: Deploy to Azure App Service (OneDeploy)
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        env:
-          KUDU_USER: ${{ secrets.AZURE_KUDU_USER }}
-          KUDU_PASS: ${{ secrets.AZURE_KUDU_PASS }}
-        run: |
-          AUTH_HEADER=$(printf '%s:%s' "${KUDU_USER}" "${KUDU_PASS}" | base64 -w 0)
-          curl -X POST \
-            "https://amis4630-api.scm.azurewebsites.net/api/publish?type=zip&async=true" \
-            --header "Authorization: Basic ${AUTH_HEADER}" \
-            --header "Content-Type: application/zip" \
-            --data-binary @backend/api/products/deploy.zip \
-            --fail \
-            --show-error
