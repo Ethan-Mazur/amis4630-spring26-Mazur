@@ -119,6 +119,18 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>
 
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlite(_sharedConnection));
+
+            // Remove the background DB initializer — tests manage their own schema
+            var hostedDescriptor = services.SingleOrDefault(
+                d => d.ImplementationType == typeof(ProductsApi.DbInitializerService));
+            if (hostedDescriptor != null)
+                services.Remove(hostedDescriptor);
+
+            // Run migrations synchronously so the schema exists before any test runs
+            var sp = services.BuildServiceProvider();
+            using var scope = sp.CreateScope();
+            var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+            db.Database.Migrate();
         });
     }
 
