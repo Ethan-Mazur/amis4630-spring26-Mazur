@@ -1,5 +1,6 @@
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -84,6 +85,8 @@ builder.Services.AddCors(options =>
 var app = builder.Build();
 
 // Apply migrations and seed data
+try
+{
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
@@ -119,11 +122,24 @@ using (var scope = app.Services.CreateScope())
             await userManager.AddToRoleAsync(admin, "Admin");
     }
 }
+}
+catch (Exception ex)
+{
+    // Log but don't crash — app can still serve requests if DB is temporarily unavailable
+    var logger = app.Services.GetRequiredService<ILogger<Program>>();
+    logger.LogError(ex, "Database initialization failed on startup.");
+}
+
+// Trust Azure's reverse proxy headers (required for correct scheme/IP detection)
+app.UseForwardedHeaders(new ForwardedHeadersOptions
+{
+    ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+});
 
 app.UseSwagger();
 app.UseSwaggerUI();
 
-app.UseHttpsRedirection();
+// Azure App Service terminates SSL at the load balancer — do not redirect here
 app.UseCors();
 app.UseAuthentication();
 app.UseAuthorization();
