@@ -44,10 +44,13 @@ jobs:
 
       - name: Deploy to Azure App Service (OneDeploy)
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        env:
+          KUDU_USER: ${{ secrets.AZURE_KUDU_USER }}
+          KUDU_PASS: ${{ secrets.AZURE_KUDU_PASS }}
         run: |
           curl -X POST \
             "https://amis4630-api.scm.azurewebsites.net/api/publish?type=zip&async=true" \
-            --user "${{ secrets.AZURE_KUDU_USER }}:${{ secrets.AZURE_KUDU_PASS }}" \
+            --user "${KUDU_USER}:${KUDU_PASS}" \
             --header "Content-Type: application/zip" \
             --data-binary @backend/api/products/deploy.zip \
             --fail \
