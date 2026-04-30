@@ -42,10 +42,14 @@ jobs:
           cd backend/api/products/publish
           find . -type f | sort | zip -@ ../deploy.zip
 
-      - name: Deploy to Azure App Service
+      - name: Deploy to Azure App Service (OneDeploy)
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: amis4630-api
-          publish-profile: ${{ secrets.AZURE_API_PUBLISH_PROFILE }}
-          package: backend/api/products/deploy.zip
+        run: |
+          curl -X POST \
+            "https://amis4630-api.scm.azurewebsites.net/api/publish?type=zip&async=true" \
+            --user "${{ secrets.AZURE_KUDU_USER }}:${{ secrets.AZURE_KUDU_PASS }}" \
+            --header "Content-Type: application/zip" \
+            --data-binary @backend/api/products/deploy.zip \
+            --fail \
+            --silent \
+            --show-error
