@@ -69,6 +69,7 @@ builder.Services.AddAuthorization();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddHostedService<ProductsApi.DbInitializerService>();
 
 builder.Services.AddCors(options =>
 {
@@ -89,51 +90,8 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-// Apply migrations and seed data
-try
-{
-using (var scope = app.Services.CreateScope())
-{
-    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    // SQLite: run EF migrations; SQL Server: use EnsureCreated (fresh production DB)
-    if (db.Database.IsSqlite())
-        db.Database.Migrate();
-    else
-        db.Database.EnsureCreated();
-
-    // Seed roles and admin user
-    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
-    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
-
-    foreach (var role in new[] { "Admin", "User" })
-    {
-        if (!await roleManager.RoleExistsAsync(role))
-            await roleManager.CreateAsync(new IdentityRole(role));
-    }
-
-    const string adminEmail = "admin@buckeyemarketplace.com";
-    const string adminPassword = "Admin123!";
-    if (await userManager.FindByEmailAsync(adminEmail) is null)
-    {
-        var admin = new ApplicationUser
-        {
-            UserName = adminEmail,
-            Email = adminEmail,
-            DisplayName = "Admin",
-            EmailConfirmed = true
-        };
-        var result = await userManager.CreateAsync(admin, adminPassword);
-        if (result.Succeeded)
-            await userManager.AddToRoleAsync(admin, "Admin");
-    }
-}
-}
-catch (Exception ex)
-{
-    // Log but don't crash — app can still serve requests if DB is temporarily unavailable
-    var logger = app.Services.GetRequiredService<ILogger<Program>>();
-    logger.LogError(ex, "Database initialization failed on startup.");
-}
+// DB initialization runs in the background via DbInitializerService
+// so the app starts instantly and passes Azure's container warmup probe
 
 // Trust Azure's reverse proxy headers (required for correct scheme/IP detection)
 app.UseForwardedHeaders(new ForwardedHeadersOptions
