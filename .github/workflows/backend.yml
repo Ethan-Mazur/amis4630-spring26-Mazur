@@ -1,0 +1,51 @@
+name: Backend CI/CD
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'backend/**'
+      - '.github/workflows/backend.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'backend/**'
+
+jobs:
+  build-test-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore backend/ProductsApi.Tests/ProductsApi.Tests.csproj
+
+      - name: Build
+        run: dotnet build backend/ProductsApi.Tests/ProductsApi.Tests.csproj --no-restore -c Release
+
+      - name: Run tests
+        run: dotnet test backend/ProductsApi.Tests/ProductsApi.Tests.csproj --no-build -c Release --verbosity normal
+
+      - name: Publish API
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: dotnet publish backend/api/products/ProductsApi.csproj -c Release -o backend/api/products/publish
+
+      - name: Zip artifact
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: |
+          cd backend/api/products/publish
+          zip -r ../deploy.zip .
+
+      - name: Deploy to Azure App Service
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: amis4630-api
+          publish-profile: ${{ secrets.AZURE_API_PUBLISH_PROFILE }}
+          package: backend/api/products/deploy.zip
