@@ -11,10 +11,20 @@ var builder = WebApplication.CreateBuilder(args);
 // Use user-secrets in development
 builder.Configuration.AddUserSecrets<Program>(optional: true);
 
-// Database
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")
-        ?? "Data Source=buckeye_marketplace.db"));
+// Database - use SQL Server in production (connection string contains "Server="), SQLite locally
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+bool useSqlServer = !string.IsNullOrEmpty(connectionString) && connectionString.Contains("Server=");
+
+if (useSqlServer)
+{
+    builder.Services.AddDbContext<AppDbContext>(options =>
+        options.UseSqlServer(connectionString));
+}
+else
+{
+    builder.Services.AddDbContext<AppDbContext>(options =>
+        options.UseSqlite(connectionString ?? "Data Source=buckeye_marketplace.db"));
+}
 
 // ASP.NET Core Identity
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
@@ -61,9 +71,11 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddCors(options =>
 {
+    var allowedOrigins = builder.Configuration.GetSection("AllowedOrigins").Get<string[]>()
+        ?? new[] { "http://localhost:3000", "http://localhost:5173" };
     options.AddDefaultPolicy(policy =>
     {
-        policy.WithOrigins("http://localhost:3000", "http://localhost:5173")
+        policy.WithOrigins(allowedOrigins)
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
@@ -75,7 +87,11 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    db.Database.Migrate();
+    // SQLite: run EF migrations; SQL Server: use EnsureCreated (fresh production DB)
+    if (db.Database.IsSqlite())
+        db.Database.Migrate();
+    else
+        db.Database.EnsureCreated();
 
     // Seed roles and admin user
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();

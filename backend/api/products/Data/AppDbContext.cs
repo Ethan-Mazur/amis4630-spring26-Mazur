@@ -25,21 +25,26 @@ public class AppDbContext : IdentityDbContext<ApplicationUser>
             .HasForeignKey(ci => ci.CartId)
             .OnDelete(DeleteBehavior.Cascade);
 
-        modelBuilder.Entity<CartItemEntity>()
-            .Property(ci => ci.Price)
-            .HasColumnType("TEXT");
+        // SQLite stores decimals as TEXT; SQL Server uses decimal(18,2) by default
+        bool isSqlite = Database.ProviderName?.Contains("Sqlite") == true;
+        if (isSqlite)
+        {
+            modelBuilder.Entity<CartItemEntity>()
+                .Property(ci => ci.Price)
+                .HasColumnType("TEXT");
 
-        modelBuilder.Entity<ProductEntity>()
-            .Property(p => p.Price)
-            .HasColumnType("TEXT");
+            modelBuilder.Entity<ProductEntity>()
+                .Property(p => p.Price)
+                .HasColumnType("TEXT");
 
-        modelBuilder.Entity<OrderEntity>()
-            .Property(o => o.Total)
-            .HasColumnType("TEXT");
+            modelBuilder.Entity<OrderEntity>()
+                .Property(o => o.Total)
+                .HasColumnType("TEXT");
 
-        modelBuilder.Entity<OrderItemEntity>()
-            .Property(oi => oi.Price)
-            .HasColumnType("TEXT");
+            modelBuilder.Entity<OrderItemEntity>()
+                .Property(oi => oi.Price)
+                .HasColumnType("TEXT");
+        }
 
         modelBuilder.Entity<OrderEntity>()
             .HasMany(o => o.Items)

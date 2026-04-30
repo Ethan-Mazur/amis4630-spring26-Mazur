@@ -1,4 +1,51 @@
-# Testing Evidence — Buckeye Marketplace (Milestone 5)
+# Testing Evidence — Buckeye Marketplace (Milestones 5 & 6)
+
+## Test Plan
+
+### Scope
+Full regression of all user-facing flows and admin flows against the production deployment at `https://calm-sky-0d7181d1e.7.azurestaticapps.net` (frontend) and `https://amis4630-api.azurewebsites.net` (backend).
+
+### Test Categories
+
+| # | Category | Tool | Flows Covered |
+|---|----------|------|---------------|
+| 1 | Unit — backend | xUnit | Order logic, password rules, cart mapping |
+| 2 | Unit — frontend | Vitest | Form validation, auth reducer, LoginPage |
+| 3 | Integration — backend | xUnit + WebApplicationFactory | Auth endpoints, cart auth guard |
+| 4 | E2E — user flows | Playwright | Register, login, browse, add-to-cart, checkout, order history |
+| 5 | E2E — admin flows | Playwright | Product CRUD, order status update |
+| 6 | Cross-browser | Playwright | Chrome, Firefox, Edge, Mobile Chrome (Pixel 5) |
+
+### User Flows Tested (E2E)
+- Browse product list → filter by category
+- View product detail page
+- Register new account
+- Login / logout
+- Add items to cart, update quantities, remove items
+- Checkout with shipping address → order confirmation (`BM-` number)
+- View order history
+
+### Admin Flows Tested (E2E)
+- Login as admin → navigate to `/admin`
+- Create new product
+- Edit existing product (update stock)
+- Delete product
+- View all orders
+- Update order status (Pending → Shipped → Delivered)
+
+### Cross-Browser Matrix
+
+| Browser | Platform | Result |
+|---------|----------|--------|
+| Chrome (Chromium) | Desktop | Pass |
+| Firefox | Desktop | Pass |
+| Edge | Desktop | Pass |
+| Chrome (Pixel 5) | Mobile | Pass |
+
+### Mobile Responsiveness
+Verified on Pixel 5 viewport via Playwright. All pages render correctly at 393×851px: NavBar collapses, product grid stacks to single column, cart and checkout forms are usable.
+
+---
 
 ## Backend Tests (xUnit)
 
