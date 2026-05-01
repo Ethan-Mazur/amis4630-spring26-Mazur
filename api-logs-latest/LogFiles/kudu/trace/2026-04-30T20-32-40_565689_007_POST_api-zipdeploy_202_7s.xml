@@ -1,0 +1,14 @@
+<step title="Incoming Request" date="2026-04-30T20:32:40.585" instance="565689" url="/api/zipdeploy?isAsync=true" method="POST" type="request" pid="853,1,15" Accept="*/*" Host="amis4630-api.scm.azurewebsites.net" User-Agent="AZURECLI/2.85.0 (MSI)" Accept-Encoding="gzip, deflate" Authorization="Bea..." Cache-Control="no-cache" Content-Type="application/octet-stream" Content-Length="21879201" x-ms-client-request-id="b8d53a72-44d3-11f1-9ad9-dc1ba14f544e" x-ms-artifact-checksum="6b161915c4bbcb7618838ad8c75261352d0cde193c7fb091ff1b739d3a6f6840" X-ARR-LOG-ID="b8d53a72-44d3-11f1-9ad9-dc1ba14f544e" CLIENT-IP="184.57.112.66:50194" X-SITE-DEPLOYMENT-ID="amis4630-api" WAS-DEFAULT-HOSTNAME="amis4630-api.scm.azurewebsites.net" X-Forwarded-Proto="https" X-AppService-Proto="https" X-Forwarded-TlsVersion="1.3" X-WAWS-Unencoded-URL="/api/zipdeploy?isAsync=true" X-Client-IP="184.57.112.66" X-Client-Port="50194" >
+  <step title="ZipPushDeploy" date="2026-04-30T20:32:40.600" >
+    <step title="ZipDeploy. Extract zip." date="2026-04-30T20:32:40.604" /><!-- duration: 2ms -->
+    <step title="Starting PushDeployAsync" date="2026-04-30T20:32:40.609" /><!-- duration: 2ms -->
+    <step title="Writing artifact to /tmp/zipdeploy/d65917fb-92be-466e-8754-3cc198115c56.zip" date="2026-04-30T20:32:40.616" >
+      <step title="Writing multipart request body to /tmp/zipdeploy/d65917fb-92be-466e-8754-3cc198115c56.zip" date="2026-04-30T20:32:40.618" /><!-- duration: 2ms -->
+    </step><!-- duration: 6505ms -->
+    <step title="Start deployment in the background" date="2026-04-30T20:32:47.141" >
+      <step title="Acquiring Deployment Lock" date="2026-04-30T20:32:47.170" /><!-- duration: 8ms -->
+      <step title="Acquired Deployment Lock" date="2026-04-30T20:32:47.226" /><!-- duration: 5ms -->
+    </step><!-- duration: 176ms -->
+  </step><!-- duration: 6731ms -->
+  <step title="Outgoing response" date="2026-04-30T20:32:47.333" type="response" statusCode="202" statusText="Accepted" /><!-- duration: 10ms -->
+</step><!-- duration: 6767ms -->

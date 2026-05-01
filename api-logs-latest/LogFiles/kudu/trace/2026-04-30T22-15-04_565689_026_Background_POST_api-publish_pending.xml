@@ -1,0 +1,163 @@
+<step title="BackgroundTrace" date="2026-04-30T22:15:04.902" instance="565689" url="/api/publish" method="POST" >
+  <step title="Creating temporary deployment - FetchDeploymentManager" date="2026-04-30T22:15:05.023" /><!-- duration: 37ms -->
+  <step title="Creating temporary deployment" date="2026-04-30T22:15:05.102" /><!-- duration: 100ms -->
+  <step title="Performing fetch based deployment" date="2026-04-30T22:15:05.454" >
+    <step title="Cleaning up temp folders from previous zip deployments and extracting pushed zip file /tmp/zipdeploy/18a9b0be-6db0-402a-b669-2a208cbeb880.zip (22.04 MB) to /tmp/zipdeploy/extracted" date="2026-04-30T22:15:06.880" >
+      <step title="ChmodRecursive Process exited with total time taken in ms: 120" date="2026-04-30T22:15:09.585" /><!-- duration: 19ms -->
+    </step><!-- duration: 2736ms -->
+    <step title="Deployment timer started" date="2026-04-30T22:15:11.677" >
+      <step title="DeploymentManager.Deploy(id:29c0dfdb-f61f-4783-b142-de6f73999687)" date="2026-04-30T22:15:11.696" >
+        <step title="Collecting changeset information" date="2026-04-30T22:15:11.758" /><!-- duration: 133ms -->
+        <step title="Updating submodules" date="2026-04-30T22:15:11.898" /><!-- duration: 1143ms -->
+        <step title="Determining deployment builder" date="2026-04-30T22:15:13.347" >
+          <step title="Builder is OneDeployBuilder" date="2026-04-30T22:15:13.358" /><!-- duration: 19ms -->
+        </step><!-- duration: 39ms -->
+        <step title="PreDeployment: context.CleanOutputPath False" date="2026-04-30T22:15:13.460" >
+          <step title="PreDeployment: context.OutputPath /home/site/wwwroot" date="2026-04-30T22:15:13.638" >
+            <step title="Building" date="2026-04-30T22:15:13.850" >
+              <step title="Executing external process" date="2026-04-30T22:15:14.500" type="process" path="starter.sh" arguments="/opt/Kudu/Scripts/parallel_rsync.sh /tmp/zipdeploy/extracted /home/site/wwwroot 8 /tmp/ False False  " >
+                <step title="Process dump" date="2026-04-30T22:15:26.568" exitCode="123" type="processOutput" /><!-- duration: 12ms -->
+              </step><!-- duration: 12088ms -->
+              <step title="Error occurred" date="2026-04-30T22:15:26.639" type="error" text="rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Windows.Extensions.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-armel\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\maccatalyst-arm64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\maccatalyst-x64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\unix\lib\net6.0\System.Drawing.Common.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm64\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\browser-wasm\nativeassets\net9.0\e_sqlite3.a&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-mips64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-arm64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-arm\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-x64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-ppc64le\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-s390x\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-x86\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x64\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Runtime.Caching.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Drawing.Common.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-arm64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-x64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\osx-arm64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\osx-x64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-arm\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-s390x\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x86\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\browser-wasm\nativeassets\net9.0\e_sqlite3.a&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-mips64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-arm64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-arm\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-x64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-ppc64le\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Drawing.Common.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-arm64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-x64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\osx-arm64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\osx-x64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-armel\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\maccatalyst-arm64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\maccatalyst-x64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\unix\lib\net6.0\System.Drawing.Common.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm64\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Windows.Extensions.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-arm\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-s390x\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x86\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-s390x\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-x86\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x64\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Runtime.Caching.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+/opt/Kudu/Scripts/starter.sh /opt/Kudu/Scripts/parallel_rsync.sh /tmp/zipdeploy/extracted /home/site/wwwroot 8 /tmp/ False False  " stackTrace="   at Kudu.Core.Infrastructure.Executable.ExecuteInternal(ITracer tracer, Func`2 onWriteOutput, Func`2 onWriteError, CancellationToken token, Encoding encoding, String arguments, Object[] args) in /tmp/KuduLite/Kudu.Core/Infrastructure/Executable.cs:line 239
+   at Kudu.Core.Infrastructure.Executable.ExecuteWithProgressWriter(ILogger logger, ITracer tracer, CancellationToken token, String arguments, Object[] args) in /tmp/KuduLite/Kudu.Core/Infrastructure/Executable.cs:line 118
+   at Kudu.Core.Deployment.Generator.ExternalCommandBuilder.RunCommand(DeploymentContext context, String command, Boolean ignoreManifest, CancellationToken token, String message, ILogger internalLogger) in /tmp/KuduLite/Kudu.Core/Deployment/Generator/ExternalCommandBuilder.cs:line 135" /><!-- duration: 18ms -->
+              <step title="Error occurred" date="2026-04-30T22:15:27.247" type="error" text="Invalid argument : &apos;/home/site/wwwroot/runtimes\linux-arm\&apos;" stackTrace="   at System.IO.FileSystem.CreateDirectory(String fullPath, UnixFileMode unixCreateMode)
+   at System.IO.Directory.CreateDirectory(String path)
+   at System.IO.Abstractions.DirectoryWrapper.CreateDirectory(String path)
+   at Kudu.Core.Infrastructure.FileSystemHelpers.CreateDirectory(String path) in /tmp/KuduLite/Kudu.Core/Infrastructure/FileSystemHelpers.cs:line 42
+   at Kudu.Core.Infrastructure.FileSystemHelpers.CopyDirectoryRecursive(String sourceDirPath, String destinationDirPath, Boolean overwrite) in /tmp/KuduLite/Kudu.Core/Infrastructure/FileSystemHelpers.cs:line 219
+   at Kudu.Core.Infrastructure.FileSystemHelpers.CopyDirectoryRecursive(String sourceDirPath, String destinationDirPath, Boolean overwrite) in /tmp/KuduLite/Kudu.Core/Infrastructure/FileSystemHelpers.cs:line 248
+   at Kudu.Core.Deployment.Generator.OneDeployBuilder.Build(DeploymentContext context, CancellationToken token) in /tmp/KuduLite/Kudu.Core/Deployment/Generator/OneDeployBuilder.cs:line 108
+   at Kudu.Core.Deployment.DeploymentManager.Build(ChangeSet changeSet, ITracer tracer, IDisposable deployStep, IRepository repository, DeploymentInfoBase deploymentInfo, DeploymentAnalytics deploymentAnalytics, Boolean fullBuildByDefault, CancellationToken cancellationToken) in /tmp/KuduLite/Kudu.Core/Deployment/DeploymentManager.cs:line 771" /><!-- duration: 6ms -->
+              <step title="Purge deployment items" date="2026-04-30T22:15:27.763" >
+                <step title="Remove 2b77ac32-, Failed, received at 04/30/2026 22:08:33" date="2026-04-30T22:15:27.845" /><!-- duration: 19ms -->
+              </step><!-- duration: 111ms -->
+            </step><!-- duration: 14043ms -->
+          </step><!-- duration: 14259ms -->
+          <step title="Error occurred" date="2026-04-30T22:15:27.904" type="error" text="Invalid argument : &apos;/home/site/wwwroot/runtimes\linux-arm\&apos;" stackTrace="   at System.IO.FileSystem.CreateDirectory(String fullPath, UnixFileMode unixCreateMode)
+   at System.IO.Directory.CreateDirectory(String path)
+   at System.IO.Abstractions.DirectoryWrapper.CreateDirectory(String path)
+   at Kudu.Core.Infrastructure.FileSystemHelpers.CreateDirectory(String path) in /tmp/KuduLite/Kudu.Core/Infrastructure/FileSystemHelpers.cs:line 42
+   at Kudu.Core.Infrastructure.FileSystemHelpers.CopyDirectoryRecursive(String sourceDirPath, String destinationDirPath, Boolean overwrite) in /tmp/KuduLite/Kudu.Core/Infrastructure/FileSystemHelpers.cs:line 219
+   at Kudu.Core.Infrastructure.FileSystemHelpers.CopyDirectoryRecursive(String sourceDirPath, String destinationDirPath, Boolean overwrite) in /tmp/KuduLite/Kudu.Core/Infrastructure/FileSystemHelpers.cs:line 248
+   at Kudu.Core.Deployment.Generator.OneDeployBuilder.Build(DeploymentContext context, CancellationToken token) in /tmp/KuduLite/Kudu.Core/Deployment/Generator/OneDeployBuilder.cs:line 108
+   at Kudu.Core.Deployment.DeploymentManager.Build(ChangeSet changeSet, ITracer tracer, IDisposable deployStep, IRepository repository, DeploymentInfoBase deploymentInfo, DeploymentAnalytics deploymentAnalytics, Boolean fullBuildByDefault, CancellationToken cancellationToken) in /tmp/KuduLite/Kudu.Core/Deployment/DeploymentManager.cs:line 771
+   at Kudu.Core.Deployment.DeploymentManager.Build(ChangeSet changeSet, ITracer tracer, IDisposable deployStep, IRepository repository, DeploymentInfoBase deploymentInfo, DeploymentAnalytics deploymentAnalytics, Boolean fullBuildByDefault, CancellationToken cancellationToken) in /tmp/KuduLite/Kudu.Core/Deployment/DeploymentManager.cs:line 840" /><!-- duration: 2ms -->
+          <step title="Cleaning up temp files" date="2026-04-30T22:15:27.988" /><!-- duration: 19ms -->
+          <step title="Cleaning up temp files" date="2026-04-30T22:15:28.035" /><!-- duration: 511ms -->
+          <step title="Error occurred" date="2026-04-30T22:15:28.570" type="error" text="Invalid argument : &apos;/home/site/wwwroot/runtimes\linux-arm\&apos;" stackTrace="   at System.IO.FileSystem.CreateDirectory(String fullPath, UnixFileMode unixCreateMode)
+   at System.IO.Directory.CreateDirectory(String path)
+   at System.IO.Abstractions.DirectoryWrapper.CreateDirectory(String path)
+   at Kudu.Core.Infrastructure.FileSystemHelpers.CreateDirectory(String path) in /tmp/KuduLite/Kudu.Core/Infrastructure/FileSystemHelpers.cs:line 42
+   at Kudu.Core.Infrastructure.FileSystemHelpers.CopyDirectoryRecursive(String sourceDirPath, String destinationDirPath, Boolean overwrite) in /tmp/KuduLite/Kudu.Core/Infrastructure/FileSystemHelpers.cs:line 219
+   at Kudu.Core.Infrastructure.FileSystemHelpers.CopyDirectoryRecursive(String sourceDirPath, String destinationDirPath, Boolean overwrite) in /tmp/KuduLite/Kudu.Core/Infrastructure/FileSystemHelpers.cs:line 248
+   at Kudu.Core.Deployment.Generator.OneDeployBuilder.Build(DeploymentContext context, CancellationToken token) in /tmp/KuduLite/Kudu.Core/Deployment/Generator/OneDeployBuilder.cs:line 108
+   at Kudu.Core.Deployment.DeploymentManager.Build(ChangeSet changeSet, ITracer tracer, IDisposable deployStep, IRepository repository, DeploymentInfoBase deploymentInfo, DeploymentAnalytics deploymentAnalytics, Boolean fullBuildByDefault, CancellationToken cancellationToken) in /tmp/KuduLite/Kudu.Core/Deployment/DeploymentManager.cs:line 771
+   at Kudu.Core.Deployment.DeploymentManager.Build(ChangeSet changeSet, ITracer tracer, IDisposable deployStep, IRepository repository, DeploymentInfoBase deploymentInfo, DeploymentAnalytics deploymentAnalytics, Boolean fullBuildByDefault, CancellationToken cancellationToken) in /tmp/KuduLite/Kudu.Core/Deployment/DeploymentManager.cs:line 840
+   at Kudu.Core.Deployment.DeploymentManager.DeployAsync(IRepository repository, ChangeSet changeSet, String deployer, Boolean clean, DeploymentInfoBase deploymentInfo, Boolean needFileUpdate, Boolean fullBuildByDefault) in /tmp/KuduLite/Kudu.Core/Deployment/DeploymentManager.cs:line 266" /><!-- duration: 9ms -->
+        </step><!-- duration: 15130ms -->
+        <step title="Reloading status file with latest updates" date="2026-04-30T22:15:28.690" >
+          <step title="WebHooksManager.PublishEventAsync: PostDeployment" date="2026-04-30T22:15:28.700" /><!-- duration: 110ms -->
+        </step><!-- duration: 141ms -->
+        <step title="Error occurred" date="2026-04-30T22:15:28.838" type="error" text="Invalid argument : &apos;/home/site/wwwroot/runtimes\linux-arm\&apos;" stackTrace="   at System.IO.FileSystem.CreateDirectory(String fullPath, UnixFileMode unixCreateMode)
+   at System.IO.Directory.CreateDirectory(String path)
+   at System.IO.Abstractions.DirectoryWrapper.CreateDirectory(String path)
+   at Kudu.Core.Infrastructure.FileSystemHelpers.CreateDirectory(String path) in /tmp/KuduLite/Kudu.Core/Infrastructure/FileSystemHelpers.cs:line 42
+   at Kudu.Core.Infrastructure.FileSystemHelpers.CopyDirectoryRecursive(String sourceDirPath, String destinationDirPath, Boolean overwrite) in /tmp/KuduLite/Kudu.Core/Infrastructure/FileSystemHelpers.cs:line 219
+   at Kudu.Core.Infrastructure.FileSystemHelpers.CopyDirectoryRecursive(String sourceDirPath, String destinationDirPath, Boolean overwrite) in /tmp/KuduLite/Kudu.Core/Infrastructure/FileSystemHelpers.cs:line 248
+   at Kudu.Core.Deployment.Generator.OneDeployBuilder.Build(DeploymentContext context, CancellationToken token) in /tmp/KuduLite/Kudu.Core/Deployment/Generator/OneDeployBuilder.cs:line 108
+   at Kudu.Core.Deployment.DeploymentManager.Build(ChangeSet changeSet, ITracer tracer, IDisposable deployStep, IRepository repository, DeploymentInfoBase deploymentInfo, DeploymentAnalytics deploymentAnalytics, Boolean fullBuildByDefault, CancellationToken cancellationToken) in /tmp/KuduLite/Kudu.Core/Deployment/DeploymentManager.cs:line 771
+   at Kudu.Core.Deployment.DeploymentManager.Build(ChangeSet changeSet, ITracer tracer, IDisposable deployStep, IRepository repository, DeploymentInfoBase deploymentInfo, DeploymentAnalytics deploymentAnalytics, Boolean fullBuildByDefault, CancellationToken cancellationToken) in /tmp/KuduLite/Kudu.Core/Deployment/DeploymentManager.cs:line 840
+   at Kudu.Core.Deployment.DeploymentManager.DeployAsync(IRepository repository, ChangeSet changeSet, String deployer, Boolean clean, DeploymentInfoBase deploymentInfo, Boolean needFileUpdate, Boolean fullBuildByDefault) in /tmp/KuduLite/Kudu.Core/Deployment/DeploymentManager.cs:line 266" /><!-- duration: 2ms -->
+        <step title="Marking deployment as failed and cleaning up the temp deployment" date="2026-04-30T22:15:28.910" /><!-- duration: 8ms -->
+      </step><!-- duration: 17406ms -->
+      <step title="Error occurred" date="2026-04-30T22:15:29.122" type="error" text="One or more errors occurred. (Deployment failed)" stackTrace="   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at Kudu.Core.Deployment.FetchDeploymentManager.&lt;&gt;c__DisplayClass22_1.&lt;PerformBackgroundDeployment&gt;b__3() in /tmp/KuduLite/Kudu.Core/Deployment/FetchDeploymentManager.cs:line 414
+   at Kudu.Contracts.Infrastructure.LockExtensions.TryLockOperation(IOperationLock lockObj, Action operation, String operationName, TimeSpan timeout) in /tmp/KuduLite/Kudu.Contracts/Infrastructure/LockExtensions.cs:line 34
+   at Kudu.Contracts.Infrastructure.LockExtensions.LockOperation(IOperationLock lockObj, Action operation, String operationName, TimeSpan timeout) in /tmp/KuduLite/Kudu.Contracts/Infrastructure/LockExtensions.cs:line 46
+   at Kudu.Core.Deployment.FetchDeploymentManager.&lt;&gt;c__DisplayClass22_0.&lt;PerformBackgroundDeployment&gt;b__1() in /tmp/KuduLite/Kudu.Core/Deployment/FetchDeploymentManager.cs:line 393" innerText="Deployment failed" innerStackTrace="   at Kudu.Core.Deployment.DeploymentManager.DeployAsync(IRepository repository, ChangeSet changeSet, String deployer, Boolean clean, DeploymentInfoBase deploymentInfo, Boolean needFileUpdate, Boolean fullBuildByDefault) in /tmp/KuduLite/Kudu.Core/Deployment/DeploymentManager.cs:line 307
+   at Kudu.Core.Deployment.FetchDeploymentManager.PerformDeployment(DeploymentInfoBase deploymentInfo, IDisposable tempDeployment, ChangeSet tempChangeSet, DeployStatusApiResult updateStatusObj) in /tmp/KuduLite/Kudu.Core/Deployment/FetchDeploymentManager.cs:line 230" /><!-- duration: 3ms -->
+    </step><!-- duration: 17454ms -->

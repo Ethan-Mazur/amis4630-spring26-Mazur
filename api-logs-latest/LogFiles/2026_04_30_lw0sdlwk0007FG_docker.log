@@ -1,0 +1,1146 @@
+2026-04-30T20:47:42.4563855Z State: Starting, Action: EstablishingSiteNetworks, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: , DetailsLevel: INFO
+2026-04-30T20:47:44.3426143Z State: Starting, Action: StartingSiteContainers, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: , DetailsLevel: INFO
+2026-04-30T20:47:44.3500502Z Container start method called.
+2026-04-30T20:47:44.3503984Z State: Starting, Action: PullingImage, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Pulling image 10.1.0.5:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod for amis4630-api., DetailsLevel: INFO
+2026-04-30T20:47:44.3505400Z Establishing network.
+2026-04-30T20:47:44.3506945Z Pulling image: appsvc/dotnetcore:10.0_20260311.2.tuxprod.
+2026-04-30T20:48:39.9294489Z Image appsvc/dotnetcore:10.0_20260311.2.tuxprod is pulled from registry 10.1.0.5:13209
+2026-04-30T20:48:39.9376561Z Container is starting.
+2026-04-30T20:48:39.9423367Z State: Starting, Action: MountingVolumes, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Mounting volumes for amis4630-api., DetailsLevel: INFO
+2026-04-30T20:48:39.9430223Z Establishing user namespace if not established already.
+2026-04-30T20:48:39.9475056Z Establishing network if not established already.
+2026-04-30T20:48:39.9485238Z Mounting volumes.
+2026-04-30T20:48:39.9638715Z Nested mountpoint site/wwwroot
+2026-04-30T20:48:40.0005964Z Nested mountpoint volatile/logs
+2026-04-30T20:48:40.0419511Z Nested mountpoint 
+2026-04-30T20:48:40.1604494Z Nested mountpoint 
+2026-04-30T20:48:40.2857769Z Nested mountpoint 
+2026-04-30T20:48:40.3250309Z Nested mountpoint 
+2026-04-30T20:48:41.8154348Z State: Starting, Action: CreatingContainer, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Finished pulling container image and mounting volumes for amis4630-api. Allocatinng the rest of the container resources to finish container creation., DetailsLevel: INFO
+2026-04-30T20:48:41.8160228Z Creating container.
+2026-04-30T20:48:41.8239051Z Creating pipes for streaming container io.
+2026-04-30T20:48:41.8243961Z Creating stdout named pipe at /podr/container/pipe/4755ede87e98_amis4630-api/stdout_20346cc4968c459bb866527d43d23566.
+2026-04-30T20:48:41.8251444Z Successfully created stdout named pipe at: /podr/container/pipe/4755ede87e98_amis4630-api/stdout_20346cc4968c459bb866527d43d23566.
+2026-04-30T20:48:41.8252582Z Opening named pipe /podr/container/pipe/4755ede87e98_amis4630-api/stdout_20346cc4968c459bb866527d43d23566 for reading in non-blocking mode.
+2026-04-30T20:48:41.8253860Z Successfully opened named pipe: /podr/container/pipe/4755ede87e98_amis4630-api/stdout_20346cc4968c459bb866527d43d23566.
+2026-04-30T20:48:41.8254877Z Successfully removed non-blocking flag from /podr/container/pipe/4755ede87e98_amis4630-api/stdout_20346cc4968c459bb866527d43d23566.
+2026-04-30T20:48:41.8338589Z Creating stderr named pipe at /podr/container/pipe/4755ede87e98_amis4630-api/stderr_ffaa52f3470e4ea6bb64cb17b7838ba8.
+2026-04-30T20:48:41.8340506Z Successfully created stderr named pipe at: /podr/container/pipe/4755ede87e98_amis4630-api/stderr_ffaa52f3470e4ea6bb64cb17b7838ba8.
+2026-04-30T20:48:41.8341767Z Opening named pipe /podr/container/pipe/4755ede87e98_amis4630-api/stderr_ffaa52f3470e4ea6bb64cb17b7838ba8 for reading in non-blocking mode.
+2026-04-30T20:48:41.8343793Z Successfully opened named pipe: /podr/container/pipe/4755ede87e98_amis4630-api/stderr_ffaa52f3470e4ea6bb64cb17b7838ba8.
+2026-04-30T20:48:41.8344982Z Successfully removed non-blocking flag from /podr/container/pipe/4755ede87e98_amis4630-api/stderr_ffaa52f3470e4ea6bb64cb17b7838ba8.
+2026-04-30T20:48:41.8349459Z Creating container with image: appsvc/dotnetcore:10.0_20260311.2.tuxprod from registry: 10.1.0.5:13209 and fully qualified image name: 10.1.0.5:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod
+2026-04-30T20:48:42.7230523Z Starting container: 4755ede87e98_amis4630-api.
+2026-04-30T20:48:42.8224051Z Starting watchers and probes.
+2026-04-30T20:48:42.8402670Z Starting metrics collection.
+2026-04-30T20:48:42.8408982Z Container is running.
+2026-04-30T20:48:42.8410990Z State: Starting, Action: CreatingContainer, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T20:48:42.9619307Z Container start method finished after 58611 ms.
+2026-04-30T20:48:42.9622000Z State: Starting, Action: InitiatingSiteWarmUpProbe, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T20:48:42.9628850Z State: Starting, Action: WaitingForSiteWarmUpProbeSuccess, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Pinging warmup path to ensure container is ready to receive requests., DetailsLevel: INFO
+2026-04-30T20:49:30.2779769Z Container has finished running with exit code: 134.
+2026-04-30T20:49:30.2858964Z Container is terminating. Grace period: 5 seconds.
+2026-04-30T20:49:30.2882513Z Stop and delete container. Retry count = 0
+2026-04-30T20:49:30.2883756Z Stopping container: 4755ede87e98_amis4630-api.
+2026-04-30T20:49:30.3855294Z Deleting container: 4755ede87e98_amis4630-api. Retry count = 0
+2026-04-30T20:49:30.6287700Z Container spec TerminationMessagePolicy  path 
+2026-04-30T20:49:30.6297120Z Container is terminated. Total time elapsed: 342 ms.
+2026-04-30T20:49:30.6307532Z Site container: amis4630-api terminated during site startup.
+2026-04-30T20:49:30.6413891Z State: Stopping, Action: CancellingStartup, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T20:49:30.6813953Z Site startup probe failed after 47.6574494 seconds.
+2026-04-30T20:49:30.9424650Z State: Stopping, Action: CancellingStartup, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:49:30, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T20:49:30.9912236Z Failed to start site. Revert by stopping site.
+2026-04-30T20:49:30.9929183Z State: Stopping, Action: StoppingSite, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:49:30, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T20:49:31.0131810Z State: Stopping, Action: StoppingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:49:30, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T20:49:31.0202313Z Site: amis4630-api stopped.
+2026-04-30T20:49:31.0314606Z State: Stopping, Action: UnmountingVolumes, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:49:30, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T20:49:31.4960964Z State: Stopping, Action: StoppingSiteNetworks, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:49:30, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T20:49:31.8668327Z State: Stopped, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:49:30, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 20:49:31 (UTC), DetailsLevel: ERR
+2026-04-30T20:49:32.1612975Z State: Stopped, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:49:30, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 20:49:31 (UTC), DetailsLevel: ERR
+2026-04-30T20:49:37.4821980Z State: Starting, Action: EstablishingSiteNetworks, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:49:30, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 20:49:31 (UTC), DetailsLevel: ERR
+2026-04-30T20:49:39.4985398Z State: Starting, Action: StartingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:49:30, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 20:49:31 (UTC), DetailsLevel: ERR
+2026-04-30T20:49:39.4986574Z Container start method called.
+2026-04-30T20:49:39.5077623Z State: Starting, Action: PullingImage, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:49:30, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Pulling image 10.1.0.5:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod for amis4630-api., DetailsLevel: INFO
+2026-04-30T20:49:39.5080003Z Establishing network.
+2026-04-30T20:49:39.5081267Z Pulling image: appsvc/dotnetcore:10.0_20260311.2.tuxprod.
+2026-04-30T20:49:39.9600120Z Container is starting.
+2026-04-30T20:49:39.9605500Z State: Starting, Action: MountingVolumes, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:49:30, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Mounting volumes for amis4630-api., DetailsLevel: INFO
+2026-04-30T20:49:39.9607460Z Establishing user namespace if not established already.
+2026-04-30T20:49:39.9611414Z Establishing network if not established already.
+2026-04-30T20:49:39.9612941Z Mounting volumes.
+2026-04-30T20:49:39.9619026Z Nested mountpoint site/wwwroot
+2026-04-30T20:49:40.0406592Z Nested mountpoint volatile/logs
+2026-04-30T20:49:40.0833221Z Nested mountpoint 
+2026-04-30T20:49:40.1222757Z Nested mountpoint 
+2026-04-30T20:49:40.1833407Z Nested mountpoint 
+2026-04-30T20:49:40.2122749Z Nested mountpoint 
+2026-04-30T20:49:40.7986416Z State: Starting, Action: CreatingContainer, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:49:30, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Finished pulling container image and mounting volumes for amis4630-api. Allocatinng the rest of the container resources to finish container creation., DetailsLevel: INFO
+2026-04-30T20:49:40.8311096Z Creating container.
+2026-04-30T20:49:40.8323013Z Creating pipes for streaming container io.
+2026-04-30T20:49:40.8331191Z Creating stdout named pipe at /podr/container/pipe/72f37ae27b15_amis4630-api/stdout_b242cf3693d64230b0f6996440b7582e.
+2026-04-30T20:49:40.8339202Z Successfully created stdout named pipe at: /podr/container/pipe/72f37ae27b15_amis4630-api/stdout_b242cf3693d64230b0f6996440b7582e.
+2026-04-30T20:49:40.8366439Z Opening named pipe /podr/container/pipe/72f37ae27b15_amis4630-api/stdout_b242cf3693d64230b0f6996440b7582e for reading in non-blocking mode.
+2026-04-30T20:49:40.8368316Z Successfully opened named pipe: /podr/container/pipe/72f37ae27b15_amis4630-api/stdout_b242cf3693d64230b0f6996440b7582e.
+2026-04-30T20:49:40.8369133Z Successfully removed non-blocking flag from /podr/container/pipe/72f37ae27b15_amis4630-api/stdout_b242cf3693d64230b0f6996440b7582e.
+2026-04-30T20:49:40.8384393Z Creating stderr named pipe at /podr/container/pipe/72f37ae27b15_amis4630-api/stderr_1434976891b14c6dad223260980a673c.
+2026-04-30T20:49:40.8389832Z Successfully created stderr named pipe at: /podr/container/pipe/72f37ae27b15_amis4630-api/stderr_1434976891b14c6dad223260980a673c.
+2026-04-30T20:49:40.8391732Z Opening named pipe /podr/container/pipe/72f37ae27b15_amis4630-api/stderr_1434976891b14c6dad223260980a673c for reading in non-blocking mode.
+2026-04-30T20:49:40.8392832Z Successfully opened named pipe: /podr/container/pipe/72f37ae27b15_amis4630-api/stderr_1434976891b14c6dad223260980a673c.
+2026-04-30T20:49:40.8393618Z Successfully removed non-blocking flag from /podr/container/pipe/72f37ae27b15_amis4630-api/stderr_1434976891b14c6dad223260980a673c.
+2026-04-30T20:49:40.8477152Z Creating container with image: appsvc/dotnetcore:10.0_20260311.2.tuxprod from registry: 10.1.0.5:13209 and fully qualified image name: 10.1.0.5:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod
+2026-04-30T20:49:41.4431624Z Starting container: 72f37ae27b15_amis4630-api.
+2026-04-30T20:49:41.5244562Z Starting watchers and probes.
+2026-04-30T20:49:41.5343384Z Starting metrics collection.
+2026-04-30T20:49:41.5429306Z Container is running.
+2026-04-30T20:49:41.5430399Z State: Starting, Action: CreatingContainer, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:49:30, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T20:49:41.8359807Z Container start method finished after 2337 ms.
+2026-04-30T20:49:41.8361635Z State: Starting, Action: InitiatingSiteWarmUpProbe, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:49:30, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T20:49:41.8361873Z State: Starting, Action: WaitingForSiteWarmUpProbeSuccess, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:49:30, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Pinging warmup path to ensure container is ready to receive requests., DetailsLevel: INFO
+2026-04-30T20:50:30.2816826Z Container has finished running with exit code: 134.
+2026-04-30T20:50:30.2900044Z Container is terminating. Grace period: 5 seconds.
+2026-04-30T20:50:30.2904663Z Stop and delete container. Retry count = 0
+2026-04-30T20:50:30.2905614Z Stopping container: 72f37ae27b15_amis4630-api.
+2026-04-30T20:50:30.4802663Z Deleting container: 72f37ae27b15_amis4630-api. Retry count = 0
+2026-04-30T20:50:30.9226449Z Container spec TerminationMessagePolicy  path 
+2026-04-30T20:50:30.9241636Z Container is terminated. Total time elapsed: 633 ms.
+2026-04-30T20:50:30.9242674Z Site container: amis4630-api terminated during site startup.
+2026-04-30T20:50:30.9347388Z State: Stopping, Action: CancellingStartup, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:49:30, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T20:50:31.0737164Z Site startup probe failed after 49.1793106 seconds.
+2026-04-30T20:50:31.4647871Z State: Stopping, Action: CancellingStartup, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:50:31, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T20:50:31.5137224Z Failed to start site. Revert by stopping site.
+2026-04-30T20:50:31.5139434Z State: Stopping, Action: StoppingSite, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:50:31, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T20:50:31.5142684Z State: Stopping, Action: StoppingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:50:31, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T20:50:31.5142867Z Site: amis4630-api stopped.
+2026-04-30T20:50:31.5166477Z State: Stopping, Action: UnmountingVolumes, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:50:31, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T20:50:32.1098888Z State: Stopping, Action: StoppingSiteNetworks, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:50:31, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T20:50:32.6022413Z Site: amis4630-api will be blocked for 1 minutes till 04/30/2026 20:51:32
+2026-04-30T20:50:32.6206825Z State: Blocked, Action: StoppingSiteNetworks, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:50:31, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site: amis4630-api will be blocked for 1 minutes till 04/30/2026 20:51:32, DetailsLevel: WARN
+2026-04-30T20:50:32.6814730Z State: Stopped, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:50:31, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 20:50:32 (UTC), DetailsLevel: WARN
+2026-04-30T20:50:32.9344664Z State: Stopped, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:50:31, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 20:50:32 (UTC), DetailsLevel: WARN
+2026-04-30T20:50:39.1792185Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:50:31, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:51:32, DetailsLevel: WARN
+2026-04-30T20:50:39.1792553Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:50:44.4181263Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:50:31, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:51:32, DetailsLevel: WARN
+2026-04-30T20:50:44.4181887Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:50:49.7016426Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:50:31, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:51:32, DetailsLevel: WARN
+2026-04-30T20:50:49.7017079Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:50:54.9744355Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:50:31, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:51:32, DetailsLevel: WARN
+2026-04-30T20:50:54.9915019Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:51:00.1813125Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:50:31, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:51:32, DetailsLevel: WARN
+2026-04-30T20:51:00.1815980Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:51:05.3149323Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:50:31, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:51:32, DetailsLevel: WARN
+2026-04-30T20:51:05.3149604Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:51:10.5069629Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:50:31, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:51:32, DetailsLevel: WARN
+2026-04-30T20:51:10.5071430Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:51:15.6682845Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:50:31, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:51:32, DetailsLevel: WARN
+2026-04-30T20:51:15.6683344Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:51:20.8649760Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:50:31, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:51:32, DetailsLevel: WARN
+2026-04-30T20:51:20.8650041Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:51:25.9662607Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:50:31, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:51:32, DetailsLevel: WARN
+2026-04-30T20:51:25.9663288Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:51:31.1546390Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:50:31, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:51:32, DetailsLevel: WARN
+2026-04-30T20:51:31.1547234Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:51:32.6054986Z Site: amis4630-api is unblocked.
+2026-04-30T20:51:36.3114309Z State: Starting, Action: EstablishingSiteNetworks, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:50:31, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:51:32, DetailsLevel: WARN
+2026-04-30T20:51:37.9610573Z State: Starting, Action: StartingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:50:31, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:51:32, DetailsLevel: WARN
+2026-04-30T20:51:37.9611671Z Container start method called.
+2026-04-30T20:51:37.9612096Z State: Starting, Action: PullingImage, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:50:31, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Pulling image 10.1.0.5:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod for amis4630-api., DetailsLevel: INFO
+2026-04-30T20:51:37.9612821Z Establishing network.
+2026-04-30T20:51:37.9614075Z Pulling image: appsvc/dotnetcore:10.0_20260311.2.tuxprod.
+2026-04-30T20:51:38.1965756Z Container is starting.
+2026-04-30T20:51:38.1969040Z State: Starting, Action: MountingVolumes, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:50:31, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Mounting volumes for amis4630-api., DetailsLevel: INFO
+2026-04-30T20:51:38.1970712Z Establishing user namespace if not established already.
+2026-04-30T20:51:38.1971963Z Establishing network if not established already.
+2026-04-30T20:51:38.1978070Z Mounting volumes.
+2026-04-30T20:51:38.1983670Z Nested mountpoint site/wwwroot
+2026-04-30T20:51:38.2174478Z Nested mountpoint volatile/logs
+2026-04-30T20:51:38.2281031Z Nested mountpoint 
+2026-04-30T20:51:38.2988499Z Nested mountpoint 
+2026-04-30T20:51:38.3473718Z Nested mountpoint 
+2026-04-30T20:51:38.3481532Z Nested mountpoint 
+2026-04-30T20:51:39.3919215Z State: Starting, Action: CreatingContainer, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:50:31, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Finished pulling container image and mounting volumes for amis4630-api. Allocatinng the rest of the container resources to finish container creation., DetailsLevel: INFO
+2026-04-30T20:51:39.3920310Z Creating container.
+2026-04-30T20:51:39.3921066Z Creating pipes for streaming container io.
+2026-04-30T20:51:39.3921782Z Creating stdout named pipe at /podr/container/pipe/e6c7bbc11712_amis4630-api/stdout_dbaf2d6f1157415c9f504995de8dc01b.
+2026-04-30T20:51:39.4010267Z Successfully created stdout named pipe at: /podr/container/pipe/e6c7bbc11712_amis4630-api/stdout_dbaf2d6f1157415c9f504995de8dc01b.
+2026-04-30T20:51:39.4012145Z Opening named pipe /podr/container/pipe/e6c7bbc11712_amis4630-api/stdout_dbaf2d6f1157415c9f504995de8dc01b for reading in non-blocking mode.
+2026-04-30T20:51:39.4013486Z Successfully opened named pipe: /podr/container/pipe/e6c7bbc11712_amis4630-api/stdout_dbaf2d6f1157415c9f504995de8dc01b.
+2026-04-30T20:51:39.4014951Z Successfully removed non-blocking flag from /podr/container/pipe/e6c7bbc11712_amis4630-api/stdout_dbaf2d6f1157415c9f504995de8dc01b.
+2026-04-30T20:51:39.4016612Z Creating stderr named pipe at /podr/container/pipe/e6c7bbc11712_amis4630-api/stderr_57b97207c28849718a0fe6b625889573.
+2026-04-30T20:51:39.4017897Z Successfully created stderr named pipe at: /podr/container/pipe/e6c7bbc11712_amis4630-api/stderr_57b97207c28849718a0fe6b625889573.
+2026-04-30T20:51:39.4018602Z Opening named pipe /podr/container/pipe/e6c7bbc11712_amis4630-api/stderr_57b97207c28849718a0fe6b625889573 for reading in non-blocking mode.
+2026-04-30T20:51:39.4019428Z Successfully opened named pipe: /podr/container/pipe/e6c7bbc11712_amis4630-api/stderr_57b97207c28849718a0fe6b625889573.
+2026-04-30T20:51:39.4020143Z Successfully removed non-blocking flag from /podr/container/pipe/e6c7bbc11712_amis4630-api/stderr_57b97207c28849718a0fe6b625889573.
+2026-04-30T20:51:39.4021235Z Creating container with image: appsvc/dotnetcore:10.0_20260311.2.tuxprod from registry: 10.1.0.5:13209 and fully qualified image name: 10.1.0.5:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod
+2026-04-30T20:51:40.1166471Z Starting container: e6c7bbc11712_amis4630-api.
+2026-04-30T20:51:40.2056188Z Starting watchers and probes.
+2026-04-30T20:51:40.2060226Z Starting metrics collection.
+2026-04-30T20:51:40.2061579Z Container is running.
+2026-04-30T20:51:40.2062249Z State: Starting, Action: CreatingContainer, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:50:31, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T20:51:40.4384916Z Container start method finished after 2477 ms.
+2026-04-30T20:51:40.4571036Z State: Starting, Action: InitiatingSiteWarmUpProbe, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:50:31, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T20:51:40.4571587Z State: Starting, Action: WaitingForSiteWarmUpProbeSuccess, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:50:31, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Pinging warmup path to ensure container is ready to receive requests., DetailsLevel: INFO
+2026-04-30T20:52:40.2193272Z Container has finished running with exit code: 134.
+2026-04-30T20:52:40.2250591Z Container is terminating. Grace period: 5 seconds.
+2026-04-30T20:52:40.2439034Z Stop and delete container. Retry count = 0
+2026-04-30T20:52:40.2440124Z Stopping container: e6c7bbc11712_amis4630-api.
+2026-04-30T20:52:40.3059859Z Deleting container: e6c7bbc11712_amis4630-api. Retry count = 0
+2026-04-30T20:52:40.5570525Z Container spec TerminationMessagePolicy  path 
+2026-04-30T20:52:40.5655952Z Container is terminated. Total time elapsed: 332 ms.
+2026-04-30T20:52:40.5661378Z Site container: amis4630-api terminated during site startup.
+2026-04-30T20:52:40.6646892Z State: Stopping, Action: CancellingStartup, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:50:31, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T20:52:40.6892238Z Site startup probe failed after 60.2211404 seconds.
+2026-04-30T20:52:40.8505118Z State: Stopping, Action: CancellingStartup, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:52:40, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T20:52:40.8694728Z Failed to start site. Revert by stopping site.
+2026-04-30T20:52:40.8696231Z State: Stopping, Action: StoppingSite, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:52:40, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T20:52:40.8698681Z State: Stopping, Action: StoppingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:52:40, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T20:52:40.8698865Z Site: amis4630-api stopped.
+2026-04-30T20:52:40.8903671Z State: Stopping, Action: UnmountingVolumes, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:52:40, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T20:52:41.3354408Z State: Stopping, Action: StoppingSiteNetworks, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:52:40, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T20:52:41.6477297Z Site: amis4630-api will be blocked for 1 minutes till 04/30/2026 20:53:41
+2026-04-30T20:52:41.6484908Z State: Blocked, Action: StoppingSiteNetworks, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:52:40, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site: amis4630-api will be blocked for 1 minutes till 04/30/2026 20:53:41, DetailsLevel: WARN
+2026-04-30T20:52:41.6501438Z State: Stopped, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:52:40, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 20:52:41 (UTC), DetailsLevel: WARN
+2026-04-30T20:52:41.9709212Z State: Stopped, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:52:40, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 20:52:41 (UTC), DetailsLevel: WARN
+2026-04-30T20:52:46.9400781Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:52:40, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:53:41, DetailsLevel: WARN
+2026-04-30T20:52:46.9404019Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:52:52.1837885Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:52:40, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:53:41, DetailsLevel: WARN
+2026-04-30T20:52:52.1838406Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:52:57.3292977Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:52:40, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:53:41, DetailsLevel: WARN
+2026-04-30T20:52:57.3293252Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:53:02.5088242Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:52:40, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:53:41, DetailsLevel: WARN
+2026-04-30T20:53:02.5089306Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:53:07.7030566Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:52:40, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:53:41, DetailsLevel: WARN
+2026-04-30T20:53:07.7030808Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:53:12.8522408Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:52:40, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:53:41, DetailsLevel: WARN
+2026-04-30T20:53:12.8522664Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:53:18.2899860Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:52:40, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:53:41, DetailsLevel: WARN
+2026-04-30T20:53:18.2900976Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:53:23.5367122Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:52:40, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:53:41, DetailsLevel: WARN
+2026-04-30T20:53:23.5367768Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:53:28.6031845Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:52:40, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:53:41, DetailsLevel: WARN
+2026-04-30T20:53:28.6032091Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:53:33.7500022Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:52:40, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:53:41, DetailsLevel: WARN
+2026-04-30T20:53:33.7500582Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:53:39.1631621Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:52:40, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:53:41, DetailsLevel: WARN
+2026-04-30T20:53:39.1631991Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:53:41.6483472Z Site: amis4630-api is unblocked.
+2026-04-30T20:53:44.3938463Z State: Starting, Action: EstablishingSiteNetworks, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:52:40, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:53:41, DetailsLevel: WARN
+2026-04-30T20:53:45.8755065Z State: Starting, Action: StartingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:52:40, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:53:41, DetailsLevel: WARN
+2026-04-30T20:53:45.8826157Z Container start method called.
+2026-04-30T20:53:45.8829386Z State: Starting, Action: PullingImage, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:52:40, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Pulling image 10.1.0.5:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod for amis4630-api., DetailsLevel: INFO
+2026-04-30T20:53:45.8830983Z Establishing network.
+2026-04-30T20:53:45.8832494Z Pulling image: appsvc/dotnetcore:10.0_20260311.2.tuxprod.
+2026-04-30T20:53:46.2153666Z Container is starting.
+2026-04-30T20:53:46.2172253Z State: Starting, Action: MountingVolumes, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:52:40, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Mounting volumes for amis4630-api., DetailsLevel: INFO
+2026-04-30T20:53:46.2357913Z Establishing user namespace if not established already.
+2026-04-30T20:53:46.2366713Z Establishing network if not established already.
+2026-04-30T20:53:46.2369490Z Mounting volumes.
+2026-04-30T20:53:46.2461749Z Nested mountpoint site/wwwroot
+2026-04-30T20:53:46.2857321Z Nested mountpoint volatile/logs
+2026-04-30T20:53:46.3073634Z Nested mountpoint 
+2026-04-30T20:53:46.3374055Z Nested mountpoint 
+2026-04-30T20:53:46.4262642Z Nested mountpoint 
+2026-04-30T20:53:46.4272152Z Nested mountpoint 
+2026-04-30T20:53:47.2721710Z State: Starting, Action: CreatingContainer, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:52:40, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Finished pulling container image and mounting volumes for amis4630-api. Allocatinng the rest of the container resources to finish container creation., DetailsLevel: INFO
+2026-04-30T20:53:47.2723057Z Creating container.
+2026-04-30T20:53:47.2723915Z Creating pipes for streaming container io.
+2026-04-30T20:53:47.2724635Z Creating stdout named pipe at /podr/container/pipe/ac1c0057f13f_amis4630-api/stdout_de92963960ad4cb9abaccecfe18a38d0.
+2026-04-30T20:53:47.2726663Z Successfully created stdout named pipe at: /podr/container/pipe/ac1c0057f13f_amis4630-api/stdout_de92963960ad4cb9abaccecfe18a38d0.
+2026-04-30T20:53:47.2727394Z Opening named pipe /podr/container/pipe/ac1c0057f13f_amis4630-api/stdout_de92963960ad4cb9abaccecfe18a38d0 for reading in non-blocking mode.
+2026-04-30T20:53:47.2728277Z Successfully opened named pipe: /podr/container/pipe/ac1c0057f13f_amis4630-api/stdout_de92963960ad4cb9abaccecfe18a38d0.
+2026-04-30T20:53:47.2729000Z Successfully removed non-blocking flag from /podr/container/pipe/ac1c0057f13f_amis4630-api/stdout_de92963960ad4cb9abaccecfe18a38d0.
+2026-04-30T20:53:47.2834845Z Creating stderr named pipe at /podr/container/pipe/ac1c0057f13f_amis4630-api/stderr_c1944dbfd6744a339ab7f79c6b2799be.
+2026-04-30T20:53:47.2836746Z Successfully created stderr named pipe at: /podr/container/pipe/ac1c0057f13f_amis4630-api/stderr_c1944dbfd6744a339ab7f79c6b2799be.
+2026-04-30T20:53:47.2837626Z Opening named pipe /podr/container/pipe/ac1c0057f13f_amis4630-api/stderr_c1944dbfd6744a339ab7f79c6b2799be for reading in non-blocking mode.
+2026-04-30T20:53:47.2838553Z Successfully opened named pipe: /podr/container/pipe/ac1c0057f13f_amis4630-api/stderr_c1944dbfd6744a339ab7f79c6b2799be.
+2026-04-30T20:53:47.2839293Z Successfully removed non-blocking flag from /podr/container/pipe/ac1c0057f13f_amis4630-api/stderr_c1944dbfd6744a339ab7f79c6b2799be.
+2026-04-30T20:53:47.2920937Z Creating container with image: appsvc/dotnetcore:10.0_20260311.2.tuxprod from registry: 10.1.0.5:13209 and fully qualified image name: 10.1.0.5:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod
+2026-04-30T20:53:47.8015092Z Starting container: ac1c0057f13f_amis4630-api.
+2026-04-30T20:53:47.8606296Z Starting watchers and probes.
+2026-04-30T20:53:47.8614486Z Starting metrics collection.
+2026-04-30T20:53:47.8898595Z Container is running.
+2026-04-30T20:53:47.8912871Z State: Starting, Action: CreatingContainer, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:52:40, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T20:53:48.1204446Z Container start method finished after 2237 ms.
+2026-04-30T20:53:48.1206370Z State: Starting, Action: InitiatingSiteWarmUpProbe, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:52:40, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T20:53:48.1206873Z State: Starting, Action: WaitingForSiteWarmUpProbeSuccess, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:52:40, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Pinging warmup path to ensure container is ready to receive requests., DetailsLevel: INFO
+2026-04-30T20:54:32.4891579Z Container has finished running with exit code: 134.
+2026-04-30T20:54:32.4896101Z Container is terminating. Grace period: 5 seconds.
+2026-04-30T20:54:32.5101688Z Stop and delete container. Retry count = 0
+2026-04-30T20:54:32.5185997Z Stopping container: ac1c0057f13f_amis4630-api.
+2026-04-30T20:54:32.5706140Z Deleting container: ac1c0057f13f_amis4630-api. Retry count = 0
+2026-04-30T20:54:32.7621471Z Container spec TerminationMessagePolicy  path 
+2026-04-30T20:54:32.7728114Z Container is terminated. Total time elapsed: 274 ms.
+2026-04-30T20:54:32.7730329Z Site container: amis4630-api terminated during site startup.
+2026-04-30T20:54:32.8100176Z State: Stopping, Action: CancellingStartup, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:52:40, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T20:54:32.8346203Z Site startup probe failed after 44.7128621 seconds.
+2026-04-30T20:54:33.0045600Z State: Stopping, Action: CancellingStartup, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T20:54:33.0332211Z Failed to start site. Revert by stopping site.
+2026-04-30T20:54:33.0334505Z State: Stopping, Action: StoppingSite, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T20:54:33.0340171Z State: Stopping, Action: StoppingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T20:54:33.0340420Z Site: amis4630-api stopped.
+2026-04-30T20:54:33.0655566Z State: Stopping, Action: UnmountingVolumes, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T20:54:33.3854223Z State: Stopping, Action: StoppingSiteNetworks, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T20:54:33.5181466Z Site: amis4630-api will be blocked for 2 minutes till 04/30/2026 20:56:33
+2026-04-30T20:54:33.5258184Z State: Blocked, Action: StoppingSiteNetworks, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site: amis4630-api will be blocked for 2 minutes till 04/30/2026 20:56:33, DetailsLevel: WARN
+2026-04-30T20:54:33.5353351Z State: Stopped, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 20:54:33 (UTC), DetailsLevel: WARN
+2026-04-30T20:54:33.6374613Z State: Stopped, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 20:54:33 (UTC), DetailsLevel: WARN
+2026-04-30T20:54:38.8339186Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:56:33, DetailsLevel: WARN
+2026-04-30T20:54:38.8411542Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:54:43.9872857Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:56:33, DetailsLevel: WARN
+2026-04-30T20:54:43.9876327Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:54:49.2535340Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:56:33, DetailsLevel: WARN
+2026-04-30T20:54:49.2537363Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:54:54.4031859Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:56:33, DetailsLevel: WARN
+2026-04-30T20:54:54.4036144Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:54:59.5150600Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:56:33, DetailsLevel: WARN
+2026-04-30T20:54:59.5150861Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:55:04.7618291Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:56:33, DetailsLevel: WARN
+2026-04-30T20:55:04.7618836Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:55:09.9826143Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:56:33, DetailsLevel: WARN
+2026-04-30T20:55:09.9827007Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:55:15.1283758Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:56:33, DetailsLevel: WARN
+2026-04-30T20:55:15.1284014Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:55:20.2181691Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:56:33, DetailsLevel: WARN
+2026-04-30T20:55:20.2181928Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:55:25.3548629Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:56:33, DetailsLevel: WARN
+2026-04-30T20:55:25.3549148Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:55:30.4925780Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:56:33, DetailsLevel: WARN
+2026-04-30T20:55:30.4926962Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:55:35.5930061Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:56:33, DetailsLevel: WARN
+2026-04-30T20:55:35.5930284Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:55:40.6587410Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:56:33, DetailsLevel: WARN
+2026-04-30T20:55:40.6587676Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:55:45.8643753Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:56:33, DetailsLevel: WARN
+2026-04-30T20:55:45.8644580Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:55:50.9845064Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:56:33, DetailsLevel: WARN
+2026-04-30T20:55:50.9846163Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:55:56.1748767Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:56:33, DetailsLevel: WARN
+2026-04-30T20:55:56.1749047Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:56:01.2742669Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:56:33, DetailsLevel: WARN
+2026-04-30T20:56:01.2742949Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:56:06.4149482Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:56:33, DetailsLevel: WARN
+2026-04-30T20:56:06.4151080Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:56:11.5676240Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:56:33, DetailsLevel: WARN
+2026-04-30T20:56:11.5676750Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:56:16.7350485Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:56:33, DetailsLevel: WARN
+2026-04-30T20:56:16.7350998Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:56:21.8633710Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:56:33, DetailsLevel: WARN
+2026-04-30T20:56:21.8633962Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:56:27.0518296Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:56:33, DetailsLevel: WARN
+2026-04-30T20:56:27.0564031Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:56:32.1441371Z State: Blocked, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:56:33, DetailsLevel: WARN
+2026-04-30T20:56:32.1444979Z Start site prohibitted because the site is being blocked.
+2026-04-30T20:56:33.5184320Z Site: amis4630-api is unblocked.
+2026-04-30T20:56:37.2796041Z State: Starting, Action: EstablishingSiteNetworks, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:56:33, DetailsLevel: WARN
+2026-04-30T20:56:38.6573498Z State: Starting, Action: StartingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site is blocked due to multiple, consecutive cold start failures. Site scheduled to be unblocked at 04/30/2026 20:56:33, DetailsLevel: WARN
+2026-04-30T20:56:38.6577515Z Container start method called.
+2026-04-30T20:56:38.6578559Z State: Starting, Action: PullingImage, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Pulling image 10.1.0.5:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod for amis4630-api., DetailsLevel: INFO
+2026-04-30T20:56:38.6582567Z Establishing network.
+2026-04-30T20:56:38.6588439Z Pulling image: appsvc/dotnetcore:10.0_20260311.2.tuxprod.
+2026-04-30T20:56:38.8783910Z Container is starting.
+2026-04-30T20:56:38.8784816Z State: Starting, Action: MountingVolumes, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Mounting volumes for amis4630-api., DetailsLevel: INFO
+2026-04-30T20:56:38.8785595Z Establishing user namespace if not established already.
+2026-04-30T20:56:38.8786489Z Establishing network if not established already.
+2026-04-30T20:56:38.8801571Z Mounting volumes.
+2026-04-30T20:56:38.8803222Z Nested mountpoint site/wwwroot
+2026-04-30T20:56:38.9396935Z Nested mountpoint volatile/logs
+2026-04-30T20:56:38.9579322Z Nested mountpoint 
+2026-04-30T20:56:38.9601763Z Nested mountpoint 
+2026-04-30T20:56:39.0286430Z Nested mountpoint 
+2026-04-30T20:56:39.0307844Z Nested mountpoint 
+2026-04-30T20:56:39.7640005Z State: Starting, Action: CreatingContainer, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Finished pulling container image and mounting volumes for amis4630-api. Allocatinng the rest of the container resources to finish container creation., DetailsLevel: INFO
+2026-04-30T20:56:39.7642328Z Creating container.
+2026-04-30T20:56:39.7648405Z Creating pipes for streaming container io.
+2026-04-30T20:56:39.7649878Z Creating stdout named pipe at /podr/container/pipe/1c2af7066824_amis4630-api/stdout_970bc05cb63d461a98e7d3d6d59cb9e2.
+2026-04-30T20:56:39.7654271Z Successfully created stdout named pipe at: /podr/container/pipe/1c2af7066824_amis4630-api/stdout_970bc05cb63d461a98e7d3d6d59cb9e2.
+2026-04-30T20:56:39.7656332Z Opening named pipe /podr/container/pipe/1c2af7066824_amis4630-api/stdout_970bc05cb63d461a98e7d3d6d59cb9e2 for reading in non-blocking mode.
+2026-04-30T20:56:39.7663990Z Successfully opened named pipe: /podr/container/pipe/1c2af7066824_amis4630-api/stdout_970bc05cb63d461a98e7d3d6d59cb9e2.
+2026-04-30T20:56:39.8166331Z Successfully removed non-blocking flag from /podr/container/pipe/1c2af7066824_amis4630-api/stdout_970bc05cb63d461a98e7d3d6d59cb9e2.
+2026-04-30T20:56:39.8358160Z Creating stderr named pipe at /podr/container/pipe/1c2af7066824_amis4630-api/stderr_272542997b4b4255b92fb62e57355ef4.
+2026-04-30T20:56:39.8544690Z Successfully created stderr named pipe at: /podr/container/pipe/1c2af7066824_amis4630-api/stderr_272542997b4b4255b92fb62e57355ef4.
+2026-04-30T20:56:39.8546585Z Opening named pipe /podr/container/pipe/1c2af7066824_amis4630-api/stderr_272542997b4b4255b92fb62e57355ef4 for reading in non-blocking mode.
+2026-04-30T20:56:39.8548394Z Successfully opened named pipe: /podr/container/pipe/1c2af7066824_amis4630-api/stderr_272542997b4b4255b92fb62e57355ef4.
+2026-04-30T20:56:39.8549146Z Successfully removed non-blocking flag from /podr/container/pipe/1c2af7066824_amis4630-api/stderr_272542997b4b4255b92fb62e57355ef4.
+2026-04-30T20:56:39.8551961Z Creating container with image: appsvc/dotnetcore:10.0_20260311.2.tuxprod from registry: 10.1.0.5:13209 and fully qualified image name: 10.1.0.5:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod
+2026-04-30T20:56:40.4095953Z Starting container: 1c2af7066824_amis4630-api.
+2026-04-30T20:56:40.5305246Z Starting watchers and probes.
+2026-04-30T20:56:40.5394879Z Starting metrics collection.
+2026-04-30T20:56:40.5504589Z Container is running.
+2026-04-30T20:56:40.5621719Z State: Starting, Action: CreatingContainer, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T20:56:40.8027532Z Container start method finished after 2144 ms.
+2026-04-30T20:56:40.8720604Z State: Starting, Action: InitiatingSiteWarmUpProbe, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T20:56:40.8722320Z State: Starting, Action: WaitingForSiteWarmUpProbeSuccess, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Pinging warmup path to ensure container is ready to receive requests., DetailsLevel: INFO
+2026-04-30T20:57:39.2340766Z Container has finished running with exit code: 134.
+2026-04-30T20:57:39.2342759Z Container is terminating. Grace period: 5 seconds.
+2026-04-30T20:57:39.2354852Z Stop and delete container. Retry count = 0
+2026-04-30T20:57:39.2433459Z Stopping container: 1c2af7066824_amis4630-api.
+2026-04-30T20:57:39.3253756Z Deleting container: 1c2af7066824_amis4630-api. Retry count = 0
+2026-04-30T20:57:39.5664573Z Container spec TerminationMessagePolicy  path 
+2026-04-30T20:57:39.5674698Z Container is terminated. Total time elapsed: 332 ms.
+2026-04-30T20:57:39.5751493Z Site container: amis4630-api terminated during site startup.
+2026-04-30T20:57:39.5861239Z State: Stopping, Action: CancellingStartup, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:54:33, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T20:57:39.6376903Z Site startup probe failed after 58.7351987 seconds.
+2026-04-30T20:57:39.9577625Z State: Stopping, Action: CancellingStartup, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:57:39, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T20:57:39.9876951Z Failed to start site. Revert by stopping site.
+2026-04-30T20:57:39.9882972Z State: Stopping, Action: StoppingSite, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:57:39, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T20:57:39.9891559Z State: Stopping, Action: StoppingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:57:39, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T20:57:39.9891807Z Site: amis4630-api stopped.
+2026-04-30T21:12:53.3457663Z State: Starting, Action: EstablishingSiteNetworks, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:57:39, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 20:57:40 (UTC), DetailsLevel: WARN
+2026-04-30T21:12:55.2490107Z State: Starting, Action: StartingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:57:39, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 20:57:40 (UTC), DetailsLevel: WARN
+2026-04-30T21:12:55.2491219Z Container start method called.
+2026-04-30T21:12:55.2500400Z State: Starting, Action: PullingImage, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:57:39, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Pulling image 10.1.0.5:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod for amis4630-api., DetailsLevel: INFO
+2026-04-30T21:12:55.2502255Z Establishing network.
+2026-04-30T21:12:55.2503852Z Pulling image: appsvc/dotnetcore:10.0_20260311.2.tuxprod.
+2026-04-30T21:12:55.7313438Z Container is starting.
+2026-04-30T21:12:55.7320948Z State: Starting, Action: MountingVolumes, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:57:39, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Mounting volumes for amis4630-api., DetailsLevel: INFO
+2026-04-30T21:12:55.7322694Z Establishing user namespace if not established already.
+2026-04-30T21:12:55.7323633Z Establishing network if not established already.
+2026-04-30T21:12:55.7324605Z Mounting volumes.
+2026-04-30T21:12:55.7325961Z Nested mountpoint site/wwwroot
+2026-04-30T21:12:55.7818005Z Nested mountpoint volatile/logs
+2026-04-30T21:12:55.8335317Z Nested mountpoint 
+2026-04-30T21:12:55.8926697Z Nested mountpoint 
+2026-04-30T21:12:56.1532363Z Nested mountpoint 
+2026-04-30T21:12:56.2042048Z Nested mountpoint 
+2026-04-30T21:12:57.9133704Z State: Starting, Action: CreatingContainer, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:57:39, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Finished pulling container image and mounting volumes for amis4630-api. Allocatinng the rest of the container resources to finish container creation., DetailsLevel: INFO
+2026-04-30T21:12:57.9137371Z Creating container.
+2026-04-30T21:12:57.9138698Z Creating pipes for streaming container io.
+2026-04-30T21:12:57.9142080Z Creating stdout named pipe at /podr/container/pipe/b9050f0a2f3a_amis4630-api/stdout_f43bd35edbaa451ea378e00fcb0b0012.
+2026-04-30T21:12:57.9152026Z Successfully created stdout named pipe at: /podr/container/pipe/b9050f0a2f3a_amis4630-api/stdout_f43bd35edbaa451ea378e00fcb0b0012.
+2026-04-30T21:12:57.9153411Z Opening named pipe /podr/container/pipe/b9050f0a2f3a_amis4630-api/stdout_f43bd35edbaa451ea378e00fcb0b0012 for reading in non-blocking mode.
+2026-04-30T21:12:57.9158167Z Successfully opened named pipe: /podr/container/pipe/b9050f0a2f3a_amis4630-api/stdout_f43bd35edbaa451ea378e00fcb0b0012.
+2026-04-30T21:12:57.9339174Z Successfully removed non-blocking flag from /podr/container/pipe/b9050f0a2f3a_amis4630-api/stdout_f43bd35edbaa451ea378e00fcb0b0012.
+2026-04-30T21:12:57.9346083Z Creating stderr named pipe at /podr/container/pipe/b9050f0a2f3a_amis4630-api/stderr_c4171b8fd8b7415db8cb2ac9e2e3a180.
+2026-04-30T21:12:57.9353430Z Successfully created stderr named pipe at: /podr/container/pipe/b9050f0a2f3a_amis4630-api/stderr_c4171b8fd8b7415db8cb2ac9e2e3a180.
+2026-04-30T21:12:57.9354270Z Opening named pipe /podr/container/pipe/b9050f0a2f3a_amis4630-api/stderr_c4171b8fd8b7415db8cb2ac9e2e3a180 for reading in non-blocking mode.
+2026-04-30T21:12:57.9355270Z Successfully opened named pipe: /podr/container/pipe/b9050f0a2f3a_amis4630-api/stderr_c4171b8fd8b7415db8cb2ac9e2e3a180.
+2026-04-30T21:12:57.9355989Z Successfully removed non-blocking flag from /podr/container/pipe/b9050f0a2f3a_amis4630-api/stderr_c4171b8fd8b7415db8cb2ac9e2e3a180.
+2026-04-30T21:12:57.9534037Z Creating container with image: appsvc/dotnetcore:10.0_20260311.2.tuxprod from registry: 10.1.0.5:13209 and fully qualified image name: 10.1.0.5:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod
+2026-04-30T21:12:58.7088613Z Starting container: b9050f0a2f3a_amis4630-api.
+2026-04-30T21:12:58.7985291Z Starting watchers and probes.
+2026-04-30T21:12:58.8074884Z Starting metrics collection.
+2026-04-30T21:12:58.8080601Z Container is running.
+2026-04-30T21:12:58.8084172Z State: Starting, Action: CreatingContainer, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:57:39, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T21:12:58.9892914Z Container start method finished after 3739 ms.
+2026-04-30T21:12:58.9904509Z State: Starting, Action: InitiatingSiteWarmUpProbe, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:57:39, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T21:12:58.9905095Z State: Starting, Action: WaitingForSiteWarmUpProbeSuccess, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:57:39, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Pinging warmup path to ensure container is ready to receive requests., DetailsLevel: INFO
+2026-04-30T21:13:47.9416419Z Container has finished running with exit code: 134.
+2026-04-30T21:13:47.9417729Z Container is terminating. Grace period: 5 seconds.
+2026-04-30T21:13:47.9433345Z Stop and delete container. Retry count = 0
+2026-04-30T21:13:47.9434921Z Stopping container: b9050f0a2f3a_amis4630-api.
+2026-04-30T21:13:48.0933168Z Deleting container: b9050f0a2f3a_amis4630-api. Retry count = 0
+2026-04-30T21:13:48.3348333Z Container spec TerminationMessagePolicy  path 
+2026-04-30T21:13:48.3358892Z Container is terminated. Total time elapsed: 393 ms.
+2026-04-30T21:13:48.3366499Z Site container: amis4630-api terminated during site startup.
+2026-04-30T21:13:48.3450457Z State: Stopping, Action: CancellingStartup, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 20:57:39, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T21:13:48.3976503Z Site startup probe failed after 49.3978228 seconds.
+2026-04-30T21:13:48.5868951Z State: Stopping, Action: CancellingStartup, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 21:13:48, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T21:13:48.6161088Z Failed to start site. Revert by stopping site.
+2026-04-30T21:13:48.6166607Z State: Stopping, Action: StoppingSite, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 21:13:48, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T21:13:48.6185694Z State: Stopping, Action: StoppingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 21:13:48, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T21:13:48.6185967Z Site: amis4630-api stopped.
+2026-04-30T21:13:48.6368067Z State: Stopping, Action: UnmountingVolumes, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 21:13:48, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T21:13:49.0694185Z State: Stopping, Action: StoppingSiteNetworks, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 21:13:48, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T21:13:49.2208560Z State: Stopped, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 21:13:48, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 21:13:49 (UTC), DetailsLevel: ERR
+2026-04-30T21:13:49.5721593Z State: Stopped, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 21:13:48, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 21:13:49 (UTC), DetailsLevel: ERR
+2026-04-30T21:20:27.9325955Z State: Starting, Action: EstablishingSiteNetworks, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 21:13:48, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 21:13:49 (UTC), DetailsLevel: ERR
+2026-04-30T21:20:29.6061564Z State: Starting, Action: StartingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 21:13:48, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 21:13:49 (UTC), DetailsLevel: ERR
+2026-04-30T21:20:29.6062983Z Container start method called.
+2026-04-30T21:20:29.6077083Z State: Starting, Action: PullingImage, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 21:13:48, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Pulling image 10.1.0.5:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod for amis4630-api., DetailsLevel: INFO
+2026-04-30T21:20:29.6083595Z Establishing network.
+2026-04-30T21:20:29.6181174Z Pulling image: appsvc/dotnetcore:10.0_20260311.2.tuxprod.
+2026-04-30T21:20:29.9509194Z Container is starting.
+2026-04-30T21:20:29.9510716Z State: Starting, Action: MountingVolumes, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 21:13:48, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Mounting volumes for amis4630-api., DetailsLevel: INFO
+2026-04-30T21:20:29.9511980Z Establishing user namespace if not established already.
+2026-04-30T21:20:29.9513071Z Establishing network if not established already.
+2026-04-30T21:20:29.9514372Z Mounting volumes.
+2026-04-30T21:20:29.9523592Z Nested mountpoint site/wwwroot
+2026-04-30T21:20:29.9719062Z Nested mountpoint volatile/logs
+2026-04-30T21:20:30.0027592Z Nested mountpoint 
+2026-04-30T21:20:30.0525983Z Nested mountpoint 
+2026-04-30T21:20:30.2237520Z Nested mountpoint 
+2026-04-30T21:20:30.2432465Z Nested mountpoint 
+2026-04-30T21:20:30.9996221Z State: Starting, Action: CreatingContainer, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 21:13:48, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Finished pulling container image and mounting volumes for amis4630-api. Allocatinng the rest of the container resources to finish container creation., DetailsLevel: INFO
+2026-04-30T21:20:30.9999234Z Creating container.
+2026-04-30T21:20:31.0000411Z Creating pipes for streaming container io.
+2026-04-30T21:20:31.0001203Z Creating stdout named pipe at /podr/container/pipe/d7c8994e0ca3_amis4630-api/stdout_fb8ad46ce1e842529ce2c7f039b47f71.
+2026-04-30T21:20:31.0078564Z Successfully created stdout named pipe at: /podr/container/pipe/d7c8994e0ca3_amis4630-api/stdout_fb8ad46ce1e842529ce2c7f039b47f71.
+2026-04-30T21:20:31.0080148Z Opening named pipe /podr/container/pipe/d7c8994e0ca3_amis4630-api/stdout_fb8ad46ce1e842529ce2c7f039b47f71 for reading in non-blocking mode.
+2026-04-30T21:20:31.0081392Z Successfully opened named pipe: /podr/container/pipe/d7c8994e0ca3_amis4630-api/stdout_fb8ad46ce1e842529ce2c7f039b47f71.
+2026-04-30T21:20:31.0082184Z Successfully removed non-blocking flag from /podr/container/pipe/d7c8994e0ca3_amis4630-api/stdout_fb8ad46ce1e842529ce2c7f039b47f71.
+2026-04-30T21:20:31.0084207Z Creating stderr named pipe at /podr/container/pipe/d7c8994e0ca3_amis4630-api/stderr_0f83e9a455e44ae18ee587f23ef1c48b.
+2026-04-30T21:20:31.0085464Z Successfully created stderr named pipe at: /podr/container/pipe/d7c8994e0ca3_amis4630-api/stderr_0f83e9a455e44ae18ee587f23ef1c48b.
+2026-04-30T21:20:31.0086215Z Opening named pipe /podr/container/pipe/d7c8994e0ca3_amis4630-api/stderr_0f83e9a455e44ae18ee587f23ef1c48b for reading in non-blocking mode.
+2026-04-30T21:20:31.0087041Z Successfully opened named pipe: /podr/container/pipe/d7c8994e0ca3_amis4630-api/stderr_0f83e9a455e44ae18ee587f23ef1c48b.
+2026-04-30T21:20:31.0087717Z Successfully removed non-blocking flag from /podr/container/pipe/d7c8994e0ca3_amis4630-api/stderr_0f83e9a455e44ae18ee587f23ef1c48b.
+2026-04-30T21:20:31.0096171Z Creating container with image: appsvc/dotnetcore:10.0_20260311.2.tuxprod from registry: 10.1.0.5:13209 and fully qualified image name: 10.1.0.5:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod
+2026-04-30T21:20:31.7554170Z Starting container: d7c8994e0ca3_amis4630-api.
+2026-04-30T21:20:31.8258355Z Starting watchers and probes.
+2026-04-30T21:20:31.8267710Z Starting metrics collection.
+2026-04-30T21:20:31.8367152Z Container is running.
+2026-04-30T21:20:31.8459135Z State: Starting, Action: CreatingContainer, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 21:13:48, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T21:20:32.0286116Z Container start method finished after 2422 ms.
+2026-04-30T21:20:32.0287944Z State: Starting, Action: InitiatingSiteWarmUpProbe, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 21:13:48, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T21:20:32.0288213Z State: Starting, Action: WaitingForSiteWarmUpProbeSuccess, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 21:13:48, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Pinging warmup path to ensure container is ready to receive requests., DetailsLevel: INFO
+2026-04-30T21:21:13.6941233Z Container has finished running with exit code: 134.
+2026-04-30T21:21:13.6951234Z Container is terminating. Grace period: 5 seconds.
+2026-04-30T21:21:13.7133362Z Stop and delete container. Retry count = 0
+2026-04-30T21:21:13.7135340Z Stopping container: d7c8994e0ca3_amis4630-api.
+2026-04-30T21:21:13.8329816Z Deleting container: d7c8994e0ca3_amis4630-api. Retry count = 0
+2026-04-30T21:21:14.0336349Z Container spec TerminationMessagePolicy  path 
+2026-04-30T21:21:14.0351403Z Container is terminated. Total time elapsed: 329 ms.
+2026-04-30T21:21:14.0356766Z Site container: amis4630-api terminated during site startup.
+2026-04-30T21:21:14.0458437Z State: Stopping, Action: CancellingStartup, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 21:13:48, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T21:21:14.0963859Z Site startup probe failed after 42.0269807 seconds.
+2026-04-30T21:21:14.2970115Z State: Stopping, Action: CancellingStartup, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 21:21:14, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T21:21:14.3351976Z Failed to start site. Revert by stopping site.
+2026-04-30T21:21:14.3365834Z State: Stopping, Action: StoppingSite, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 21:21:14, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T21:21:14.3375218Z State: Stopping, Action: StoppingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 21:21:14, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T21:21:14.3375491Z Site: amis4630-api stopped.
+2026-04-30T22:09:53.9789489Z State: Starting, Action: EstablishingSiteNetworks, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 21:21:14, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 21:21:15 (UTC), DetailsLevel: WARN
+2026-04-30T22:09:55.6407581Z State: Starting, Action: StartingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 21:21:14, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 21:21:15 (UTC), DetailsLevel: WARN
+2026-04-30T22:09:55.6687639Z Container start method called.
+2026-04-30T22:09:55.6694043Z State: Starting, Action: PullingImage, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 21:21:14, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Pulling image 10.1.0.6:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod for amis4630-api., DetailsLevel: INFO
+2026-04-30T22:09:55.6703374Z Establishing network.
+2026-04-30T22:09:55.6784275Z Pulling image: appsvc/dotnetcore:10.0_20260311.2.tuxprod.
+2026-04-30T22:09:56.0340332Z Image appsvc/dotnetcore:10.0_20260311.2.tuxprod is pulled from registry 10.1.0.6:13209
+2026-04-30T22:09:56.0353036Z Container is starting.
+2026-04-30T22:09:56.0358213Z State: Starting, Action: MountingVolumes, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 21:21:14, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Mounting volumes for amis4630-api., DetailsLevel: INFO
+2026-04-30T22:09:56.0360291Z Establishing user namespace if not established already.
+2026-04-30T22:09:56.0438772Z Establishing network if not established already.
+2026-04-30T22:09:56.0533646Z Mounting volumes.
+2026-04-30T22:09:56.0535705Z Nested mountpoint 
+2026-04-30T22:09:56.1662212Z Nested mountpoint volatile/logs
+2026-04-30T22:09:56.2058758Z Nested mountpoint 
+2026-04-30T22:09:56.2556547Z Nested mountpoint 
+2026-04-30T22:09:56.2669306Z Nested mountpoint 
+2026-04-30T22:09:56.6102308Z State: Starting, Action: CreatingContainer, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 21:21:14, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Finished pulling container image and mounting volumes for amis4630-api. Allocatinng the rest of the container resources to finish container creation., DetailsLevel: INFO
+2026-04-30T22:09:56.6173493Z Creating container.
+2026-04-30T22:09:56.6181054Z Creating pipes for streaming container io.
+2026-04-30T22:09:56.6184405Z Creating stdout named pipe at /podr/container/pipe/37fb3d5cf5ac_amis4630-api/stdout_a3c530774a134e2685dfcd00f9bc065b.
+2026-04-30T22:09:56.6190390Z Successfully created stdout named pipe at: /podr/container/pipe/37fb3d5cf5ac_amis4630-api/stdout_a3c530774a134e2685dfcd00f9bc065b.
+2026-04-30T22:09:56.6191626Z Opening named pipe /podr/container/pipe/37fb3d5cf5ac_amis4630-api/stdout_a3c530774a134e2685dfcd00f9bc065b for reading in non-blocking mode.
+2026-04-30T22:09:56.6195253Z Successfully opened named pipe: /podr/container/pipe/37fb3d5cf5ac_amis4630-api/stdout_a3c530774a134e2685dfcd00f9bc065b.
+2026-04-30T22:09:56.6196389Z Successfully removed non-blocking flag from /podr/container/pipe/37fb3d5cf5ac_amis4630-api/stdout_a3c530774a134e2685dfcd00f9bc065b.
+2026-04-30T22:09:56.6271666Z Creating stderr named pipe at /podr/container/pipe/37fb3d5cf5ac_amis4630-api/stderr_9594be1e42f4475a9d0dee5082147b77.
+2026-04-30T22:09:56.6275114Z Successfully created stderr named pipe at: /podr/container/pipe/37fb3d5cf5ac_amis4630-api/stderr_9594be1e42f4475a9d0dee5082147b77.
+2026-04-30T22:09:56.6276264Z Opening named pipe /podr/container/pipe/37fb3d5cf5ac_amis4630-api/stderr_9594be1e42f4475a9d0dee5082147b77 for reading in non-blocking mode.
+2026-04-30T22:09:56.6278651Z Successfully opened named pipe: /podr/container/pipe/37fb3d5cf5ac_amis4630-api/stderr_9594be1e42f4475a9d0dee5082147b77.
+2026-04-30T22:09:56.6280330Z Successfully removed non-blocking flag from /podr/container/pipe/37fb3d5cf5ac_amis4630-api/stderr_9594be1e42f4475a9d0dee5082147b77.
+2026-04-30T22:09:56.6282827Z Creating container with image: appsvc/dotnetcore:10.0_20260311.2.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod
+2026-04-30T22:09:57.3760136Z Starting container: 37fb3d5cf5ac_amis4630-api.
+2026-04-30T22:09:57.5084239Z Starting watchers and probes.
+2026-04-30T22:09:57.5095516Z Starting metrics collection.
+2026-04-30T22:09:57.5191447Z Container is running.
+2026-04-30T22:09:57.5203274Z State: Starting, Action: CreatingContainer, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 21:21:14, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T22:09:57.6812002Z Container start method finished after 1982 ms.
+2026-04-30T22:09:57.6902135Z State: Starting, Action: InitiatingSiteWarmUpProbe, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 21:21:14, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T22:09:57.6913159Z State: Starting, Action: WaitingForSiteWarmUpProbeSuccess, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 21:21:14, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Pinging warmup path to ensure container is ready to receive requests., DetailsLevel: INFO
+2026-04-30T22:11:45.3251571Z Container has finished running with exit code: 134.
+2026-04-30T22:11:45.3253407Z Container is terminating. Grace period: 5 seconds.
+2026-04-30T22:11:45.3582420Z Stop and delete container. Retry count = 0
+2026-04-30T22:11:45.3641540Z Stopping container: 37fb3d5cf5ac_amis4630-api.
+2026-04-30T22:11:45.4350345Z Deleting container: 37fb3d5cf5ac_amis4630-api. Retry count = 0
+2026-04-30T22:11:45.7066138Z Container spec TerminationMessagePolicy  path 
+2026-04-30T22:11:45.7083057Z Container is terminated. Total time elapsed: 353 ms.
+2026-04-30T22:11:45.7164027Z Site container: amis4630-api terminated during site startup.
+2026-04-30T22:11:45.7656964Z State: Stopping, Action: CancellingStartup, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 21:21:14, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T22:11:45.8687907Z Site startup probe failed after 108.1070381 seconds.
+2026-04-30T22:11:46.1202884Z State: Stopping, Action: CancellingStartup, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 22:11:46, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T22:11:46.2294147Z Failed to start site. Revert by stopping site.
+2026-04-30T22:11:46.2407805Z State: Stopping, Action: StoppingSite, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 22:11:46, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T22:11:46.2490266Z State: Stopping, Action: StoppingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 22:11:46, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T22:11:46.2495092Z Site: amis4630-api stopped.
+2026-04-30T22:11:46.2588822Z State: Stopping, Action: UnmountingVolumes, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 22:11:46, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T22:11:46.5855540Z State: Stopping, Action: StoppingSiteNetworks, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 22:11:46, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T22:11:46.9268336Z State: Stopped, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 22:11:46, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 22:11:46 (UTC), DetailsLevel: ERR
+2026-04-30T22:11:47.1799008Z State: Stopped, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 22:11:46, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 22:11:46 (UTC), DetailsLevel: ERR
+2026-04-30T23:10:13.7649946Z State: Starting, Action: EstablishingSiteNetworks, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 22:11:46, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 22:11:46 (UTC), DetailsLevel: ERR
+2026-04-30T23:10:15.4916210Z State: Starting, Action: StartingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 22:11:46, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 22:11:46 (UTC), DetailsLevel: ERR
+2026-04-30T23:10:15.5002809Z Container start method called.
+2026-04-30T23:10:15.5302398Z State: Starting, Action: PullingImage, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 22:11:46, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Pulling image 10.1.0.6:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod for amis4630-api., DetailsLevel: INFO
+2026-04-30T23:10:15.5308818Z Establishing network.
+2026-04-30T23:10:15.5322832Z Pulling image: appsvc/dotnetcore:10.0_20260311.2.tuxprod.
+2026-04-30T23:10:15.7115313Z Container is starting.
+2026-04-30T23:10:15.7124379Z State: Starting, Action: MountingVolumes, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 22:11:46, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Mounting volumes for amis4630-api., DetailsLevel: INFO
+2026-04-30T23:10:15.7194061Z Establishing user namespace if not established already.
+2026-04-30T23:10:15.7198055Z Establishing network if not established already.
+2026-04-30T23:10:15.7203186Z Mounting volumes.
+2026-04-30T23:10:15.7312819Z Nested mountpoint 
+2026-04-30T23:10:15.7601017Z Nested mountpoint volatile/logs
+2026-04-30T23:10:15.7809486Z Nested mountpoint 
+2026-04-30T23:10:15.7825424Z Nested mountpoint 
+2026-04-30T23:10:15.7902782Z Nested mountpoint 
+2026-04-30T23:10:16.1778761Z State: Starting, Action: CreatingContainer, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 22:11:46, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Finished pulling container image and mounting volumes for amis4630-api. Allocatinng the rest of the container resources to finish container creation., DetailsLevel: INFO
+2026-04-30T23:10:16.1780522Z Creating container.
+2026-04-30T23:10:16.1781449Z Creating pipes for streaming container io.
+2026-04-30T23:10:16.1782231Z Creating stdout named pipe at /podr/container/pipe/1600cae8f08a_amis4630-api/stdout_fcf284112fbe4d13aaa70bb3604d5a4f.
+2026-04-30T23:10:16.1794223Z Successfully created stdout named pipe at: /podr/container/pipe/1600cae8f08a_amis4630-api/stdout_fcf284112fbe4d13aaa70bb3604d5a4f.
+2026-04-30T23:10:16.1795160Z Opening named pipe /podr/container/pipe/1600cae8f08a_amis4630-api/stdout_fcf284112fbe4d13aaa70bb3604d5a4f for reading in non-blocking mode.
+2026-04-30T23:10:16.1972703Z Successfully opened named pipe: /podr/container/pipe/1600cae8f08a_amis4630-api/stdout_fcf284112fbe4d13aaa70bb3604d5a4f.
+2026-04-30T23:10:16.1973770Z Successfully removed non-blocking flag from /podr/container/pipe/1600cae8f08a_amis4630-api/stdout_fcf284112fbe4d13aaa70bb3604d5a4f.
+2026-04-30T23:10:16.1975173Z Creating stderr named pipe at /podr/container/pipe/1600cae8f08a_amis4630-api/stderr_5d53439abf8e4a17b71c13ad54274de3.
+2026-04-30T23:10:16.1976503Z Successfully created stderr named pipe at: /podr/container/pipe/1600cae8f08a_amis4630-api/stderr_5d53439abf8e4a17b71c13ad54274de3.
+2026-04-30T23:10:16.1977236Z Opening named pipe /podr/container/pipe/1600cae8f08a_amis4630-api/stderr_5d53439abf8e4a17b71c13ad54274de3 for reading in non-blocking mode.
+2026-04-30T23:10:16.1985215Z Successfully opened named pipe: /podr/container/pipe/1600cae8f08a_amis4630-api/stderr_5d53439abf8e4a17b71c13ad54274de3.
+2026-04-30T23:10:16.1986361Z Successfully removed non-blocking flag from /podr/container/pipe/1600cae8f08a_amis4630-api/stderr_5d53439abf8e4a17b71c13ad54274de3.
+2026-04-30T23:10:16.1988273Z Creating container with image: appsvc/dotnetcore:10.0_20260311.2.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod
+2026-04-30T23:10:16.9771733Z Starting container: 1600cae8f08a_amis4630-api.
+2026-04-30T23:10:17.3254240Z Starting watchers and probes.
+2026-04-30T23:10:17.3349381Z Starting metrics collection.
+2026-04-30T23:10:17.3362178Z Container is running.
+2026-04-30T23:10:17.3363789Z State: Starting, Action: CreatingContainer, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 22:11:46, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T23:10:17.8286297Z Container start method finished after 2242 ms.
+2026-04-30T23:10:17.8402123Z State: Starting, Action: InitiatingSiteWarmUpProbe, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 22:11:46, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T23:10:17.8488996Z State: Starting, Action: WaitingForSiteWarmUpProbeSuccess, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 22:11:46, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Pinging warmup path to ensure container is ready to receive requests., DetailsLevel: INFO
+2026-04-30T23:12:05.2318538Z Container has finished running with exit code: 134.
+2026-04-30T23:12:05.2409333Z Container is terminating. Grace period: 5 seconds.
+2026-04-30T23:12:05.2531823Z Stop and delete container. Retry count = 0
+2026-04-30T23:12:05.2614989Z Stopping container: 1600cae8f08a_amis4630-api.
+2026-04-30T23:12:05.3512358Z Deleting container: 1600cae8f08a_amis4630-api. Retry count = 0
+2026-04-30T23:12:06.0529788Z Container spec TerminationMessagePolicy  path 
+2026-04-30T23:12:06.0734828Z Container is terminated. Total time elapsed: 829 ms.
+2026-04-30T23:12:06.0834294Z Site container: amis4630-api terminated during site startup.
+2026-04-30T23:12:06.0998441Z State: Stopping, Action: CancellingStartup, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 22:11:46, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T23:12:06.2628550Z Site startup probe failed after 108.3929959 seconds.
+2026-04-30T23:12:06.4340471Z State: Stopping, Action: CancellingStartup, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:12:06, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T23:12:06.4927982Z Failed to start site. Revert by stopping site.
+2026-04-30T23:12:06.4952912Z State: Stopping, Action: StoppingSite, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:12:06, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T23:12:06.5034194Z State: Stopping, Action: StoppingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:12:06, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T23:12:06.5128128Z Site: amis4630-api stopped.
+2026-04-30T23:12:53.1018591Z State: Starting, Action: EstablishingSiteNetworks, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:12:06, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 23:12:07 (UTC), DetailsLevel: WARN
+2026-04-30T23:12:54.7707983Z State: Starting, Action: StartingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:12:06, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 23:12:07 (UTC), DetailsLevel: WARN
+2026-04-30T23:12:54.7713162Z Container start method called.
+2026-04-30T23:12:54.7714203Z State: Starting, Action: PullingImage, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:12:06, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Pulling image 10.1.0.6:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod for amis4630-api., DetailsLevel: INFO
+2026-04-30T23:12:54.7974464Z Establishing network.
+2026-04-30T23:12:54.7989813Z Pulling image: appsvc/dotnetcore:10.0_20260311.2.tuxprod.
+2026-04-30T23:12:55.0034022Z Container is starting.
+2026-04-30T23:12:55.0034998Z State: Starting, Action: MountingVolumes, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:12:06, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Mounting volumes for amis4630-api., DetailsLevel: INFO
+2026-04-30T23:12:55.0036263Z Establishing user namespace if not established already.
+2026-04-30T23:12:55.0037119Z Establishing network if not established already.
+2026-04-30T23:12:55.0038007Z Mounting volumes.
+2026-04-30T23:12:55.0039240Z Nested mountpoint 
+2026-04-30T23:12:55.0326950Z Nested mountpoint volatile/logs
+2026-04-30T23:12:55.0831976Z Nested mountpoint 
+2026-04-30T23:12:55.1600152Z Nested mountpoint 
+2026-04-30T23:12:55.1615650Z Nested mountpoint 
+2026-04-30T23:12:55.6125521Z State: Starting, Action: CreatingContainer, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:12:06, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Finished pulling container image and mounting volumes for amis4630-api. Allocatinng the rest of the container resources to finish container creation., DetailsLevel: INFO
+2026-04-30T23:12:55.6133478Z Creating container.
+2026-04-30T23:12:55.6134943Z Creating pipes for streaming container io.
+2026-04-30T23:12:55.6394474Z Creating stdout named pipe at /podr/container/pipe/ca17a5fd3d99_amis4630-api/stdout_85eba21a98ea47a8aea379bb6a193f83.
+2026-04-30T23:12:55.6403465Z Successfully created stdout named pipe at: /podr/container/pipe/ca17a5fd3d99_amis4630-api/stdout_85eba21a98ea47a8aea379bb6a193f83.
+2026-04-30T23:12:55.6404880Z Opening named pipe /podr/container/pipe/ca17a5fd3d99_amis4630-api/stdout_85eba21a98ea47a8aea379bb6a193f83 for reading in non-blocking mode.
+2026-04-30T23:12:55.6406337Z Successfully opened named pipe: /podr/container/pipe/ca17a5fd3d99_amis4630-api/stdout_85eba21a98ea47a8aea379bb6a193f83.
+2026-04-30T23:12:55.6407406Z Successfully removed non-blocking flag from /podr/container/pipe/ca17a5fd3d99_amis4630-api/stdout_85eba21a98ea47a8aea379bb6a193f83.
+2026-04-30T23:12:55.6421655Z Creating stderr named pipe at /podr/container/pipe/ca17a5fd3d99_amis4630-api/stderr_e691d0c2f48d4407b01a067603ea3c9e.
+2026-04-30T23:12:55.6603164Z Successfully created stderr named pipe at: /podr/container/pipe/ca17a5fd3d99_amis4630-api/stderr_e691d0c2f48d4407b01a067603ea3c9e.
+2026-04-30T23:12:55.6609428Z Opening named pipe /podr/container/pipe/ca17a5fd3d99_amis4630-api/stderr_e691d0c2f48d4407b01a067603ea3c9e for reading in non-blocking mode.
+2026-04-30T23:12:55.6683787Z Successfully opened named pipe: /podr/container/pipe/ca17a5fd3d99_amis4630-api/stderr_e691d0c2f48d4407b01a067603ea3c9e.
+2026-04-30T23:12:55.6689468Z Successfully removed non-blocking flag from /podr/container/pipe/ca17a5fd3d99_amis4630-api/stderr_e691d0c2f48d4407b01a067603ea3c9e.
+2026-04-30T23:12:55.7009848Z Creating container with image: appsvc/dotnetcore:10.0_20260311.2.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod
+2026-04-30T23:12:56.3354474Z Starting container: ca17a5fd3d99_amis4630-api.
+2026-04-30T23:12:56.4158654Z Starting watchers and probes.
+2026-04-30T23:12:56.4353488Z Starting metrics collection.
+2026-04-30T23:12:56.4364596Z Container is running.
+2026-04-30T23:12:56.4366699Z State: Starting, Action: CreatingContainer, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:12:06, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T23:12:56.5281728Z Container start method finished after 1756 ms.
+2026-04-30T23:12:56.5560368Z State: Starting, Action: InitiatingSiteWarmUpProbe, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:12:06, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T23:12:56.5562850Z State: Starting, Action: WaitingForSiteWarmUpProbeSuccess, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:12:06, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Pinging warmup path to ensure container is ready to receive requests., DetailsLevel: INFO
+2026-04-30T23:14:48.0237877Z Container has finished running with exit code: 134.
+2026-04-30T23:14:48.0242199Z Container is terminating. Grace period: 5 seconds.
+2026-04-30T23:14:48.0487373Z Stop and delete container. Retry count = 0
+2026-04-30T23:14:48.0562680Z Stopping container: ca17a5fd3d99_amis4630-api.
+2026-04-30T23:14:48.1596426Z Deleting container: ca17a5fd3d99_amis4630-api. Retry count = 0
+2026-04-30T23:14:48.3990737Z Container spec TerminationMessagePolicy  path 
+2026-04-30T23:14:48.4068143Z Container is terminated. Total time elapsed: 354 ms.
+2026-04-30T23:14:48.4075953Z Site container: amis4630-api terminated during site startup.
+2026-04-30T23:14:48.4167348Z State: Stopping, Action: CancellingStartup, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:12:06, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T23:14:48.5583456Z Site startup probe failed after 112.0014564 seconds.
+2026-04-30T23:14:48.8792530Z State: Stopping, Action: CancellingStartup, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:14:48, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T23:14:48.9465878Z Failed to start site. Revert by stopping site.
+2026-04-30T23:14:48.9468440Z State: Stopping, Action: StoppingSite, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:14:48, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T23:14:48.9471640Z State: Stopping, Action: StoppingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:14:48, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T23:14:48.9471781Z Site: amis4630-api stopped.
+2026-04-30T23:14:48.9483687Z State: Stopping, Action: UnmountingVolumes, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:14:48, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T23:14:49.4846231Z State: Stopping, Action: StoppingSiteNetworks, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:14:48, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T23:14:49.8513750Z State: Stopped, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:14:48, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 23:14:49 (UTC), DetailsLevel: ERR
+2026-04-30T23:14:50.1206904Z State: Stopped, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:14:48, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 23:14:49 (UTC), DetailsLevel: ERR
+2026-04-30T23:16:29.6998217Z State: Starting, Action: EstablishingSiteNetworks, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:14:48, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 23:14:49 (UTC), DetailsLevel: ERR
+2026-04-30T23:16:32.3760372Z State: Starting, Action: StartingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:14:48, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 23:14:49 (UTC), DetailsLevel: ERR
+2026-04-30T23:16:32.3765634Z Container start method called.
+2026-04-30T23:16:32.3772966Z State: Starting, Action: PullingImage, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:14:48, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Pulling image 10.1.0.6:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod for amis4630-api., DetailsLevel: INFO
+2026-04-30T23:16:32.3774558Z Establishing network.
+2026-04-30T23:16:32.3867701Z Pulling image: appsvc/dotnetcore:10.0_20260311.2.tuxprod.
+2026-04-30T23:16:32.9962758Z Container is starting.
+2026-04-30T23:16:32.9967662Z State: Starting, Action: MountingVolumes, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:14:48, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Mounting volumes for amis4630-api., DetailsLevel: INFO
+2026-04-30T23:16:32.9974369Z Establishing user namespace if not established already.
+2026-04-30T23:16:32.9979355Z Establishing network if not established already.
+2026-04-30T23:16:33.0050130Z Mounting volumes.
+2026-04-30T23:16:33.0060159Z Nested mountpoint 
+2026-04-30T23:16:33.0253973Z Nested mountpoint volatile/logs
+2026-04-30T23:16:33.0874934Z Nested mountpoint 
+2026-04-30T23:16:33.1156504Z Nested mountpoint 
+2026-04-30T23:16:33.1165040Z Nested mountpoint 
+2026-04-30T23:16:33.5489380Z State: Starting, Action: CreatingContainer, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:14:48, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Finished pulling container image and mounting volumes for amis4630-api. Allocatinng the rest of the container resources to finish container creation., DetailsLevel: INFO
+2026-04-30T23:16:33.5491895Z Creating container.
+2026-04-30T23:16:33.5493233Z Creating pipes for streaming container io.
+2026-04-30T23:16:33.5494328Z Creating stdout named pipe at /podr/container/pipe/54069d519629_amis4630-api/stdout_e049e9caac6343a5be297a298ac88870.
+2026-04-30T23:16:33.5589784Z Successfully created stdout named pipe at: /podr/container/pipe/54069d519629_amis4630-api/stdout_e049e9caac6343a5be297a298ac88870.
+2026-04-30T23:16:33.5591825Z Opening named pipe /podr/container/pipe/54069d519629_amis4630-api/stdout_e049e9caac6343a5be297a298ac88870 for reading in non-blocking mode.
+2026-04-30T23:16:33.5593440Z Successfully opened named pipe: /podr/container/pipe/54069d519629_amis4630-api/stdout_e049e9caac6343a5be297a298ac88870.
+2026-04-30T23:16:33.5594655Z Successfully removed non-blocking flag from /podr/container/pipe/54069d519629_amis4630-api/stdout_e049e9caac6343a5be297a298ac88870.
+2026-04-30T23:16:33.5777035Z Creating stderr named pipe at /podr/container/pipe/54069d519629_amis4630-api/stderr_e4d9477f8f6e4cac9c13d9c33de4aa30.
+2026-04-30T23:16:33.5778938Z Successfully created stderr named pipe at: /podr/container/pipe/54069d519629_amis4630-api/stderr_e4d9477f8f6e4cac9c13d9c33de4aa30.
+2026-04-30T23:16:33.5779745Z Opening named pipe /podr/container/pipe/54069d519629_amis4630-api/stderr_e4d9477f8f6e4cac9c13d9c33de4aa30 for reading in non-blocking mode.
+2026-04-30T23:16:33.5784061Z Successfully opened named pipe: /podr/container/pipe/54069d519629_amis4630-api/stderr_e4d9477f8f6e4cac9c13d9c33de4aa30.
+2026-04-30T23:16:33.5785488Z Successfully removed non-blocking flag from /podr/container/pipe/54069d519629_amis4630-api/stderr_e4d9477f8f6e4cac9c13d9c33de4aa30.
+2026-04-30T23:16:33.5787074Z Creating container with image: appsvc/dotnetcore:10.0_20260311.2.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod
+2026-04-30T23:16:34.4479738Z Starting container: 54069d519629_amis4630-api.
+2026-04-30T23:16:34.5305440Z Starting watchers and probes.
+2026-04-30T23:16:34.5389808Z Starting metrics collection.
+2026-04-30T23:16:34.5392451Z Container is running.
+2026-04-30T23:16:34.5405813Z State: Starting, Action: CreatingContainer, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:14:48, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T23:16:34.7583924Z Container start method finished after 2342 ms.
+2026-04-30T23:16:34.7865888Z State: Starting, Action: InitiatingSiteWarmUpProbe, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:14:48, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T23:16:34.7871916Z State: Starting, Action: WaitingForSiteWarmUpProbeSuccess, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:14:48, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Pinging warmup path to ensure container is ready to receive requests., DetailsLevel: INFO
+2026-04-30T23:18:25.3370217Z Container has finished running with exit code: 134.
+2026-04-30T23:18:25.3382183Z Container is terminating. Grace period: 5 seconds.
+2026-04-30T23:18:25.3972049Z Stop and delete container. Retry count = 0
+2026-04-30T23:18:25.3984663Z Stopping container: 54069d519629_amis4630-api.
+2026-04-30T23:18:25.4910665Z Deleting container: 54069d519629_amis4630-api. Retry count = 0
+2026-04-30T23:18:25.7303493Z Container spec TerminationMessagePolicy  path 
+2026-04-30T23:18:25.7401640Z Container is terminated. Total time elapsed: 393 ms.
+2026-04-30T23:18:25.7412991Z Site container: amis4630-api terminated during site startup.
+2026-04-30T23:18:25.7587202Z State: Stopping, Action: CancellingStartup, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:14:48, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T23:18:25.9301798Z Site startup probe failed after 111.1404741 seconds.
+2026-04-30T23:18:26.1612458Z State: Stopping, Action: CancellingStartup, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T23:18:26.1794024Z Failed to start site. Revert by stopping site.
+2026-04-30T23:18:26.1825217Z State: Stopping, Action: StoppingSite, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T23:18:26.1904142Z State: Stopping, Action: StoppingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T23:18:26.1907004Z Site: amis4630-api stopped.
+2026-04-30T23:18:26.2009667Z State: Stopping, Action: UnmountingVolumes, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T23:18:26.5025609Z State: Stopping, Action: StoppingSiteNetworks, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site container: amis4630-api terminated during site startup. Cancelling site startup., DetailsLevel: ERR
+2026-04-30T23:18:26.9048731Z Site: amis4630-api will be blocked for 1 minutes till 04/30/2026 23:19:26
+2026-04-30T23:18:26.9053433Z State: Blocked, Action: StoppingSiteNetworks, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site: amis4630-api will be blocked for 1 minutes till 04/30/2026 23:19:26, DetailsLevel: WARN
+2026-04-30T23:18:26.9153141Z State: Stopped, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 23:18:26 (UTC), DetailsLevel: WARN
+2026-04-30T23:18:27.1241414Z State: Stopped, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 23:18:26 (UTC), DetailsLevel: WARN
+2026-04-30T23:19:26.9056552Z Site: amis4630-api is unblocked.
+2026-04-30T23:20:19.8292437Z State: Starting, Action: EstablishingSiteNetworks, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 23:18:26 (UTC), DetailsLevel: WARN
+2026-04-30T23:20:21.2726228Z State: Starting, Action: StartingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 23:18:26 (UTC), DetailsLevel: WARN
+2026-04-30T23:20:21.2735111Z Container start method called.
+2026-04-30T23:20:21.2741198Z State: Starting, Action: PullingImage, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Pulling image 10.1.0.6:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod for amis4630-api., DetailsLevel: INFO
+2026-04-30T23:20:21.2743007Z Establishing network.
+2026-04-30T23:20:21.2744319Z Pulling image: appsvc/dotnetcore:10.0_20260311.2.tuxprod.
+2026-04-30T23:20:21.4945464Z Container is starting.
+2026-04-30T23:20:21.4951373Z State: Starting, Action: MountingVolumes, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Mounting volumes for amis4630-api., DetailsLevel: INFO
+2026-04-30T23:20:21.4954108Z Establishing user namespace if not established already.
+2026-04-30T23:20:21.5054021Z Establishing network if not established already.
+2026-04-30T23:20:21.5164479Z Mounting volumes.
+2026-04-30T23:20:21.5172284Z Nested mountpoint 
+2026-04-30T23:20:21.5834211Z Nested mountpoint volatile/logs
+2026-04-30T23:20:21.6346547Z Nested mountpoint 
+2026-04-30T23:20:21.6354341Z Nested mountpoint 
+2026-04-30T23:20:21.6733199Z Nested mountpoint 
+2026-04-30T23:20:22.1299119Z State: Starting, Action: CreatingContainer, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Finished pulling container image and mounting volumes for amis4630-api. Allocatinng the rest of the container resources to finish container creation., DetailsLevel: INFO
+2026-04-30T23:20:22.1892788Z Creating container.
+2026-04-30T23:20:22.1896450Z Creating pipes for streaming container io.
+2026-04-30T23:20:22.1902194Z Creating stdout named pipe at /podr/container/pipe/9d441039f722_amis4630-api/stdout_c2a9602a8e8147dcbf198f5af63ddb2f.
+2026-04-30T23:20:22.2392235Z Successfully created stdout named pipe at: /podr/container/pipe/9d441039f722_amis4630-api/stdout_c2a9602a8e8147dcbf198f5af63ddb2f.
+2026-04-30T23:20:22.2393911Z Opening named pipe /podr/container/pipe/9d441039f722_amis4630-api/stdout_c2a9602a8e8147dcbf198f5af63ddb2f for reading in non-blocking mode.
+2026-04-30T23:20:22.2400049Z Successfully opened named pipe: /podr/container/pipe/9d441039f722_amis4630-api/stdout_c2a9602a8e8147dcbf198f5af63ddb2f.
+2026-04-30T23:20:22.2401525Z Successfully removed non-blocking flag from /podr/container/pipe/9d441039f722_amis4630-api/stdout_c2a9602a8e8147dcbf198f5af63ddb2f.
+2026-04-30T23:20:22.2484785Z Creating stderr named pipe at /podr/container/pipe/9d441039f722_amis4630-api/stderr_50c175ef5b8541239f042b2ea48b5ddd.
+2026-04-30T23:20:22.2486539Z Successfully created stderr named pipe at: /podr/container/pipe/9d441039f722_amis4630-api/stderr_50c175ef5b8541239f042b2ea48b5ddd.
+2026-04-30T23:20:22.2487251Z Opening named pipe /podr/container/pipe/9d441039f722_amis4630-api/stderr_50c175ef5b8541239f042b2ea48b5ddd for reading in non-blocking mode.
+2026-04-30T23:20:22.2488184Z Successfully opened named pipe: /podr/container/pipe/9d441039f722_amis4630-api/stderr_50c175ef5b8541239f042b2ea48b5ddd.
+2026-04-30T23:20:22.2488900Z Successfully removed non-blocking flag from /podr/container/pipe/9d441039f722_amis4630-api/stderr_50c175ef5b8541239f042b2ea48b5ddd.
+2026-04-30T23:20:22.2490055Z Creating container with image: appsvc/dotnetcore:10.0_20260311.2.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod
+2026-04-30T23:20:23.0548107Z Starting container: 9d441039f722_amis4630-api.
+2026-04-30T23:20:23.1518940Z Starting watchers and probes.
+2026-04-30T23:20:23.1527056Z Starting metrics collection.
+2026-04-30T23:20:23.1528285Z Container is running.
+2026-04-30T23:20:23.1529004Z State: Starting, Action: CreatingContainer, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T23:20:23.3618209Z Container start method finished after 2070 ms.
+2026-04-30T23:20:23.3717744Z State: Starting, Action: InitiatingSiteWarmUpProbe, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T23:20:23.3719101Z State: Starting, Action: WaitingForSiteWarmUpProbeSuccess, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Pinging warmup path to ensure container is ready to receive requests., DetailsLevel: INFO
+2026-04-30T23:22:00.9817517Z Site startup probe succeeded after 97.5914227 seconds.
+2026-04-30T23:22:01.1235427Z State: Starting, Action: WarmUpProbeSucceeded, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site startup probe succeeded after 97.5914227 seconds., DetailsLevel: INFO
+2026-04-30T23:22:01.5960260Z Site is running with deployment version: cfb58a87-3861-442b-b43c-cc29fa91ad68
+2026-04-30T23:22:01.5968877Z Site started.
+2026-04-30T23:22:01.5971085Z State: Started, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site started at 04/30/2026 23:22:01 (UTC), DetailsLevel: INFO
+2026-04-30T23:22:01.7160416Z Site is running with patch version DOTNETCORE 10.0.4
+2026-04-30T23:22:02.8881051Z State: Starting, Action: EstablishingSiteNetworks, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: , DetailsLevel: INFO
+2026-04-30T23:22:12.3369898Z State: Starting, Action: StartingSiteContainers, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: , DetailsLevel: INFO
+2026-04-30T23:22:12.3462550Z Container start method called.
+2026-04-30T23:22:12.3463673Z State: Starting, Action: PullingImage, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Pulling image 10.1.0.6:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod for amis4630-api., DetailsLevel: INFO
+2026-04-30T23:22:12.3465162Z Establishing network.
+2026-04-30T23:22:12.3466242Z Pulling image: appsvc/dotnetcore:10.0_20260311.2.tuxprod.
+2026-04-30T23:22:13.3289271Z Container is starting.
+2026-04-30T23:22:13.3298118Z State: Starting, Action: MountingVolumes, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Mounting volumes for amis4630-api., DetailsLevel: INFO
+2026-04-30T23:22:13.3368540Z Establishing user namespace if not established already.
+2026-04-30T23:22:13.3371982Z Establishing network if not established already.
+2026-04-30T23:22:13.3374506Z Mounting volumes.
+2026-04-30T23:22:13.3665929Z Nested mountpoint 
+2026-04-30T23:22:13.5370851Z Nested mountpoint volatile/logs
+2026-04-30T23:22:13.7430986Z Nested mountpoint 
+2026-04-30T23:22:13.7552719Z Nested mountpoint 
+2026-04-30T23:22:13.7558953Z Nested mountpoint 
+2026-04-30T23:22:16.8178226Z State: Starting, Action: CreatingContainer, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Finished pulling container image and mounting volumes for amis4630-api. Allocatinng the rest of the container resources to finish container creation., DetailsLevel: INFO
+2026-04-30T23:22:16.8353935Z Creating container.
+2026-04-30T23:22:16.8355738Z Creating pipes for streaming container io.
+2026-04-30T23:22:16.8356707Z Creating stdout named pipe at /podr/container/pipe/b487f8d024ed_amis4630-api/stdout_28940185f4224e09b9e43bc6c71484da.
+2026-04-30T23:22:16.8359007Z Successfully created stdout named pipe at: /podr/container/pipe/b487f8d024ed_amis4630-api/stdout_28940185f4224e09b9e43bc6c71484da.
+2026-04-30T23:22:16.8359723Z Opening named pipe /podr/container/pipe/b487f8d024ed_amis4630-api/stdout_28940185f4224e09b9e43bc6c71484da for reading in non-blocking mode.
+2026-04-30T23:22:16.8360669Z Successfully opened named pipe: /podr/container/pipe/b487f8d024ed_amis4630-api/stdout_28940185f4224e09b9e43bc6c71484da.
+2026-04-30T23:22:16.8361368Z Successfully removed non-blocking flag from /podr/container/pipe/b487f8d024ed_amis4630-api/stdout_28940185f4224e09b9e43bc6c71484da.
+2026-04-30T23:22:16.8366758Z Creating stderr named pipe at /podr/container/pipe/b487f8d024ed_amis4630-api/stderr_1760ccf281764924a76f9c13239919b3.
+2026-04-30T23:22:16.8368202Z Successfully created stderr named pipe at: /podr/container/pipe/b487f8d024ed_amis4630-api/stderr_1760ccf281764924a76f9c13239919b3.
+2026-04-30T23:22:16.8368882Z Opening named pipe /podr/container/pipe/b487f8d024ed_amis4630-api/stderr_1760ccf281764924a76f9c13239919b3 for reading in non-blocking mode.
+2026-04-30T23:22:16.8558013Z Successfully opened named pipe: /podr/container/pipe/b487f8d024ed_amis4630-api/stderr_1760ccf281764924a76f9c13239919b3.
+2026-04-30T23:22:16.8567341Z Successfully removed non-blocking flag from /podr/container/pipe/b487f8d024ed_amis4630-api/stderr_1760ccf281764924a76f9c13239919b3.
+2026-04-30T23:22:16.8569596Z Creating container with image: appsvc/dotnetcore:10.0_20260311.2.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod
+2026-04-30T23:22:20.3627907Z Starting container: b487f8d024ed_amis4630-api.
+2026-04-30T23:22:20.6337974Z Starting watchers and probes.
+2026-04-30T23:22:20.6537140Z Starting metrics collection.
+2026-04-30T23:22:20.6545440Z Container is running.
+2026-04-30T23:22:20.6635295Z State: Starting, Action: CreatingContainer, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T23:22:21.0827696Z Container start method finished after 8736 ms.
+2026-04-30T23:22:21.0829515Z State: Starting, Action: InitiatingSiteWarmUpProbe, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T23:22:21.0829728Z State: Starting, Action: WaitingForSiteWarmUpProbeSuccess, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Pinging warmup path to ensure container is ready to receive requests., DetailsLevel: INFO
+2026-04-30T23:24:45.5036748Z Site startup probe succeeded after 144.4193616 seconds.
+2026-04-30T23:24:45.7436562Z State: Starting, Action: WarmUpProbeSucceeded, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Site startup probe succeeded after 144.4193616 seconds., DetailsLevel: INFO
+2026-04-30T23:24:46.1642375Z Site is running with deployment version: cfb58a87-3861-442b-b43c-cc29fa91ad68
+2026-04-30T23:24:46.1732278Z Site started.
+2026-04-30T23:24:46.1733801Z State: Started, Action: None, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Site started at 04/30/2026 23:24:46 (UTC), DetailsLevel: INFO
+2026-04-30T23:24:46.1740862Z Site is running with patch version DOTNETCORE 10.0.4
+2026-04-30T23:25:06.2169766Z State: Stopping, Action: StoppingSite, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site started at 04/30/2026 23:22:01 (UTC), DetailsLevel: INFO
+2026-04-30T23:25:06.2190038Z State: Stopping, Action: StoppingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site started at 04/30/2026 23:22:01 (UTC), DetailsLevel: INFO
+2026-04-30T23:25:06.2192053Z Container is terminating. Grace period: 5 seconds.
+2026-04-30T23:25:06.2332474Z Stop and delete container. Retry count = 0
+2026-04-30T23:25:06.2404004Z Stopping container: 9d441039f722_amis4630-api.
+2026-04-30T23:25:11.3865594Z Deleting container: 9d441039f722_amis4630-api. Retry count = 0
+2026-04-30T23:25:11.5958200Z Container spec TerminationMessagePolicy  path 
+2026-04-30T23:25:11.5961585Z Container is terminated. Total time elapsed: 5376 ms.
+2026-04-30T23:25:11.5965047Z Site: amis4630-api stopped.
+2026-04-30T23:26:13.0199239Z State: Starting, Action: EstablishingSiteNetworks, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: , DetailsLevel: INFO
+2026-04-30T23:26:15.9096657Z State: Starting, Action: StartingSiteContainers, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: , DetailsLevel: INFO
+2026-04-30T23:26:15.9100544Z Container start method called.
+2026-04-30T23:26:15.9102896Z State: Starting, Action: PullingImage, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Pulling image 10.1.0.6:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod for amis4630-api., DetailsLevel: INFO
+2026-04-30T23:26:15.9104342Z Establishing network.
+2026-04-30T23:26:15.9120978Z Pulling image: appsvc/dotnetcore:10.0_20260311.2.tuxprod.
+2026-04-30T23:26:16.5797764Z Container is starting.
+2026-04-30T23:26:16.5799127Z State: Starting, Action: MountingVolumes, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Mounting volumes for amis4630-api., DetailsLevel: INFO
+2026-04-30T23:26:16.5800681Z Establishing user namespace if not established already.
+2026-04-30T23:26:16.5801813Z Establishing network if not established already.
+2026-04-30T23:26:16.5802992Z Mounting volumes.
+2026-04-30T23:26:16.5998362Z Nested mountpoint 
+2026-04-30T23:26:16.7000962Z Nested mountpoint volatile/logs
+2026-04-30T23:26:16.7317350Z Nested mountpoint 
+2026-04-30T23:26:16.8747437Z Nested mountpoint 
+2026-04-30T23:26:16.9357541Z Nested mountpoint 
+2026-04-30T23:26:17.5133418Z State: Starting, Action: CreatingContainer, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Finished pulling container image and mounting volumes for amis4630-api. Allocatinng the rest of the container resources to finish container creation., DetailsLevel: INFO
+2026-04-30T23:26:17.5135193Z Creating container.
+2026-04-30T23:26:17.5136240Z Creating pipes for streaming container io.
+2026-04-30T23:26:17.5137009Z Creating stdout named pipe at /podr/container/pipe/19c4caa7c56a_amis4630-api/stdout_1b181eb4cbf14e9bbd8baf7ea515bc32.
+2026-04-30T23:26:17.5325230Z Successfully created stdout named pipe at: /podr/container/pipe/19c4caa7c56a_amis4630-api/stdout_1b181eb4cbf14e9bbd8baf7ea515bc32.
+2026-04-30T23:26:17.5328627Z Opening named pipe /podr/container/pipe/19c4caa7c56a_amis4630-api/stdout_1b181eb4cbf14e9bbd8baf7ea515bc32 for reading in non-blocking mode.
+2026-04-30T23:26:17.5334171Z Successfully opened named pipe: /podr/container/pipe/19c4caa7c56a_amis4630-api/stdout_1b181eb4cbf14e9bbd8baf7ea515bc32.
+2026-04-30T23:26:17.5533429Z Successfully removed non-blocking flag from /podr/container/pipe/19c4caa7c56a_amis4630-api/stdout_1b181eb4cbf14e9bbd8baf7ea515bc32.
+2026-04-30T23:26:17.5535026Z Creating stderr named pipe at /podr/container/pipe/19c4caa7c56a_amis4630-api/stderr_71df787cc8de4ba1a1fd277922a7c0cf.
+2026-04-30T23:26:17.5536501Z Successfully created stderr named pipe at: /podr/container/pipe/19c4caa7c56a_amis4630-api/stderr_71df787cc8de4ba1a1fd277922a7c0cf.
+2026-04-30T23:26:17.5608797Z Opening named pipe /podr/container/pipe/19c4caa7c56a_amis4630-api/stderr_71df787cc8de4ba1a1fd277922a7c0cf for reading in non-blocking mode.
+2026-04-30T23:26:17.5613541Z Successfully opened named pipe: /podr/container/pipe/19c4caa7c56a_amis4630-api/stderr_71df787cc8de4ba1a1fd277922a7c0cf.
+2026-04-30T23:26:17.5615748Z Successfully removed non-blocking flag from /podr/container/pipe/19c4caa7c56a_amis4630-api/stderr_71df787cc8de4ba1a1fd277922a7c0cf.
+2026-04-30T23:26:17.5717976Z Creating container with image: appsvc/dotnetcore:10.0_20260311.2.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod
+2026-04-30T23:26:18.6264729Z Starting container: 19c4caa7c56a_amis4630-api.
+2026-04-30T23:26:18.7553738Z Starting watchers and probes.
+2026-04-30T23:26:18.7641225Z Starting metrics collection.
+2026-04-30T23:26:18.7644580Z Container is running.
+2026-04-30T23:26:18.7645712Z State: Starting, Action: CreatingContainer, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T23:26:19.1241386Z Container start method finished after 3213 ms.
+2026-04-30T23:26:19.1244244Z State: Starting, Action: InitiatingSiteWarmUpProbe, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T23:26:19.1256970Z State: Starting, Action: WaitingForSiteWarmUpProbeSuccess, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Pinging warmup path to ensure container is ready to receive requests., DetailsLevel: INFO
+2026-04-30T23:27:59.6746173Z Site startup probe succeeded after 100.5403353 seconds.
+2026-04-30T23:27:59.8451029Z State: Starting, Action: WarmUpProbeSucceeded, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Site startup probe succeeded after 100.5403353 seconds., DetailsLevel: INFO
+2026-04-30T23:28:00.1396254Z Site is running with deployment version: 1e87e90f-d921-45cb-90c7-ce6111dcdaf9
+2026-04-30T23:28:00.1408272Z Site started.
+2026-04-30T23:28:00.1427492Z State: Started, Action: None, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Site started at 04/30/2026 23:28:00 (UTC), DetailsLevel: INFO
+2026-04-30T23:28:00.1436029Z Site is running with patch version DOTNETCORE 10.0.4
+2026-04-30T23:28:20.1944234Z State: Stopping, Action: StoppingSite, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site started at 04/30/2026 23:24:46 (UTC), DetailsLevel: INFO
+2026-04-30T23:28:20.1978128Z State: Stopping, Action: StoppingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site started at 04/30/2026 23:24:46 (UTC), DetailsLevel: INFO
+2026-04-30T23:28:20.1982373Z Container is terminating. Grace period: 5 seconds.
+2026-04-30T23:28:20.2425388Z Stop and delete container. Retry count = 0
+2026-04-30T23:28:20.2435074Z Stopping container: b487f8d024ed_amis4630-api.
+2026-04-30T23:28:25.5910895Z Deleting container: b487f8d024ed_amis4630-api. Retry count = 0
+2026-04-30T23:28:25.9701554Z Container spec TerminationMessagePolicy  path 
+2026-04-30T23:28:25.9712663Z Container is terminated. Total time elapsed: 5771 ms.
+2026-04-30T23:28:25.9714032Z Site: amis4630-api stopped.
+2026-04-30T23:30:22.9559598Z State: Starting, Action: EstablishingSiteNetworks, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: , DetailsLevel: INFO
+2026-04-30T23:30:25.8630283Z State: Starting, Action: StartingSiteContainers, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: , DetailsLevel: INFO
+2026-04-30T23:30:25.8638917Z Container start method called.
+2026-04-30T23:30:25.8643063Z State: Starting, Action: PullingImage, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Pulling image 10.1.0.6:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod for amis4630-api., DetailsLevel: INFO
+2026-04-30T23:30:25.8644708Z Establishing network.
+2026-04-30T23:30:25.8827104Z Pulling image: appsvc/dotnetcore:10.0_20260311.2.tuxprod.
+2026-04-30T23:30:26.9378566Z Container is starting.
+2026-04-30T23:30:26.9389595Z State: Starting, Action: MountingVolumes, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Mounting volumes for amis4630-api., DetailsLevel: INFO
+2026-04-30T23:30:26.9390881Z Establishing user namespace if not established already.
+2026-04-30T23:30:26.9391909Z Establishing network if not established already.
+2026-04-30T23:30:26.9392806Z Mounting volumes.
+2026-04-30T23:30:26.9393960Z Nested mountpoint 
+2026-04-30T23:30:26.9497051Z Nested mountpoint volatile/logs
+2026-04-30T23:30:26.9968349Z Nested mountpoint 
+2026-04-30T23:30:26.9975441Z Nested mountpoint 
+2026-04-30T23:30:27.0081190Z Nested mountpoint 
+2026-04-30T23:30:27.9286661Z State: Starting, Action: CreatingContainer, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Finished pulling container image and mounting volumes for amis4630-api. Allocatinng the rest of the container resources to finish container creation., DetailsLevel: INFO
+2026-04-30T23:30:27.9287710Z Creating container.
+2026-04-30T23:30:27.9288479Z Creating pipes for streaming container io.
+2026-04-30T23:30:27.9297408Z Creating stdout named pipe at /podr/container/pipe/b9764fb2176a_amis4630-api/stdout_15f14eaa99f4432e9dc54a8eac5614e3.
+2026-04-30T23:30:27.9299665Z Successfully created stdout named pipe at: /podr/container/pipe/b9764fb2176a_amis4630-api/stdout_15f14eaa99f4432e9dc54a8eac5614e3.
+2026-04-30T23:30:27.9300404Z Opening named pipe /podr/container/pipe/b9764fb2176a_amis4630-api/stdout_15f14eaa99f4432e9dc54a8eac5614e3 for reading in non-blocking mode.
+2026-04-30T23:30:27.9303326Z Successfully opened named pipe: /podr/container/pipe/b9764fb2176a_amis4630-api/stdout_15f14eaa99f4432e9dc54a8eac5614e3.
+2026-04-30T23:30:27.9304235Z Successfully removed non-blocking flag from /podr/container/pipe/b9764fb2176a_amis4630-api/stdout_15f14eaa99f4432e9dc54a8eac5614e3.
+2026-04-30T23:30:27.9305668Z Creating stderr named pipe at /podr/container/pipe/b9764fb2176a_amis4630-api/stderr_d5f2481a59e4435dbae8e6648e88e558.
+2026-04-30T23:30:27.9404857Z Successfully created stderr named pipe at: /podr/container/pipe/b9764fb2176a_amis4630-api/stderr_d5f2481a59e4435dbae8e6648e88e558.
+2026-04-30T23:30:27.9407089Z Opening named pipe /podr/container/pipe/b9764fb2176a_amis4630-api/stderr_d5f2481a59e4435dbae8e6648e88e558 for reading in non-blocking mode.
+2026-04-30T23:30:27.9408405Z Successfully opened named pipe: /podr/container/pipe/b9764fb2176a_amis4630-api/stderr_d5f2481a59e4435dbae8e6648e88e558.
+2026-04-30T23:30:27.9409165Z Successfully removed non-blocking flag from /podr/container/pipe/b9764fb2176a_amis4630-api/stderr_d5f2481a59e4435dbae8e6648e88e558.
+2026-04-30T23:30:27.9492237Z Creating container with image: appsvc/dotnetcore:10.0_20260311.2.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod
+2026-04-30T23:30:29.5662665Z Starting container: b9764fb2176a_amis4630-api.
+2026-04-30T23:30:29.6760221Z Starting watchers and probes.
+2026-04-30T23:30:29.7366277Z Starting metrics collection.
+2026-04-30T23:30:29.7368876Z Container is running.
+2026-04-30T23:30:29.7369772Z State: Starting, Action: CreatingContainer, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T23:30:30.2171493Z Container start method finished after 4353 ms.
+2026-04-30T23:30:30.2173290Z State: Starting, Action: InitiatingSiteWarmUpProbe, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T23:30:30.2173486Z State: Starting, Action: WaitingForSiteWarmUpProbeSuccess, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Pinging warmup path to ensure container is ready to receive requests., DetailsLevel: INFO
+2026-04-30T23:32:29.6285403Z Site startup probe succeeded after 119.3943046 seconds.
+2026-04-30T23:32:29.7906835Z State: Starting, Action: WarmUpProbeSucceeded, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Site startup probe succeeded after 119.3943046 seconds., DetailsLevel: INFO
+2026-04-30T23:32:30.0912220Z Site is running with deployment version: 1e87e90f-d921-45cb-90c7-ce6111dcdaf9
+2026-04-30T23:32:30.0919042Z Site started.
+2026-04-30T23:32:30.0932789Z State: Started, Action: None, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Site started at 04/30/2026 23:32:30 (UTC), DetailsLevel: INFO
+2026-04-30T23:32:30.1024942Z Site is running with patch version DOTNETCORE 10.0.4
+2026-04-30T23:32:50.1500504Z State: Stopping, Action: StoppingSite, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site started at 04/30/2026 23:28:00 (UTC), DetailsLevel: INFO
+2026-04-30T23:32:50.1517633Z State: Stopping, Action: StoppingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site started at 04/30/2026 23:28:00 (UTC), DetailsLevel: INFO
+2026-04-30T23:32:50.1529643Z Container is terminating. Grace period: 5 seconds.
+2026-04-30T23:32:50.1714875Z Stop and delete container. Retry count = 0
+2026-04-30T23:32:50.1715889Z Stopping container: 19c4caa7c56a_amis4630-api.
+2026-04-30T23:32:55.3243364Z Deleting container: 19c4caa7c56a_amis4630-api. Retry count = 0
+2026-04-30T23:32:55.5842816Z Container spec TerminationMessagePolicy  path 
+2026-04-30T23:32:55.5932206Z Container is terminated. Total time elapsed: 5439 ms.
+2026-04-30T23:32:55.5945575Z Site: amis4630-api stopped.
+2026-04-30T23:36:36.1114186Z State: Starting, Action: EstablishingSiteNetworks, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: , DetailsLevel: INFO
+2026-04-30T23:36:37.7936458Z State: Starting, Action: StartingSiteContainers, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: , DetailsLevel: INFO
+2026-04-30T23:36:37.7937986Z Container start method called.
+2026-04-30T23:36:37.7940961Z State: Starting, Action: PullingImage, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Pulling image 10.1.0.5:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod for amis4630-api., DetailsLevel: INFO
+2026-04-30T23:36:37.7957565Z Establishing network.
+2026-04-30T23:36:37.7961809Z Pulling image: appsvc/dotnetcore:10.0_20260311.2.tuxprod.
+2026-04-30T23:36:38.0902407Z Container is starting.
+2026-04-30T23:36:38.0903498Z State: Starting, Action: MountingVolumes, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Mounting volumes for amis4630-api., DetailsLevel: INFO
+2026-04-30T23:36:38.0904635Z Establishing user namespace if not established already.
+2026-04-30T23:36:38.0982710Z Establishing network if not established already.
+2026-04-30T23:36:38.0985144Z Mounting volumes.
+2026-04-30T23:36:38.0993383Z Nested mountpoint 
+2026-04-30T23:36:38.1855728Z Nested mountpoint volatile/logs
+2026-04-30T23:36:38.2081991Z Nested mountpoint 
+2026-04-30T23:36:38.2490846Z Nested mountpoint 
+2026-04-30T23:36:38.2569278Z Nested mountpoint 
+2026-04-30T23:36:38.8073373Z State: Starting, Action: CreatingContainer, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Finished pulling container image and mounting volumes for amis4630-api. Allocatinng the rest of the container resources to finish container creation., DetailsLevel: INFO
+2026-04-30T23:36:38.8075751Z Creating container.
+2026-04-30T23:36:38.8080011Z Creating pipes for streaming container io.
+2026-04-30T23:36:38.8342503Z Creating stdout named pipe at /podr/container/pipe/61a319c12d08_amis4630-api/stdout_7b26acfa20694c36b0304ab90c10646c.
+2026-04-30T23:36:38.8632383Z Successfully created stdout named pipe at: /podr/container/pipe/61a319c12d08_amis4630-api/stdout_7b26acfa20694c36b0304ab90c10646c.
+2026-04-30T23:36:38.8633870Z Opening named pipe /podr/container/pipe/61a319c12d08_amis4630-api/stdout_7b26acfa20694c36b0304ab90c10646c for reading in non-blocking mode.
+2026-04-30T23:36:38.8640229Z Successfully opened named pipe: /podr/container/pipe/61a319c12d08_amis4630-api/stdout_7b26acfa20694c36b0304ab90c10646c.
+2026-04-30T23:36:38.8741615Z Successfully removed non-blocking flag from /podr/container/pipe/61a319c12d08_amis4630-api/stdout_7b26acfa20694c36b0304ab90c10646c.
+2026-04-30T23:36:38.8745029Z Creating stderr named pipe at /podr/container/pipe/61a319c12d08_amis4630-api/stderr_c4876025eca1444487258bf09367c96b.
+2026-04-30T23:36:38.8750285Z Successfully created stderr named pipe at: /podr/container/pipe/61a319c12d08_amis4630-api/stderr_c4876025eca1444487258bf09367c96b.
+2026-04-30T23:36:38.8753257Z Opening named pipe /podr/container/pipe/61a319c12d08_amis4630-api/stderr_c4876025eca1444487258bf09367c96b for reading in non-blocking mode.
+2026-04-30T23:36:38.8931947Z Successfully opened named pipe: /podr/container/pipe/61a319c12d08_amis4630-api/stderr_c4876025eca1444487258bf09367c96b.
+2026-04-30T23:36:38.8939399Z Successfully removed non-blocking flag from /podr/container/pipe/61a319c12d08_amis4630-api/stderr_c4876025eca1444487258bf09367c96b.
+2026-04-30T23:36:38.8947577Z Creating container with image: appsvc/dotnetcore:10.0_20260311.2.tuxprod from registry: 10.1.0.5:13209 and fully qualified image name: 10.1.0.5:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod
+2026-04-30T23:36:40.1744103Z Starting container: 61a319c12d08_amis4630-api.
+2026-04-30T23:36:40.3166716Z Starting watchers and probes.
+2026-04-30T23:36:40.3455032Z Starting metrics collection.
+2026-04-30T23:36:40.3459169Z Container is running.
+2026-04-30T23:36:40.3654276Z State: Starting, Action: CreatingContainer, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T23:36:40.7246353Z Container start method finished after 2930 ms.
+2026-04-30T23:36:40.7248051Z State: Starting, Action: InitiatingSiteWarmUpProbe, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T23:36:40.7248260Z State: Starting, Action: WaitingForSiteWarmUpProbeSuccess, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Pinging warmup path to ensure container is ready to receive requests., DetailsLevel: INFO
+2026-04-30T23:37:34.9329243Z Site startup probe succeeded after 54.2069358 seconds.
+2026-04-30T23:37:35.2634569Z State: Starting, Action: WarmUpProbeSucceeded, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Site startup probe succeeded after 54.2069358 seconds., DetailsLevel: INFO
+2026-04-30T23:37:35.6744312Z Site is running with deployment version: 3a6720a7-255c-4e31-b070-5aa9281737d9
+2026-04-30T23:37:35.6749807Z Site started.
+2026-04-30T23:37:35.6751173Z State: Started, Action: None, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Site started at 04/30/2026 23:37:35 (UTC), DetailsLevel: INFO
+2026-04-30T23:37:35.6755795Z Site is running with patch version DOTNETCORE 10.0.4
+2026-04-30T23:37:55.7128359Z State: Stopping, Action: StoppingSite, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site started at 04/30/2026 23:32:30 (UTC), DetailsLevel: INFO
+2026-04-30T23:37:55.7131487Z State: Stopping, Action: StoppingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site started at 04/30/2026 23:32:30 (UTC), DetailsLevel: INFO
+2026-04-30T23:37:55.7150085Z Container is terminating. Grace period: 5 seconds.
+2026-04-30T23:37:55.7523980Z Stop and delete container. Retry count = 0
+2026-04-30T23:37:55.7532468Z Stopping container: b9764fb2176a_amis4630-api.
+2026-04-30T23:38:00.9670690Z Deleting container: b9764fb2176a_amis4630-api. Retry count = 0
+2026-04-30T23:38:01.6699498Z Container spec TerminationMessagePolicy  path 
+2026-04-30T23:38:01.6703318Z Container is terminated. Total time elapsed: 5955 ms.
+2026-04-30T23:38:01.6704585Z Site: amis4630-api stopped.
+2026-04-30T23:40:47.9769069Z State: Starting, Action: EstablishingSiteNetworks, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: , DetailsLevel: INFO
+2026-04-30T23:40:49.7663436Z State: Starting, Action: StartingSiteContainers, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: , DetailsLevel: INFO
+2026-04-30T23:40:49.7664503Z Container start method called.
+2026-04-30T23:40:49.7664843Z State: Starting, Action: PullingImage, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Pulling image 10.1.0.5:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod for amis4630-api., DetailsLevel: INFO
+2026-04-30T23:40:49.7672201Z Establishing network.
+2026-04-30T23:40:49.7673992Z Pulling image: appsvc/dotnetcore:10.0_20260311.2.tuxprod.
+2026-04-30T23:40:50.0920560Z Container is starting.
+2026-04-30T23:40:50.0923966Z State: Starting, Action: MountingVolumes, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Mounting volumes for amis4630-api., DetailsLevel: INFO
+2026-04-30T23:40:50.0928485Z Establishing user namespace if not established already.
+2026-04-30T23:40:50.0930484Z Establishing network if not established already.
+2026-04-30T23:40:50.1027618Z Mounting volumes.
+2026-04-30T23:40:50.1105286Z Nested mountpoint 
+2026-04-30T23:40:50.1210583Z Nested mountpoint volatile/logs
+2026-04-30T23:40:50.1416056Z Nested mountpoint 
+2026-04-30T23:40:50.1828633Z Nested mountpoint 
+2026-04-30T23:40:50.3433757Z Nested mountpoint 
+2026-04-30T23:40:50.7236174Z State: Starting, Action: CreatingContainer, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Finished pulling container image and mounting volumes for amis4630-api. Allocatinng the rest of the container resources to finish container creation., DetailsLevel: INFO
+2026-04-30T23:40:50.7237210Z Creating container.
+2026-04-30T23:40:50.7237981Z Creating pipes for streaming container io.
+2026-04-30T23:40:50.7238668Z Creating stdout named pipe at /podr/container/pipe/e6bab1489c55_amis4630-api/stdout_4847448a237645b1a1dfbc9d9f70e610.
+2026-04-30T23:40:50.7447041Z Successfully created stdout named pipe at: /podr/container/pipe/e6bab1489c55_amis4630-api/stdout_4847448a237645b1a1dfbc9d9f70e610.
+2026-04-30T23:40:50.7449069Z Opening named pipe /podr/container/pipe/e6bab1489c55_amis4630-api/stdout_4847448a237645b1a1dfbc9d9f70e610 for reading in non-blocking mode.
+2026-04-30T23:40:50.7450185Z Successfully opened named pipe: /podr/container/pipe/e6bab1489c55_amis4630-api/stdout_4847448a237645b1a1dfbc9d9f70e610.
+2026-04-30T23:40:50.7451009Z Successfully removed non-blocking flag from /podr/container/pipe/e6bab1489c55_amis4630-api/stdout_4847448a237645b1a1dfbc9d9f70e610.
+2026-04-30T23:40:50.7536532Z Creating stderr named pipe at /podr/container/pipe/e6bab1489c55_amis4630-api/stderr_833fd5f0cbf5476288550f8585a37354.
+2026-04-30T23:40:50.7538238Z Successfully created stderr named pipe at: /podr/container/pipe/e6bab1489c55_amis4630-api/stderr_833fd5f0cbf5476288550f8585a37354.
+2026-04-30T23:40:50.7542577Z Opening named pipe /podr/container/pipe/e6bab1489c55_amis4630-api/stderr_833fd5f0cbf5476288550f8585a37354 for reading in non-blocking mode.
+2026-04-30T23:40:50.7543930Z Successfully opened named pipe: /podr/container/pipe/e6bab1489c55_amis4630-api/stderr_833fd5f0cbf5476288550f8585a37354.
+2026-04-30T23:40:50.7544765Z Successfully removed non-blocking flag from /podr/container/pipe/e6bab1489c55_amis4630-api/stderr_833fd5f0cbf5476288550f8585a37354.
+2026-04-30T23:40:50.7561219Z Creating container with image: appsvc/dotnetcore:10.0_20260311.2.tuxprod from registry: 10.1.0.5:13209 and fully qualified image name: 10.1.0.5:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod
+2026-04-30T23:40:51.8954320Z Starting container: e6bab1489c55_amis4630-api.
+2026-04-30T23:40:52.0185176Z Starting watchers and probes.
+2026-04-30T23:40:52.0270980Z Starting metrics collection.
+2026-04-30T23:40:52.0274128Z Container is running.
+2026-04-30T23:40:52.0284687Z State: Starting, Action: CreatingContainer, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T23:40:52.3984488Z Container start method finished after 2611 ms.
+2026-04-30T23:40:52.3993743Z State: Starting, Action: InitiatingSiteWarmUpProbe, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T23:40:52.3994369Z State: Starting, Action: WaitingForSiteWarmUpProbeSuccess, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Pinging warmup path to ensure container is ready to receive requests., DetailsLevel: INFO
+2026-04-30T23:41:30.7959056Z Site startup probe succeeded after 38.3671979 seconds.
+2026-04-30T23:41:31.0370770Z State: Starting, Action: WarmUpProbeSucceeded, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Site startup probe succeeded after 38.3671979 seconds., DetailsLevel: INFO
+2026-04-30T23:41:31.6697846Z Site is running with deployment version: 988ce6a2-aa32-479b-8e52-fef43383d811
+2026-04-30T23:41:31.6702049Z Site started.
+2026-04-30T23:41:31.6710624Z State: Started, Action: None, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: Site started at 04/30/2026 23:41:31 (UTC), DetailsLevel: INFO
+2026-04-30T23:41:31.6713801Z Site is running with patch version DOTNETCORE 10.0.4
+2026-04-30T23:41:51.7172087Z State: Stopping, Action: StoppingSite, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site started at 04/30/2026 23:37:35 (UTC), DetailsLevel: INFO
+2026-04-30T23:41:51.7182100Z State: Stopping, Action: StoppingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site started at 04/30/2026 23:37:35 (UTC), DetailsLevel: INFO
+2026-04-30T23:41:51.7185959Z Container is terminating. Grace period: 5 seconds.
+2026-04-30T23:41:51.7880303Z Stop and delete container. Retry count = 0
+2026-04-30T23:41:51.7887352Z Stopping container: 61a319c12d08_amis4630-api.
+2026-04-30T23:41:57.0797272Z Deleting container: 61a319c12d08_amis4630-api. Retry count = 0
+2026-04-30T23:41:57.3310332Z Container spec TerminationMessagePolicy  path 
+2026-04-30T23:41:57.3318147Z Container is terminated. Total time elapsed: 5612 ms.
+2026-04-30T23:41:57.3323404Z Site: amis4630-api stopped.
+2026-04-30T23:43:47.7603042Z State: Blocked, Action: None, LastError: , LastErrorTimestamp: 01/01/0001 00:00:00, LastErrorDetails: , Details: , DetailsLevel: INFO
+2026-04-30T23:44:07.9125760Z State: Stopping, Action: StoppingSite, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site started at 04/30/2026 23:41:31 (UTC), DetailsLevel: INFO
+2026-04-30T23:44:07.9130682Z State: Stopping, Action: StoppingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site started at 04/30/2026 23:41:31 (UTC), DetailsLevel: INFO
+2026-04-30T23:44:07.9131863Z Container is terminating. Grace period: 5 seconds.
+2026-04-30T23:44:07.9297397Z Stop and delete container. Retry count = 0
+2026-04-30T23:44:07.9300657Z Stopping container: e6bab1489c55_amis4630-api.
+2026-04-30T23:44:14.0334544Z Deleting container: e6bab1489c55_amis4630-api. Retry count = 0
+2026-04-30T23:44:14.2643241Z Container spec TerminationMessagePolicy  path 
+2026-04-30T23:44:14.2644565Z Container is terminated. Total time elapsed: 6351 ms.
+2026-04-30T23:44:14.2646002Z Site: amis4630-api stopped.
+2026-04-30T23:48:04.0589233Z State: Starting, Action: EstablishingSiteNetworks, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: , DetailsLevel: INFO
+2026-04-30T23:48:05.2680719Z State: Starting, Action: StartingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: , DetailsLevel: INFO
+2026-04-30T23:48:05.2681820Z Container start method called.
+2026-04-30T23:48:05.2776659Z State: Starting, Action: PullingImage, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Pulling image 10.1.0.6:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod for amis4630-api., DetailsLevel: INFO
+2026-04-30T23:48:05.2854470Z Establishing network.
+2026-04-30T23:48:05.2858860Z Pulling image: appsvc/dotnetcore:10.0_20260311.2.tuxprod.
+2026-04-30T23:48:05.5711194Z Container is starting.
+2026-04-30T23:48:05.5716825Z State: Starting, Action: MountingVolumes, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Mounting volumes for amis4630-api., DetailsLevel: INFO
+2026-04-30T23:48:05.5723361Z Establishing user namespace if not established already.
+2026-04-30T23:48:05.5795632Z Establishing network if not established already.
+2026-04-30T23:48:05.5798902Z Mounting volumes.
+2026-04-30T23:48:05.5801199Z Nested mountpoint 
+2026-04-30T23:48:05.6100322Z Nested mountpoint volatile/logs
+2026-04-30T23:48:05.6308005Z Nested mountpoint 
+2026-04-30T23:48:05.6829630Z Nested mountpoint 
+2026-04-30T23:48:05.7018200Z Nested mountpoint 
+2026-04-30T23:48:06.0331255Z State: Starting, Action: CreatingContainer, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Finished pulling container image and mounting volumes for amis4630-api. Allocatinng the rest of the container resources to finish container creation., DetailsLevel: INFO
+2026-04-30T23:48:06.0338792Z Creating container.
+2026-04-30T23:48:06.0343299Z Creating pipes for streaming container io.
+2026-04-30T23:48:06.0347303Z Creating stdout named pipe at /podr/container/pipe/cad65d0294b7_amis4630-api/stdout_94aa68bac4e549dfa3eec850a7ee7250.
+2026-04-30T23:48:06.0417849Z Successfully created stdout named pipe at: /podr/container/pipe/cad65d0294b7_amis4630-api/stdout_94aa68bac4e549dfa3eec850a7ee7250.
+2026-04-30T23:48:06.0422339Z Opening named pipe /podr/container/pipe/cad65d0294b7_amis4630-api/stdout_94aa68bac4e549dfa3eec850a7ee7250 for reading in non-blocking mode.
+2026-04-30T23:48:06.0424802Z Successfully opened named pipe: /podr/container/pipe/cad65d0294b7_amis4630-api/stdout_94aa68bac4e549dfa3eec850a7ee7250.
+2026-04-30T23:48:06.0427722Z Successfully removed non-blocking flag from /podr/container/pipe/cad65d0294b7_amis4630-api/stdout_94aa68bac4e549dfa3eec850a7ee7250.
+2026-04-30T23:48:06.0430563Z Creating stderr named pipe at /podr/container/pipe/cad65d0294b7_amis4630-api/stderr_cfa261916480460b90670b639f2d248f.
+2026-04-30T23:48:06.0432116Z Successfully created stderr named pipe at: /podr/container/pipe/cad65d0294b7_amis4630-api/stderr_cfa261916480460b90670b639f2d248f.
+2026-04-30T23:48:06.0432816Z Opening named pipe /podr/container/pipe/cad65d0294b7_amis4630-api/stderr_cfa261916480460b90670b639f2d248f for reading in non-blocking mode.
+2026-04-30T23:48:06.0433649Z Successfully opened named pipe: /podr/container/pipe/cad65d0294b7_amis4630-api/stderr_cfa261916480460b90670b639f2d248f.
+2026-04-30T23:48:06.0434387Z Successfully removed non-blocking flag from /podr/container/pipe/cad65d0294b7_amis4630-api/stderr_cfa261916480460b90670b639f2d248f.
+2026-04-30T23:48:06.0437425Z Creating container with image: appsvc/dotnetcore:10.0_20260311.2.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod
+2026-04-30T23:48:06.5780422Z Starting container: cad65d0294b7_amis4630-api.
+2026-04-30T23:48:06.7204719Z Starting watchers and probes.
+2026-04-30T23:48:06.7399991Z Starting metrics collection.
+2026-04-30T23:48:06.7403395Z Container is running.
+2026-04-30T23:48:06.7404167Z State: Starting, Action: CreatingContainer, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T23:48:06.9108543Z Container start method finished after 1633 ms.
+2026-04-30T23:48:06.9110841Z State: Starting, Action: InitiatingSiteWarmUpProbe, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T23:48:06.9111334Z State: Starting, Action: WaitingForSiteWarmUpProbeSuccess, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Pinging warmup path to ensure container is ready to receive requests., DetailsLevel: INFO
+2026-04-30T23:48:40.1923439Z Site startup probe succeeded after 33.1486429 seconds.
+2026-04-30T23:48:40.4937249Z State: Starting, Action: WarmUpProbeSucceeded, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site startup probe succeeded after 33.1486429 seconds., DetailsLevel: INFO
+2026-04-30T23:48:40.9967134Z Site is running with deployment version: 988ce6a2-aa32-479b-8e52-fef43383d811
+2026-04-30T23:48:40.9975400Z Site started.
+2026-04-30T23:48:40.9979053Z State: Started, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site started at 04/30/2026 23:48:40 (UTC), DetailsLevel: INFO
+2026-04-30T23:48:41.1067348Z Site is running with patch version DOTNETCORE 10.0.4
+2026-04-30T23:49:12.1315725Z State: Stopping, Action: StoppingSite, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site started at 04/30/2026 23:48:40 (UTC), DetailsLevel: INFO
+2026-04-30T23:49:12.1337453Z State: Stopping, Action: StoppingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site started at 04/30/2026 23:48:40 (UTC), DetailsLevel: INFO
+2026-04-30T23:49:12.1342399Z Container is terminating. Grace period: 5 seconds.
+2026-04-30T23:49:12.3034159Z Stop and delete container. Retry count = 0
+2026-04-30T23:49:12.3035064Z Stopping container: cad65d0294b7_amis4630-api.
+2026-04-30T23:49:17.7812476Z Deleting container: cad65d0294b7_amis4630-api. Retry count = 0
+2026-04-30T23:49:18.2227780Z Container spec TerminationMessagePolicy  path 
+2026-04-30T23:49:18.2231065Z Container is terminated. Total time elapsed: 6088 ms.
+2026-04-30T23:49:18.2234448Z Site: amis4630-api stopped.
+2026-04-30T23:49:18.2814861Z State: Stopping, Action: UnmountingVolumes, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site started at 04/30/2026 23:48:40 (UTC), DetailsLevel: INFO
+2026-04-30T23:49:18.9273383Z State: Stopping, Action: StoppingSiteNetworks, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site started at 04/30/2026 23:48:40 (UTC), DetailsLevel: INFO
+2026-04-30T23:49:19.5085092Z State: Stopped, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 23:49:19 (UTC), DetailsLevel: INFO
+2026-04-30T23:49:19.5989956Z State: Stopped, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 23:49:19 (UTC), DetailsLevel: INFO
+2026-04-30T23:49:54.3392895Z State: Starting, Action: EstablishingSiteNetworks, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 23:49:19 (UTC), DetailsLevel: INFO
+2026-04-30T23:49:56.4413274Z State: Starting, Action: StartingSiteContainers, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site stopped at 04/30/2026 23:49:19 (UTC), DetailsLevel: INFO
+2026-04-30T23:49:56.4421861Z Container start method called.
+2026-04-30T23:49:56.4493225Z State: Starting, Action: PullingImage, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Pulling image 10.1.0.6:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod for amis4630-api., DetailsLevel: INFO
+2026-04-30T23:49:56.4497525Z Establishing network.
+2026-04-30T23:49:56.4501006Z Pulling image: appsvc/dotnetcore:10.0_20260311.2.tuxprod.
+2026-04-30T23:49:56.6308813Z Container is starting.
+2026-04-30T23:49:56.6312373Z State: Starting, Action: MountingVolumes, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Mounting volumes for amis4630-api., DetailsLevel: INFO
+2026-04-30T23:49:56.6315508Z Establishing user namespace if not established already.
+2026-04-30T23:49:56.6321237Z Establishing network if not established already.
+2026-04-30T23:49:56.6323030Z Mounting volumes.
+2026-04-30T23:49:56.6324793Z Nested mountpoint 
+2026-04-30T23:49:56.6529066Z Nested mountpoint volatile/logs
+2026-04-30T23:49:56.6729979Z Nested mountpoint 
+2026-04-30T23:49:56.6927183Z Nested mountpoint 
+2026-04-30T23:49:56.7020214Z Nested mountpoint 
+2026-04-30T23:49:57.1841748Z State: Starting, Action: CreatingContainer, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Finished pulling container image and mounting volumes for amis4630-api. Allocatinng the rest of the container resources to finish container creation., DetailsLevel: INFO
+2026-04-30T23:49:57.1842755Z Creating container.
+2026-04-30T23:49:57.1843528Z Creating pipes for streaming container io.
+2026-04-30T23:49:57.1844240Z Creating stdout named pipe at /podr/container/pipe/70ae43526cb5_amis4630-api/stdout_46722f1fb9204baaa0a43f13bcb103a6.
+2026-04-30T23:49:57.2244183Z Successfully created stdout named pipe at: /podr/container/pipe/70ae43526cb5_amis4630-api/stdout_46722f1fb9204baaa0a43f13bcb103a6.
+2026-04-30T23:49:57.2245156Z Opening named pipe /podr/container/pipe/70ae43526cb5_amis4630-api/stdout_46722f1fb9204baaa0a43f13bcb103a6 for reading in non-blocking mode.
+2026-04-30T23:49:57.2246169Z Successfully opened named pipe: /podr/container/pipe/70ae43526cb5_amis4630-api/stdout_46722f1fb9204baaa0a43f13bcb103a6.
+2026-04-30T23:49:57.2246903Z Successfully removed non-blocking flag from /podr/container/pipe/70ae43526cb5_amis4630-api/stdout_46722f1fb9204baaa0a43f13bcb103a6.
+2026-04-30T23:49:57.2248033Z Creating stderr named pipe at /podr/container/pipe/70ae43526cb5_amis4630-api/stderr_47c3c2f401084568b9763e1b2291687b.
+2026-04-30T23:49:57.2249229Z Successfully created stderr named pipe at: /podr/container/pipe/70ae43526cb5_amis4630-api/stderr_47c3c2f401084568b9763e1b2291687b.
+2026-04-30T23:49:57.2250082Z Opening named pipe /podr/container/pipe/70ae43526cb5_amis4630-api/stderr_47c3c2f401084568b9763e1b2291687b for reading in non-blocking mode.
+2026-04-30T23:49:57.2250957Z Successfully opened named pipe: /podr/container/pipe/70ae43526cb5_amis4630-api/stderr_47c3c2f401084568b9763e1b2291687b.
+2026-04-30T23:49:57.2251676Z Successfully removed non-blocking flag from /podr/container/pipe/70ae43526cb5_amis4630-api/stderr_47c3c2f401084568b9763e1b2291687b.
+2026-04-30T23:49:57.2252614Z Creating container with image: appsvc/dotnetcore:10.0_20260311.2.tuxprod from registry: 10.1.0.6:13209 and fully qualified image name: 10.1.0.6:13209/appsvc/dotnetcore:10.0_20260311.2.tuxprod
+2026-04-30T23:49:58.2476855Z Starting container: 70ae43526cb5_amis4630-api.
+2026-04-30T23:49:58.3122737Z Starting watchers and probes.
+2026-04-30T23:49:58.3211271Z Starting metrics collection.
+2026-04-30T23:49:58.3216653Z Container is running.
+2026-04-30T23:49:58.3217842Z State: Starting, Action: CreatingContainer, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T23:49:58.6819514Z Container start method finished after 2202 ms.
+2026-04-30T23:49:58.6831132Z State: Starting, Action: InitiatingSiteWarmUpProbe, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Container amis4630-api successfully created and is running., DetailsLevel: INFO
+2026-04-30T23:49:58.6832513Z State: Starting, Action: WaitingForSiteWarmUpProbeSuccess, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Pinging warmup path to ensure container is ready to receive requests., DetailsLevel: INFO
+2026-04-30T23:50:34.6381637Z Site startup probe succeeded after 35.9539307 seconds.
+2026-04-30T23:50:34.9505127Z State: Starting, Action: WarmUpProbeSucceeded, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site startup probe succeeded after 35.9539307 seconds., DetailsLevel: INFO
+2026-04-30T23:50:35.8159986Z Site is running with deployment version: 988ce6a2-aa32-479b-8e52-fef43383d811
+2026-04-30T23:50:35.8340892Z Site started.
+2026-04-30T23:50:35.8341992Z State: Started, Action: None, LastError: ContainerTimeout, LastErrorTimestamp: 04/30/2026 23:18:26, LastErrorDetails: Container did not start within expected time limit of 230s. Please inspect your container logs for more details., Details: Site started at 04/30/2026 23:50:35 (UTC), DetailsLevel: INFO
+2026-04-30T23:50:35.8638903Z Site is running with patch version DOTNETCORE 10.0.4

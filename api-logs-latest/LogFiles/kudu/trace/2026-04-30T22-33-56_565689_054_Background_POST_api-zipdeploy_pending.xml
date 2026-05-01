@@ -1,0 +1,956 @@
+<step title="BackgroundTrace" date="2026-04-30T22:33:56.055" instance="565689" url="/api/zipdeploy" method="POST" >
+  <step title="Creating temporary deployment - FetchDeploymentManager" date="2026-04-30T22:33:56.123" /><!-- duration: 1ms -->
+  <step title="Creating temporary deployment" date="2026-04-30T22:33:56.128" /><!-- duration: 55ms -->
+  <step title="Performing fetch based deployment" date="2026-04-30T22:33:56.231" >
+    <step title="Cleaning up temp folders from previous zip deployments and extracting pushed zip file /tmp/zipdeploy/fe499a6c-7e29-41dc-bfad-3b9d34e79cac.zip (22.04 MB) to /tmp/zipdeploy/extracted" date="2026-04-30T22:33:57.396" >
+      <step title="ChmodRecursive Process exited with total time taken in ms: 41" date="2026-04-30T22:33:58.754" /><!-- duration: 20ms -->
+    </step><!-- duration: 1396ms -->
+    <step title="Deployment timer started" date="2026-04-30T22:34:00.812" >
+      <step title="DeploymentManager.Deploy(id:efbdd13d-df59-41a6-ada6-cb24dadc9974)" date="2026-04-30T22:34:00.816" >
+        <step title="Collecting changeset information" date="2026-04-30T22:34:00.854" /><!-- duration: 91ms -->
+        <step title="Updating submodules" date="2026-04-30T22:34:00.948" /><!-- duration: 1182ms -->
+        <step title="Determining deployment builder" date="2026-04-30T22:34:02.864" >
+          <step title="Builder is BasicBuilder" date="2026-04-30T22:34:02.946" /><!-- duration: 28ms -->
+        </step><!-- duration: 130ms -->
+        <step title="PreDeployment: context.CleanOutputPath False" date="2026-04-30T22:34:03.318" >
+          <step title="PreDeployment: context.OutputPath /home/site/wwwroot" date="2026-04-30T22:34:03.492" >
+            <step title="Building" date="2026-04-30T22:34:03.661" >
+              <step title="Executing external process" date="2026-04-30T22:34:03.922" type="process" path="starter.sh" arguments="/opt/Kudu/Scripts/parallel_rsync.sh /tmp/zipdeploy/extracted /home/site/wwwroot 8 /tmp/ False True  " >
+                <step title="Process dump" date="2026-04-30T22:34:12.068" exitCode="123" type="processOutput" /><!-- duration: 13ms -->
+              </step><!-- duration: 8165ms -->
+              <step title="Error occurred" date="2026-04-30T22:34:12.114" type="error" text="rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-arm64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-x64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\osx-arm64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\osx-x64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Windows.Extensions.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-arm\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-s390x\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x86\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\browser-wasm\nativeassets\net9.0\e_sqlite3.a&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-mips64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-arm64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-arm\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-x64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-ppc64le\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Drawing.Common.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-armel\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\maccatalyst-arm64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\maccatalyst-x64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\unix\lib\net6.0\System.Drawing.Common.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm64\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-s390x\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-x86\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x64\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Runtime.Caching.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\browser-wasm\nativeassets\net9.0\e_sqlite3.a&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-mips64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-arm64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-arm\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-x64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-ppc64le\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-arm\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-s390x\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x86\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-s390x\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-x86\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x64\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Runtime.Caching.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Drawing.Common.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Windows.Extensions.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-arm64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-x64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\osx-arm64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\osx-x64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-armel\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\maccatalyst-arm64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\maccatalyst-x64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\unix\lib\net6.0\System.Drawing.Common.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm64\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+/opt/Kudu/Scripts/starter.sh /opt/Kudu/Scripts/parallel_rsync.sh /tmp/zipdeploy/extracted /home/site/wwwroot 8 /tmp/ False True  " stackTrace="   at Kudu.Core.Infrastructure.Executable.ExecuteInternal(ITracer tracer, Func`2 onWriteOutput, Func`2 onWriteError, CancellationToken token, Encoding encoding, String arguments, Object[] args) in /tmp/KuduLite/Kudu.Core/Infrastructure/Executable.cs:line 239
+   at Kudu.Core.Infrastructure.Executable.ExecuteWithProgressWriter(ILogger logger, ITracer tracer, CancellationToken token, String arguments, Object[] args) in /tmp/KuduLite/Kudu.Core/Infrastructure/Executable.cs:line 118
+   at Kudu.Core.Deployment.Generator.ExternalCommandBuilder.RunCommand(DeploymentContext context, String command, Boolean ignoreManifest, CancellationToken token, String message, ILogger internalLogger) in /tmp/KuduLite/Kudu.Core/Deployment/Generator/ExternalCommandBuilder.cs:line 135" /><!-- duration: 14ms -->
+              <step title="Warning" date="2026-04-30T22:34:12.139" type="warning" text="Exception in parallel rsync: ExitCode: 123, Output: Run rsync from: /tmp/zipdeploy/extracted/ to: /home/site/wwwroot/ in 8 parallel threads
+Delete options: clean=False, use manifest=True, directory to ignore=
+Prev manifest = /home/site/deployments/19e1af30-0557-4c93-922c-2bc6d6720d34/manifest and next /home/site/deployments/efbdd13d-df59-41a6-ada6-cb24dadc9974/manifest
+Cleaning up /tmp//filelist.txt and /tmp//splits
+Creating a list of all files at /tmp//filelist.txt
+No directory to exclude.
+Created /tmp//filelist.txt. Total number of files to be synced = 82.
+Created batches from the list of files. Processing 11 files in each thread
+Running rsync for filelist /tmp//splits/split.aa from /tmp/zipdeploy/extracted/ to /home/site/wwwroot/
+Running rsync for filelist /tmp//splits/split.ab from /tmp/zipdeploy/extracted/ to /home/site/wwwroot/
+Running rsync for filelist /tmp//splits/split.ac from /tmp/zipdeploy/extracted/ to /home/site/wwwroot/
+Running rsync for filelist /tmp//splits/split.ae from /tmp/zipdeploy/extracted/ to /home/site/wwwroot/
+Running rsync for filelist /tmp//splits/split.ad from /tmp/zipdeploy/extracted/ to /home/site/wwwroot/
+Running rsync for filelist /tmp//splits/split.af from /tmp/zipdeploy/extracted/ to /home/site/wwwroot/
+Running rsync for filelist /tmp//splits/split.ah from /tmp/zipdeploy/extracted/ to /home/site/wwwroot/
+Running rsync for filelist /tmp//splits/split.ag from /tmp/zipdeploy/extracted/ to /home/site/wwwroot/
+
+Number of files: 11 (reg: 11)
+Number of created files: 0
+Number of deleted files: 0
+Number of regular files transferred: 1
+Total file size: 6.51M bytes
+Total transferred file size: 41.18K bytes
+Literal data: 41.18K bytes
+Matched data: 0 bytes
+File list size: 0
+File list generation time: 0.001 seconds
+File list transfer time: 0.000 seconds
+Total bytes sent: 20.86K
+Total bytes received: 47
+
+sent 20.86K bytes  received 47 bytes  41.81K bytes/sec
+total size is 6.51M  speedup is 311.21
+Attempt 1: Rsync for filelist /tmp//splits/split.ae completed with exit code 23
+
+Number of files: 11 (reg: 11)
+Number of created files: 0
+Number of deleted files: 0
+Number of regular files transferred: 0
+Total file size: 8.80M bytes
+Total transferred file size: 0 bytes
+Literal data: 0 bytes
+Matched data: 0 bytes
+File list size: 0
+File list generation time: 0.078 seconds
+File list transfer time: 0.000 seconds
+Total bytes sent: 633
+Total bytes received: 31
+
+sent 633 bytes  received 31 bytes  1.33K bytes/sec
+total size is 8.80M  speedup is 13,257.30
+Attempt 1: Rsync for filelist /tmp//splits/split.ad completed with exit code 23
+
+Number of files: 11 (reg: 11)
+Number of created files: 0
+Number of deleted files: 0
+Number of regular files transferred: 1
+Total file size: 7.06M bytes
+Total transferred file size: 140.29K bytes
+Literal data: 140.29K bytes
+Matched data: 0 bytes
+File list size: 0
+File list generation time: 0.001 seconds
+File list transfer time: 0.000 seconds
+Total bytes sent: 47.50K
+Total bytes received: 53
+
+sent 47.50K bytes  received 53 bytes  95.10K bytes/sec
+total size is 7.06M  speedup is 148.55
+
+Number of files: 5 (reg: 5)
+Number of created files: 0
+Number of deleted files: 0
+Number of regular files transferred: 0
+Total file size: 2.58M bytes
+Total transferred file size: 0 bytes
+Literal data: 0 bytes
+Matched data: 0 bytes
+File list size: 0
+File list generation time: 0.001 seconds
+File list transfer time: 0.000 seconds
+Total bytes sent: 356
+Total bytes received: 22
+
+sent 356 bytes  received 22 bytes  756.00 bytes/sec
+total size is 2.58M  speedup is 6,833.67
+Attempt 1: Rsync for filelist /tmp//splits/split.ah completed with exit code 23
+Attempt 1: Rsync for filelist /tmp//splits/split.ac completed with exit code 23
+
+Number of files: 11 (reg: 11)
+Number of created files: 0
+Number of deleted files: 0
+Number of regular files transferred: 0
+Total file size: 7.06M bytes
+Total transferred file size: 0 bytes
+Literal data: 0 bytes
+Matched data: 0 bytes
+File list size: 0
+File list generation time: 0.037 seconds
+File list transfer time: 0.000 seconds
+Total bytes sent: 565
+Total bytes received: 37
+
+sent 565 bytes  received 37 bytes  1.20K bytes/sec
+total size is 7.06M  speedup is 11,731.72
+Attempt 1: Rsync for filelist /tmp//splits/split.af completed with exit code 23
+
+Number of files: 11 (reg: 11)
+Number of created files: 0
+Number of deleted files: 0
+Number of regular files transferred: 0
+Total file size: 8.30M bytes
+Total transferred file size: 0 bytes
+Literal data: 0 bytes
+Matched data: 0 bytes
+File list size: 0
+File list generation time: 0.001 seconds
+File list transfer time: 0.000 seconds
+Total bytes sent: 618
+Total bytes received: 31
+
+sent 618 bytes  received 31 bytes  1.30K bytes/sec
+total size is 8.30M  speedup is 12,781.41
+Attempt 1: Rsync for filelist /tmp//splits/split.ab completed with exit code 23
+
+Number of files: 11 (reg: 11)
+Number of created files: 0
+Number of deleted files: 0
+Number of regular files transferred: 3
+Total file size: 5.33M bytes
+Total transferred file size: 107.91K bytes
+Literal data: 107.91K bytes
+Matched data: 0 bytes
+File list size: 0
+File list generation time: 0.001 seconds
+File list transfer time: 0.000 seconds
+Total bytes sent: 41.67K
+Total bytes received: 91
+
+sent 41.67K bytes  received 91 bytes  27.84K bytes/sec
+total size is 5.33M  speedup is 127.56
+
+Number of files: 11 (reg: 11)
+Number of created files: 0
+Number of deleted files: 0
+Number of regular files transferred: 0
+Total file size: 7.06M bytes
+Total transferred file size: 0 bytes
+Literal data: 0 bytes
+Matched data: 0 bytes
+File list size: 0
+File list generation time: 0.001 seconds
+File list transfer time: 0.000 seconds
+Total bytes sent: 616
+Total bytes received: 37
+
+sent 616 bytes  received 37 bytes  1.31K bytes/sec
+total size is 7.06M  speedup is 10,817.32
+Attempt 1: Rsync for filelist /tmp//splits/split.aa completed with exit code 23
+Attempt 2: Rsync for filelist /tmp//splits/split.ac completed with exit code 23
+
+Number of files: 11 (reg: 11)
+Number of created files: 0
+Number of deleted files: 0
+Number of regular files transferred: 0
+Total file size: 8.80M bytes
+Total transferred file size: 0 bytes
+Literal data: 0 bytes
+Matched data: 0 bytes
+File list size: 0
+File list generation time: 0.001 seconds
+File list transfer time: 0.000 seconds
+Total bytes sent: 629
+Total bytes received: 31
+
+sent 629 bytes  received 31 bytes  440.00 bytes/sec
+total size is 8.80M  speedup is 13,337.64
+Attempt 2: Rsync for filelist /tmp//splits/split.ad completed with exit code 23
+
+Number of files: 11 (reg: 11)
+Number of created files: 0
+Number of deleted files: 0
+Number of regular files transferred: 0
+Total file size: 7.06M bytes
+Total transferred file size: 0 bytes
+Literal data: 0 bytes
+Matched data: 0 bytes
+File list size: 0
+File list generation time: 0.001 seconds
+File list transfer time: 0.000 seconds
+Total bytes sent: 561
+Total bytes received: 37
+
+sent 561 bytes  received 37 bytes  1.20K bytes/sec
+total size is 7.06M  speedup is 11,810.19
+Attempt 2: Rsync for filelist /tmp//splits/split.af completed with exit code 23
+
+Number of files: 5 (reg: 5)
+Number of created files: 0
+Number of deleted files: 0
+Number of regular files transferred: 0
+Total file size: 2.58M bytes
+Total transferred file size: 0 bytes
+Literal data: 0 bytes
+Matched data: 0 bytes
+File list size: 0
+File list generation time: 0.001 seconds
+File list transfer time: 0.000 seconds
+Total bytes sent: 352
+Total bytes received: 22
+
+sent 352 bytes  received 22 bytes  748.00 bytes/sec
+total size is 2.58M  speedup is 6,906.76
+Attempt 2: Rsync for filelist /tmp//splits/split.ah completed with exit code 23
+
+Number of files: 11 (reg: 11)
+Number of created files: 0
+Number of deleted files: 0
+Number of regular files transferred: 2
+Total file size: 5.13M bytes
+Total transferred file size: 593 bytes
+Literal data: 593 bytes
+Matched data: 0 bytes
+File list size: 0
+File list generation time: 0.001 seconds
+File list transfer time: 0.000 seconds
+Total bytes sent: 1.05K
+Total bytes received: 75
+
+sent 1.05K bytes  received 75 bytes  748.00 bytes/sec
+total size is 5.13M  speedup is 4,568.49
+Attempt 1: Rsync for filelist /tmp//splits/split.ag completed with exit code 23
+
+Number of files: 11 (reg: 11)
+Number of created files: 0
+Number of deleted files: 0
+Number of regular files transferred: 0
+Total file size: 5.33M bytes
+Total transferred file size: 0 bytes
+Literal data: 0 bytes
+Matched data: 0 bytes
+File list size: 0
+File list generation time: 0.001 seconds
+File list transfer time: 0.000 seconds
+Total bytes sent: 490
+Total bytes received: 43
+
+sent 490 bytes  received 43 bytes  1.07K bytes/sec
+total size is 5.33M  speedup is 9,994.58
+Attempt 2: Rsync for filelist /tmp//splits/split.aa completed with exit code 23
+
+Number of files: 11 (reg: 11)
+Number of created files: 0
+Number of deleted files: 0
+Number of regular files transferred: 0
+Total file size: 8.30M bytes
+Total transferred file size: 0 bytes
+Literal data: 0 bytes
+Matched data: 0 bytes
+File list size: 0
+File list generation time: 0.018 seconds
+File list transfer time: 0.000 seconds
+Total bytes sent: 614
+Total bytes received: 31
+
+sent 614 bytes  received 31 bytes  1.29K bytes/sec
+total size is 8.30M  speedup is 12,860.67
+
+Number of files: 11 (reg: 11)
+Number of created files: 0
+Number of deleted files: 0
+Number of regular files transferred: 0
+Total file size: 6.51M bytes
+Total transferred file size: 0 bytes
+Literal data: 0 bytes
+Matched data: 0 bytes
+File list size: 0
+File list generation time: 0.039 seconds
+File list transfer time: 0.000 seconds
+Total bytes sent: 619
+Total bytes received: 31
+
+sent 619 bytes  received 31 bytes  1.30K bytes/sec
+total size is 6.51M  speedup is 10,009.01
+Attempt 2: Rsync for filelist /tmp//splits/split.ab completed with exit code 23
+Attempt 2: Rsync for filelist /tmp//splits/split.ae completed with exit code 23
+
+Number of files: 11 (reg: 11)
+Number of created files: 0
+Number of deleted files: 0
+Number of regular files transferred: 0
+Total file size: 5.13M bytes
+Total transferred file size: 0 bytes
+Literal data: 0 bytes
+Matched data: 0 bytes
+File list size: 0
+File list generation time: 0.009 seconds
+File list transfer time: 0.000 seconds
+Total bytes sent: 635
+Total bytes received: 43
+
+sent 635 bytes  received 43 bytes  1.36K bytes/sec
+total size is 5.13M  speedup is 7,560.25
+Attempt 2: Rsync for filelist /tmp//splits/split.ag completed with exit code 23
+An error has occurred during web site deployment.
+Rsync failed in 2 seconds, Error: rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-arm64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-x64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\osx-arm64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\osx-x64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Windows.Extensions.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-arm\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-s390x\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x86\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\browser-wasm\nativeassets\net9.0\e_sqlite3.a&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-mips64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-arm64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-arm\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-x64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-ppc64le\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Drawing.Common.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-armel\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\maccatalyst-arm64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\maccatalyst-x64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\unix\lib\net6.0\System.Drawing.Common.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm64\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-s390x\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-x86\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x64\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Runtime.Caching.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\browser-wasm\nativeassets\net9.0\e_sqlite3.a&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-mips64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-arm64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-arm\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-x64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-ppc64le\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-arm\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-s390x\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x86\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-s390x\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-x86\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x64\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Runtime.Caching.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Drawing.Common.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Windows.Extensions.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-arm64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-x64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\osx-arm64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\osx-x64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-armel\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\maccatalyst-arm64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\maccatalyst-x64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\unix\lib\net6.0\System.Drawing.Common.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm64\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7], Kudu.Core.Infrastructure.CommandLineException: rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-arm64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-x64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\osx-arm64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\osx-x64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Windows.Extensions.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-arm\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-s390x\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x86\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\browser-wasm\nativeassets\net9.0\e_sqlite3.a&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-mips64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-arm64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-arm\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-x64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-ppc64le\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Drawing.Common.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-armel\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\maccatalyst-arm64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\maccatalyst-x64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\unix\lib\net6.0\System.Drawing.Common.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm64\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-s390x\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-x86\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x64\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Runtime.Caching.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\browser-wasm\nativeassets\net9.0\e_sqlite3.a&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-mips64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-arm64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-arm\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-x64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-ppc64le\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-arm\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-s390x\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x86\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-s390x\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-x86\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x64\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Runtime.Caching.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Drawing.Common.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Windows.Extensions.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-arm64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-x64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\osx-arm64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\osx-x64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-armel\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\maccatalyst-arm64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\maccatalyst-x64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\unix\lib\net6.0\System.Drawing.Common.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm64\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+/opt/Kudu/Scripts/starter.sh /opt/Kudu/Scripts/parallel_rsync.sh /tmp/zipdeploy/extracted /home/site/wwwroot 8 /tmp/ False True  
+   at Kudu.Core.Infrastructure.Executable.ExecuteInternal(ITracer tracer, Func`2 onWriteOutput, Func`2 onWriteError, CancellationToken token, Encoding encoding, String arguments, Object[] args) in /tmp/KuduLite/Kudu.Core/Infrastructure/Executable.cs:line 239
+   at Kudu.Core.Infrastructure.Executable.ExecuteWithProgressWriter(ILogger logger, ITracer tracer, CancellationToken token, String arguments, Object[] args) in /tmp/KuduLite/Kudu.Core/Infrastructure/Executable.cs:line 118
+   at Kudu.Core.Deployment.Generator.ExternalCommandBuilder.RunCommand(DeploymentContext context, String command, Boolean ignoreManifest, CancellationToken token, String message, ILogger internalLogger) in /tmp/KuduLite/Kudu.Core/Deployment/Generator/ExternalCommandBuilder.cs:line 135
+   at Kudu.Core.Deployment.Generator.GeneratorSiteBuilder.Build(DeploymentContext context, CancellationToken token) in /tmp/KuduLite/Kudu.Core/Deployment/Generator/GeneratorSiteBuilder.cs:line 70" /><!-- duration: 19ms -->
+              <step title="Error occurred" date="2026-04-30T22:34:12.188" type="error" text="rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-arm64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-x64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\osx-arm64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\osx-x64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Windows.Extensions.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-arm\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-s390x\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x86\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\browser-wasm\nativeassets\net9.0\e_sqlite3.a&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-mips64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-arm64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-arm\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-x64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-ppc64le\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Drawing.Common.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-armel\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\maccatalyst-arm64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\maccatalyst-x64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\unix\lib\net6.0\System.Drawing.Common.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm64\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-s390x\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-x86\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x64\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Runtime.Caching.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\browser-wasm\nativeassets\net9.0\e_sqlite3.a&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-mips64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-arm64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-arm\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-x64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-ppc64le\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-arm\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-s390x\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x86\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-s390x\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-x86\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x64\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Runtime.Caching.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Drawing.Common.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Windows.Extensions.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-arm64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-x64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\osx-arm64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\osx-x64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-armel\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\maccatalyst-arm64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\maccatalyst-x64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\unix\lib\net6.0\System.Drawing.Common.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm64\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+/opt/Kudu/Scripts/starter.sh /opt/Kudu/Scripts/parallel_rsync.sh /tmp/zipdeploy/extracted /home/site/wwwroot 8 /tmp/ False True  " stackTrace="   at Kudu.Core.Infrastructure.Executable.ExecuteInternal(ITracer tracer, Func`2 onWriteOutput, Func`2 onWriteError, CancellationToken token, Encoding encoding, String arguments, Object[] args) in /tmp/KuduLite/Kudu.Core/Infrastructure/Executable.cs:line 239
+   at Kudu.Core.Infrastructure.Executable.ExecuteWithProgressWriter(ILogger logger, ITracer tracer, CancellationToken token, String arguments, Object[] args) in /tmp/KuduLite/Kudu.Core/Infrastructure/Executable.cs:line 118
+   at Kudu.Core.Deployment.Generator.ExternalCommandBuilder.RunCommand(DeploymentContext context, String command, Boolean ignoreManifest, CancellationToken token, String message, ILogger internalLogger) in /tmp/KuduLite/Kudu.Core/Deployment/Generator/ExternalCommandBuilder.cs:line 135
+   at Kudu.Core.Deployment.Generator.GeneratorSiteBuilder.Build(DeploymentContext context, CancellationToken token) in /tmp/KuduLite/Kudu.Core/Deployment/Generator/GeneratorSiteBuilder.cs:line 70
+--- End of stack trace from previous location ---
+   at Kudu.Core.Deployment.DeploymentManager.Build(ChangeSet changeSet, ITracer tracer, IDisposable deployStep, IRepository repository, DeploymentInfoBase deploymentInfo, DeploymentAnalytics deploymentAnalytics, Boolean fullBuildByDefault, CancellationToken cancellationToken) in /tmp/KuduLite/Kudu.Core/Deployment/DeploymentManager.cs:line 771" /><!-- duration: 20ms -->
+              <step title="Purge deployment items" date="2026-04-30T22:34:12.557" >
+                <step title="Remove ec0f64c8-, Failed, received at 04/30/2026 22:28:37" date="2026-04-30T22:34:12.603" /><!-- duration: 2ms -->
+              </step><!-- duration: 50ms -->
+            </step><!-- duration: 8948ms -->
+          </step><!-- duration: 9119ms -->
+          <step title="Error occurred" date="2026-04-30T22:34:12.613" type="error" text="rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-arm64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-x64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\osx-arm64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\osx-x64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Windows.Extensions.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-arm\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-s390x\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x86\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\browser-wasm\nativeassets\net9.0\e_sqlite3.a&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-mips64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-arm64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-arm\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-x64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-ppc64le\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Drawing.Common.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-armel\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\maccatalyst-arm64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\maccatalyst-x64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\unix\lib\net6.0\System.Drawing.Common.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm64\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-s390x\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-x86\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x64\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Runtime.Caching.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\browser-wasm\nativeassets\net9.0\e_sqlite3.a&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-mips64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-arm64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-arm\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-x64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-ppc64le\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-arm\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-s390x\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x86\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-s390x\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-x86\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x64\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Runtime.Caching.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Drawing.Common.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Windows.Extensions.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-arm64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-x64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\osx-arm64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\osx-x64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-armel\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\maccatalyst-arm64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\maccatalyst-x64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\unix\lib\net6.0\System.Drawing.Common.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm64\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+/opt/Kudu/Scripts/starter.sh /opt/Kudu/Scripts/parallel_rsync.sh /tmp/zipdeploy/extracted /home/site/wwwroot 8 /tmp/ False True  " stackTrace="   at Kudu.Core.Infrastructure.Executable.ExecuteInternal(ITracer tracer, Func`2 onWriteOutput, Func`2 onWriteError, CancellationToken token, Encoding encoding, String arguments, Object[] args) in /tmp/KuduLite/Kudu.Core/Infrastructure/Executable.cs:line 239
+   at Kudu.Core.Infrastructure.Executable.ExecuteWithProgressWriter(ILogger logger, ITracer tracer, CancellationToken token, String arguments, Object[] args) in /tmp/KuduLite/Kudu.Core/Infrastructure/Executable.cs:line 118
+   at Kudu.Core.Deployment.Generator.ExternalCommandBuilder.RunCommand(DeploymentContext context, String command, Boolean ignoreManifest, CancellationToken token, String message, ILogger internalLogger) in /tmp/KuduLite/Kudu.Core/Deployment/Generator/ExternalCommandBuilder.cs:line 135
+   at Kudu.Core.Deployment.Generator.GeneratorSiteBuilder.Build(DeploymentContext context, CancellationToken token) in /tmp/KuduLite/Kudu.Core/Deployment/Generator/GeneratorSiteBuilder.cs:line 70
+--- End of stack trace from previous location ---
+   at Kudu.Core.Deployment.DeploymentManager.Build(ChangeSet changeSet, ITracer tracer, IDisposable deployStep, IRepository repository, DeploymentInfoBase deploymentInfo, DeploymentAnalytics deploymentAnalytics, Boolean fullBuildByDefault, CancellationToken cancellationToken) in /tmp/KuduLite/Kudu.Core/Deployment/DeploymentManager.cs:line 771
+   at Kudu.Core.Deployment.DeploymentManager.Build(ChangeSet changeSet, ITracer tracer, IDisposable deployStep, IRepository repository, DeploymentInfoBase deploymentInfo, DeploymentAnalytics deploymentAnalytics, Boolean fullBuildByDefault, CancellationToken cancellationToken) in /tmp/KuduLite/Kudu.Core/Deployment/DeploymentManager.cs:line 840" /><!-- duration: 3ms -->
+          <step title="Cleaning up temp files" date="2026-04-30T22:34:12.663" /><!-- duration: 3ms -->
+          <step title="Cleaning up temp files" date="2026-04-30T22:34:12.669" /><!-- duration: 503ms -->
+          <step title="Error occurred" date="2026-04-30T22:34:13.197" type="error" text="rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-arm64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-x64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\osx-arm64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\osx-x64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Windows.Extensions.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-arm\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-s390x\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x86\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\browser-wasm\nativeassets\net9.0\e_sqlite3.a&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-mips64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-arm64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-arm\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-x64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-ppc64le\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Drawing.Common.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-armel\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\maccatalyst-arm64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\maccatalyst-x64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\unix\lib\net6.0\System.Drawing.Common.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm64\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-s390x\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-x86\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x64\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Runtime.Caching.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\browser-wasm\nativeassets\net9.0\e_sqlite3.a&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-mips64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-arm64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-arm\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-x64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-ppc64le\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-arm\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-s390x\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x86\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-s390x\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-x86\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x64\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Runtime.Caching.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Drawing.Common.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Windows.Extensions.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-arm64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-x64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\osx-arm64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\osx-x64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-armel\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\maccatalyst-arm64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\maccatalyst-x64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\unix\lib\net6.0\System.Drawing.Common.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm64\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+/opt/Kudu/Scripts/starter.sh /opt/Kudu/Scripts/parallel_rsync.sh /tmp/zipdeploy/extracted /home/site/wwwroot 8 /tmp/ False True  " stackTrace="   at Kudu.Core.Infrastructure.Executable.ExecuteInternal(ITracer tracer, Func`2 onWriteOutput, Func`2 onWriteError, CancellationToken token, Encoding encoding, String arguments, Object[] args) in /tmp/KuduLite/Kudu.Core/Infrastructure/Executable.cs:line 239
+   at Kudu.Core.Infrastructure.Executable.ExecuteWithProgressWriter(ILogger logger, ITracer tracer, CancellationToken token, String arguments, Object[] args) in /tmp/KuduLite/Kudu.Core/Infrastructure/Executable.cs:line 118
+   at Kudu.Core.Deployment.Generator.ExternalCommandBuilder.RunCommand(DeploymentContext context, String command, Boolean ignoreManifest, CancellationToken token, String message, ILogger internalLogger) in /tmp/KuduLite/Kudu.Core/Deployment/Generator/ExternalCommandBuilder.cs:line 135
+   at Kudu.Core.Deployment.Generator.GeneratorSiteBuilder.Build(DeploymentContext context, CancellationToken token) in /tmp/KuduLite/Kudu.Core/Deployment/Generator/GeneratorSiteBuilder.cs:line 70
+--- End of stack trace from previous location ---
+   at Kudu.Core.Deployment.DeploymentManager.Build(ChangeSet changeSet, ITracer tracer, IDisposable deployStep, IRepository repository, DeploymentInfoBase deploymentInfo, DeploymentAnalytics deploymentAnalytics, Boolean fullBuildByDefault, CancellationToken cancellationToken) in /tmp/KuduLite/Kudu.Core/Deployment/DeploymentManager.cs:line 771
+   at Kudu.Core.Deployment.DeploymentManager.Build(ChangeSet changeSet, ITracer tracer, IDisposable deployStep, IRepository repository, DeploymentInfoBase deploymentInfo, DeploymentAnalytics deploymentAnalytics, Boolean fullBuildByDefault, CancellationToken cancellationToken) in /tmp/KuduLite/Kudu.Core/Deployment/DeploymentManager.cs:line 840
+   at Kudu.Core.Deployment.DeploymentManager.DeployAsync(IRepository repository, ChangeSet changeSet, String deployer, Boolean clean, DeploymentInfoBase deploymentInfo, Boolean needFileUpdate, Boolean fullBuildByDefault) in /tmp/KuduLite/Kudu.Core/Deployment/DeploymentManager.cs:line 266" /><!-- duration: 3ms -->
+        </step><!-- duration: 9886ms -->
+        <step title="Reloading status file with latest updates" date="2026-04-30T22:34:13.247" >
+          <step title="WebHooksManager.PublishEventAsync: PostDeployment" date="2026-04-30T22:34:13.249" /><!-- duration: 18ms -->
+        </step><!-- duration: 22ms -->
+        <step title="Error occurred" date="2026-04-30T22:34:13.271" type="error" text="rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-arm64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-x64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\osx-arm64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\osx-x64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Windows.Extensions.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-arm\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-s390x\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x86\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\browser-wasm\nativeassets\net9.0\e_sqlite3.a&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-mips64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-arm64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-arm\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-x64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-ppc64le\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Drawing.Common.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-armel\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\maccatalyst-arm64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\maccatalyst-x64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\unix\lib\net6.0\System.Drawing.Common.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm64\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-s390x\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-x86\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x64\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Runtime.Caching.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\browser-wasm\nativeassets\net9.0\e_sqlite3.a&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-mips64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-arm64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-arm\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-x64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-ppc64le\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-arm\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-s390x\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x86\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-musl-s390x\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-x86\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x64\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Runtime.Caching.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Drawing.Common.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\System.Windows.Extensions.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-arm64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-x64\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\osx-arm64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\osx-x64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\linux-armel\native\libe_sqlite3.so&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\maccatalyst-arm64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\maccatalyst-x64\native\libe_sqlite3.dylib&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\unix\lib\net6.0\System.Drawing.Common.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm64\native\e_sqlite3.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll&quot;: Invalid argument (22)
+rsync: [generator] recv_generator: failed to stat &quot;/home/site/wwwroot/runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll&quot;: Invalid argument (22)
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+rsync error: some files/attrs were not transferred (see previous errors) (code 23) at main.c(1338) [sender=3.2.7]
+/opt/Kudu/Scripts/starter.sh /opt/Kudu/Scripts/parallel_rsync.sh /tmp/zipdeploy/extracted /home/site/wwwroot 8 /tmp/ False True  " stackTrace="   at Kudu.Core.Infrastructure.Executable.ExecuteInternal(ITracer tracer, Func`2 onWriteOutput, Func`2 onWriteError, CancellationToken token, Encoding encoding, String arguments, Object[] args) in /tmp/KuduLite/Kudu.Core/Infrastructure/Executable.cs:line 239
+   at Kudu.Core.Infrastructure.Executable.ExecuteWithProgressWriter(ILogger logger, ITracer tracer, CancellationToken token, String arguments, Object[] args) in /tmp/KuduLite/Kudu.Core/Infrastructure/Executable.cs:line 118
+   at Kudu.Core.Deployment.Generator.ExternalCommandBuilder.RunCommand(DeploymentContext context, String command, Boolean ignoreManifest, CancellationToken token, String message, ILogger internalLogger) in /tmp/KuduLite/Kudu.Core/Deployment/Generator/ExternalCommandBuilder.cs:line 135
+   at Kudu.Core.Deployment.Generator.GeneratorSiteBuilder.Build(DeploymentContext context, CancellationToken token) in /tmp/KuduLite/Kudu.Core/Deployment/Generator/GeneratorSiteBuilder.cs:line 70
+--- End of stack trace from previous location ---
+   at Kudu.Core.Deployment.DeploymentManager.Build(ChangeSet changeSet, ITracer tracer, IDisposable deployStep, IRepository repository, DeploymentInfoBase deploymentInfo, DeploymentAnalytics deploymentAnalytics, Boolean fullBuildByDefault, CancellationToken cancellationToken) in /tmp/KuduLite/Kudu.Core/Deployment/DeploymentManager.cs:line 771
+   at Kudu.Core.Deployment.DeploymentManager.Build(ChangeSet changeSet, ITracer tracer, IDisposable deployStep, IRepository repository, DeploymentInfoBase deploymentInfo, DeploymentAnalytics deploymentAnalytics, Boolean fullBuildByDefault, CancellationToken cancellationToken) in /tmp/KuduLite/Kudu.Core/Deployment/DeploymentManager.cs:line 840
+   at Kudu.Core.Deployment.DeploymentManager.DeployAsync(IRepository repository, ChangeSet changeSet, String deployer, Boolean clean, DeploymentInfoBase deploymentInfo, Boolean needFileUpdate, Boolean fullBuildByDefault) in /tmp/KuduLite/Kudu.Core/Deployment/DeploymentManager.cs:line 266" /><!-- duration: 2ms -->
+        <step title="Marking deployment as failed and cleaning up the temp deployment" date="2026-04-30T22:34:13.328" /><!-- duration: 2ms -->
+      </step><!-- duration: 12640ms -->
+      <step title="Error occurred" date="2026-04-30T22:34:13.471" type="error" text="One or more errors occurred. (Deployment failed)" stackTrace="   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at Kudu.Core.Deployment.FetchDeploymentManager.&lt;&gt;c__DisplayClass22_1.&lt;PerformBackgroundDeployment&gt;b__3() in /tmp/KuduLite/Kudu.Core/Deployment/FetchDeploymentManager.cs:line 414
+   at Kudu.Contracts.Infrastructure.LockExtensions.TryLockOperation(IOperationLock lockObj, Action operation, String operationName, TimeSpan timeout) in /tmp/KuduLite/Kudu.Contracts/Infrastructure/LockExtensions.cs:line 34
+   at Kudu.Contracts.Infrastructure.LockExtensions.LockOperation(IOperationLock lockObj, Action operation, String operationName, TimeSpan timeout) in /tmp/KuduLite/Kudu.Contracts/Infrastructure/LockExtensions.cs:line 46
+   at Kudu.Core.Deployment.FetchDeploymentManager.&lt;&gt;c__DisplayClass22_0.&lt;PerformBackgroundDeployment&gt;b__1() in /tmp/KuduLite/Kudu.Core/Deployment/FetchDeploymentManager.cs:line 393" innerText="Deployment failed" innerStackTrace="   at Kudu.Core.Deployment.DeploymentManager.DeployAsync(IRepository repository, ChangeSet changeSet, String deployer, Boolean clean, DeploymentInfoBase deploymentInfo, Boolean needFileUpdate, Boolean fullBuildByDefault) in /tmp/KuduLite/Kudu.Core/Deployment/DeploymentManager.cs:line 307
+   at Kudu.Core.Deployment.FetchDeploymentManager.PerformDeployment(DeploymentInfoBase deploymentInfo, IDisposable tempDeployment, ChangeSet tempChangeSet, DeployStatusApiResult updateStatusObj) in /tmp/KuduLite/Kudu.Core/Deployment/FetchDeploymentManager.cs:line 230" /><!-- duration: 2ms -->
+    </step><!-- duration: 12663ms -->

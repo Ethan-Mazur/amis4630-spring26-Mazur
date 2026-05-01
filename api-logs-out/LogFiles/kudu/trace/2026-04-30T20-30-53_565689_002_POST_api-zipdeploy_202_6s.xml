@@ -1,0 +1,17 @@
+<step title="Incoming Request" date="2026-04-30T20:30:53.826" instance="565689" url="/api/zipdeploy?isAsync=true" method="POST" type="request" pid="853,1,19" Accept="*/*" Host="amis4630-api.scm.azurewebsites.net" User-Agent="AZURECLI/2.85.0 (MSI)" Accept-Encoding="gzip, deflate" Authorization="Bea..." Cache-Control="no-cache" Content-Type="application/octet-stream" Content-Length="21879201" x-ms-client-request-id="77f87f70-44d3-11f1-9a91-dc1ba14f544e" x-ms-artifact-checksum="6b161915c4bbcb7618838ad8c75261352d0cde193c7fb091ff1b739d3a6f6840" X-ARR-LOG-ID="77f87f70-44d3-11f1-9a91-dc1ba14f544e" CLIENT-IP="184.57.112.66:60827" X-SITE-DEPLOYMENT-ID="amis4630-api" WAS-DEFAULT-HOSTNAME="amis4630-api.scm.azurewebsites.net" X-Forwarded-Proto="https" X-AppService-Proto="https" X-Forwarded-TlsVersion="1.3" X-WAWS-Unencoded-URL="/api/zipdeploy?isAsync=true" X-Client-IP="184.57.112.66" X-Client-Port="60827" >
+  <step title="ZipPushDeploy" date="2026-04-30T20:30:53.942" >
+    <step title="ZipDeploy. Extract zip." date="2026-04-30T20:30:53.947" /><!-- duration: 5ms -->
+    <step title="None repository commit" date="2026-04-30T20:30:53.961" >
+      <step title="Commit id: b1907f09-3f45-4ed1-b829-b6e9b1578196" date="2026-04-30T20:30:53.963" Message="N/A" AuthorName="N/A" AuthorEmail="N/A" /><!-- duration: 15ms -->
+    </step><!-- duration: 20ms -->
+    <step title="Starting PushDeployAsync" date="2026-04-30T20:30:53.983" /><!-- duration: 3ms -->
+    <step title="Writing artifact to /tmp/zipdeploy/1d04a67e-7278-4fec-9371-d5784557aff6.zip" date="2026-04-30T20:30:54.005" >
+      <step title="Writing multipart request body to /tmp/zipdeploy/1d04a67e-7278-4fec-9371-d5784557aff6.zip" date="2026-04-30T20:30:54.032" /><!-- duration: 2ms -->
+    </step><!-- duration: 5245ms -->
+    <step title="Start deployment in the background" date="2026-04-30T20:30:59.264" >
+      <step title="Acquiring Deployment Lock" date="2026-04-30T20:30:59.312" /><!-- duration: 2ms -->
+      <step title="Acquired Deployment Lock" date="2026-04-30T20:30:59.376" /><!-- duration: 2ms -->
+    </step><!-- duration: 244ms -->
+  </step><!-- duration: 5581ms -->
+  <step title="Outgoing response" date="2026-04-30T20:30:59.572" type="response" statusCode="202" statusText="Accepted" /><!-- duration: 12ms -->
+</step><!-- duration: 5769ms -->

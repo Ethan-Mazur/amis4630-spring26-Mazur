@@ -1,0 +1,8 @@
+<step title="Incoming Request" date="2026-04-30T21:57:19.238" instance="565689" url="/api/deployments/latest?deployer=OneDeploy&amp;time=2026-04-30_21-57-19Z" method="GET" type="request" pid="851,1,23" Host="amis4630-api.scm.azurewebsites.net" User-Agent="GITHUBACTIONS_DeployWebAppToAzure_781ebb311a31172fafb4fc79e1d2ffddedbed81893ed853e5e9f3c86dd190376_v3.0.8" Authorization="Bas..." Content-Type="application/json; charset=utf-8" Cookie="ARRAffinity=5656892a738600b748cd8937def16f99a980ac87bf2ea3ad41fb6ecd9e578037;Path=/;HttpOnly;Secure;Domain=amis4630-api.scm.azurewebsites.net; ARRAffinitySameSite=5656892a738600b748cd8937def16f99a980ac87bf2ea3ad41fb6ecd9e578037;Path=/;HttpOnly;SameSite=None;Secure;Domain=amis4630-api.scm.azurewebsites.net" Content-Length="0" X-ARR-LOG-ID="29c95368-d069-44af-ad25-cdf18aca3cc4" CLIENT-IP="130.131.237.134:29744" X-SITE-DEPLOYMENT-ID="amis4630-api" WAS-DEFAULT-HOSTNAME="amis4630-api.scm.azurewebsites.net" X-Forwarded-Proto="https" X-AppService-Proto="https" X-Forwarded-TlsVersion="1.3" X-WAWS-Unencoded-URL="/api/deployments/latest?deployer=OneDeploy&amp;time=2026-04-30_21-57-19Z" X-Client-IP="130.131.237.134" X-Client-Port="29744" >
+  <step title="DeploymentService.GetResult" date="2026-04-30T21:57:19.326" >
+    <step title="DeploymentService.GetLatestDeployment" date="2026-04-30T21:57:19.358" >
+      <step title="DeploymentManager.GetResults" date="2026-04-30T21:57:19.381" /><!-- duration: 188ms -->
+    </step><!-- duration: 222ms -->
+  </step><!-- duration: 256ms -->
+  <step title="Outgoing response" date="2026-04-30T21:57:19.585" type="response" statusCode="202" statusText="Accepted" /><!-- duration: 6ms -->
+</step><!-- duration: 355ms -->
